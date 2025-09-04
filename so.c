@@ -25,6 +25,37 @@
 // intervalo entre interrupções do relógio
 #define INTERVALO_INTERRUPCAO 50   // em instruções executadas
 
+// a tabela de processos
+#define MAX_PROCESSOS 10
+
+// os estados em que um processo pode se encontrar
+typedef enum {
+  PRONTO,
+  EXECUTANDO,
+  BLOQUEADO,
+  TERMINADO
+} processo_estado_t;
+
+// a estrutura com as informações de um processo (Process Control Block)
+typedef struct {
+  int pid;                      // identificador do processo
+  processo_estado_t estado;     // estado atual do processo
+  
+  // contexto da CPU (registradores salvos)
+  int regA;
+  int regX;
+  int regPC;
+  int regERRO;
+
+  // informações de E/S
+  dispositivo_id_t disp_entrada;  // dispositivo de entrada do processo
+  dispositivo_id_t disp_saida;    // dispositivo de saída do processo
+
+  // para a chamada de sistema SO_ESPERA_PROC
+  int pid_esperado;             // pid do processo que este está esperando
+  
+} processo_t;
+
 struct so_t {
   cpu_t *cpu;
   mem_t *mem;
@@ -34,7 +65,11 @@ struct so_t {
 
   int regA, regX, regPC, regERRO; // cópia do estado da CPU
   // t2: tabela de processos, processo corrente, pendências, etc
+  processo_t tabela_processos[MAX_PROCESSOS];
+  int processo_atual_idx;
+  int proximo_pid;
 };
+
 
 
 // função de tratamento de interrupção (entrada no SO)
@@ -61,6 +96,14 @@ so_t *so_cria(cpu_t *cpu, mem_t *mem, es_t *es, console_t *console)
   self->es = es;
   self->console = console;
   self->erro_interno = false;
+
+  // Inicializa a tabela de processos
+  for (int i = 0; i < MAX_PROCESSOS; i++) {
+    self->tabela_processos[i].estado = TERMINADO; // Marcar todos como livres/terminados
+    self->tabela_processos[i].pid = -1;
+  }
+  self->processo_atual_idx = -1; // Nenhum processo executando inicialmente
+  self->proximo_pid = 1;
 
   // quando a CPU executar uma instrução CHAMAC, deve chamar a função
   //   so_trata_interrupcao, com primeiro argumento um ptr para o SO
@@ -227,6 +270,39 @@ static void so_trata_reset(so_t *self)
     console_printf("SO: problema na programação do timer");
     self->erro_interno = true;
   }
+
+  // Cria o primeiro processo (init)
+  // 1. Carrega o programa 'init.maq' na memória
+  ender = so_carrega_programa(self, "init.maq");
+  if (ender < 0) { // so_carrega_programa agora retorna -1 em caso de erro
+    console_printf("SO: problema na carga do programa inicial");
+    self->erro_interno = true;
+    return;
+  }
+
+  // 2. Encontra um slot livre na tabela de processos (será o 0)
+  int processo_idx = 0; // O primeiro processo vai para o primeiro slot
+  
+  // 3. Preenche a estrutura do processo (PCB)
+  processo_t *p = &self->tabela_processos[processo_idx];
+  p->pid = self->proximo_pid++;
+  p->estado = PRONTO; // Está pronto para executar, mas ainda não está na CPU
+  p->regPC = ender;   // O contador de programa aponta para o início do init
+  p->regA = 0;
+  p->regX = 0;
+  p->regERRO = ERR_OK;
+  p->pid_esperado = -1; // Não está esperando por ninguém
+
+  // Atribui os dispositivos de E/S padrão (Terminal A)
+  p->disp_entrada = D_TERM_A_TECLADO;
+  p->disp_saida = D_TERM_A_TELA;
+
+  // 4. Define este como o processo que será executado a seguir
+  self->processo_atual_idx = processo_idx;
+
+  // Não alteramos mais self->regPC diretamente. O despachante usará o 
+  // valor do processo atual.
+  console_printf("SO: processo 'init' criado com PID %d", p->pid);
 
   // t2: deveria criar um processo para o init, e inicializar o estado do
   //   processador para esse processo com os registradores zerados, exceto
