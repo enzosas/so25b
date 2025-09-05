@@ -169,12 +169,33 @@ static void so_salva_estado_da_cpu(so_t *self)
   //   CPU na memória, nos endereços CPU_END_PC etc. O registrador X foi salvo
   //   pelo tratador de interrupção (ver trata_irq.asm) no endereço 59
   // se não houver processo corrente, não faz nada
-  if (mem_le(self->mem, CPU_END_A, &self->regA) != ERR_OK
-      || mem_le(self->mem, CPU_END_PC, &self->regPC) != ERR_OK
-      || mem_le(self->mem, CPU_END_erro, &self->regERRO) != ERR_OK
-      || mem_le(self->mem, 59, &self->regX)) {
-    console_printf("SO: erro na leitura dos registradores");
+  if (self->processo_atual_idx == -1) {
+    return;
+  }
+  
+  // obtém um ponteiro para o PCB do processo que estava executando
+  processo_t *p = &self->tabela_processos[self->processo_atual_idx];
+
+  // lê o estado da CPU que foi salvo na memória pela interrupção
+  int pc, a, erro, x;
+  if (mem_le(self->mem, CPU_END_PC, &pc) != ERR_OK ||
+      mem_le(self->mem, CPU_END_A, &a) != ERR_OK ||
+      mem_le(self->mem, CPU_END_erro, &erro) != ERR_OK ||
+      mem_le(self->mem, 59, &x) != ERR_OK) { // X salvo pelo trata_int.asm
+    console_printf("SO: erro na leitura dos registradores ao salvar contexto.");
     self->erro_interno = true;
+    return;
+  }
+
+  // salva os valores no PCB do processo
+  p->regPC = pc;
+  p->regA = a;
+  p->regERRO = erro;
+  p->regX = x;
+
+  // se o processo estava executando, agora ele está pronto para voltar pra fila
+  if (p->estado == EXECUTANDO) {
+    p->estado = PRONTO;
   }
 }
 
@@ -204,15 +225,34 @@ static int so_despacha(so_t *self)
   //   senão retorna 1
   // o valor retornado será o valor de retorno de CHAMAC, e será colocado no 
   //   registrador A para o tratador de interrupção (ver trata_irq.asm).
-  if (mem_escreve(self->mem, CPU_END_A, self->regA) != ERR_OK
-      || mem_escreve(self->mem, CPU_END_PC, self->regPC) != ERR_OK
-      || mem_escreve(self->mem, CPU_END_erro, self->regERRO) != ERR_OK
-      || mem_escreve(self->mem, 59, self->regX)) {
-    console_printf("SO: erro na escrita dos registradores");
-    self->erro_interno = true;
+  
+  // se não há processo a executar, avisa a CPU para parar
+  if (self->processo_atual_idx == -1) {
+    return 1; // Retorna 1 para o assembly, que fará a CPU parar (PARA)
   }
-  if (self->erro_interno) return 1;
-  else return 0;
+
+  // obtém um ponteiro para o PCB do processo que vai executar
+  processo_t *p = &self->tabela_processos[self->processo_atual_idx];
+
+  // escreve o estado do processo na memória, de onde a CPU irá restaurá-lo
+  if (mem_escreve(self->mem, CPU_END_PC, p->regPC) != ERR_OK ||
+      mem_escreve(self->mem, CPU_END_A, p->regA) != ERR_OK ||
+      mem_escreve(self->mem, CPU_END_erro, p->regERRO) != ERR_OK ||
+      mem_escreve(self->mem, 59, p->regX) != ERR_OK) {
+    console_printf("SO: erro na escrita dos registradores ao despachar processo.");
+    self->erro_interno = true;
+    return 1; // Para a CPU em caso de erro
+  }
+  
+  // marca o processo como executando
+  p->estado = EXECUTANDO;
+
+  // se houver algum erro interno no SO, para a CPU
+  if (self->erro_interno) {
+    return 1;
+  }
+
+  return 0; // Retorna 0 para o assembly, que fará a CPU retornar da interrupção (RETI)
 }
 
 
