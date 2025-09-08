@@ -488,11 +488,19 @@ static void so_chamada_le(so_t *self)
   //     o caso
   // implementação lendo direto do terminal A
   //   t2: deveria usar dispositivo de entrada corrente do processo
+  
+  processo_t *p = &self->tabela_processos[self->processo_atual_idx];
+  dispositivo_id_t teclado = p->disp_entrada;
+  dispositivo_id_t teclado_ok = teclado + TERM_TECLADO_OK - TERM_TECLADO;
+  
+  
+  
   for (;;) {  // espera ocupada!
     int estado;
-    if (es_le(self->es, D_TERM_A_TECLADO_OK, &estado) != ERR_OK) {
-      console_printf("SO: problema no acesso ao estado do teclado");
+    if (es_le(self->es, teclado_ok, &estado) != ERR_OK) {
+      console_printf("SO: problema no acesso ao estado do teclado do processo %d", p->pid);
       self->erro_interno = true;
+      p->regA = -1; // Retorna erro
       return;
     }
     if (estado != 0) break;
@@ -503,9 +511,10 @@ static void so_chamada_le(so_t *self)
     console_tictac(self->console);
   }
   int dado;
-  if (es_le(self->es, D_TERM_A_TECLADO, &dado) != ERR_OK) {
-    console_printf("SO: problema no acesso ao teclado");
+  if (es_le(self->es, teclado, &dado) != ERR_OK) {
+    console_printf("SO: problema no acesso ao teclado do processo %d", p->pid);
     self->erro_interno = true;
+    p->regA = -1; // Retorna erro
     return;
   }
   // escreve no reg A do processador
@@ -513,7 +522,7 @@ static void so_chamada_le(so_t *self)
   // t2: se houvesse processo, deveria escrever no reg A do processo
   // t2: o acesso só deve ser feito nesse momento se for possível; se não, o processo
   //   é bloqueado, e o acesso só deve ser feito mais tarde (e o processo desbloqueado)
-  self->regA = dado;
+  p->regA = dado; // Coloca o dado lido no registador A do processo
 }
 
 // implementação da chamada se sistema SO_ESCR
@@ -524,11 +533,17 @@ static void so_chamada_escr(so_t *self)
   //   t2: deveria bloquear o processo se dispositivo ocupado
   // implementação escrevendo direto do terminal A
   //   t2: deveria usar o dispositivo de saída corrente do processo
+
+  processo_t *p = &self->tabela_processos[self->processo_atual_idx];
+  dispositivo_id_t tela = p->disp_saida;
+  dispositivo_id_t tela_ok = tela + TERM_TELA_OK - TERM_TELA;
+
   for (;;) {
     int estado;
-    if (es_le(self->es, D_TERM_A_TELA_OK, &estado) != ERR_OK) {
-      console_printf("SO: problema no acesso ao estado da tela");
+    if (es_le(self->es, tela_ok, &estado) != ERR_OK) {
+      console_printf("SO: problema no acesso ao estado da tela do processo %d", p->pid);
       self->erro_interno = true;
+      p->regA = -1; // Retorna erro
       return;
     }
     if (estado != 0) break;
@@ -543,13 +558,14 @@ static void so_chamada_escr(so_t *self)
   // t2: deveria usar os registradores do processo que está realizando a E/S
   // t2: caso o processo tenha sido bloqueado, esse acesso deve ser realizado em outra execução
   //   do SO, quando ele verificar que esse acesso já pode ser feito.
-  dado = self->regX;
-  if (es_escreve(self->es, D_TERM_A_TELA, dado) != ERR_OK) {
-    console_printf("SO: problema no acesso à tela");
+  dado = p->regX;
+  if (es_escreve(self->es, tela, dado) != ERR_OK) {
+    console_printf("SO: problema no acesso à tela do processo %d", p->pid);
     self->erro_interno = true;
+    p->regA = -1; // Retorna erro
     return;
   }
-  self->regA = 0;
+  p->regA = 0; // Retorna 0 (sucesso)
 }
 
 // implementação da chamada se sistema SO_CRIA_PROC
@@ -602,9 +618,15 @@ static void so_chamada_cria_proc(so_t *self)
   novo->regERRO = ERR_OK;
   novo->pid_esperado = -1;
 
-  // O novo processo herda os dispositivos de E/S do pai
-  novo->disp_entrada = pai->disp_entrada;
-  novo->disp_saida = pai->disp_saida;
+  // Atribui um terminal com base no PID (0=A, 1=B, 2=C, 3=D)
+  // Assumindo 4 terminais no total
+  int terminal_idx = (novo->pid - 1) % 4; 
+  // O ID base do terminal (D_TERM_A, D_TERM_B, etc) é D_TERM_A + 4 * indice
+  int term_base = D_TERM_A + terminal_idx * 4;
+
+  // Atribui os dispositivos de E/S corretos para o terminal calculado
+  novo->disp_entrada = term_base + TERM_TECLADO;
+  novo->disp_saida = term_base + TERM_TELA;
 
   // 5. Retornar o PID do novo processo no registrador A do pai
   pai->regA = novo->pid;
