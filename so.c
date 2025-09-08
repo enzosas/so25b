@@ -216,6 +216,35 @@ static void so_escalona(so_t *self)
   // t2: na primeira versão, escolhe um processo pronto caso o processo
   //   corrente não possa continuar executando, senão deixa o mesmo processo.
   //   depois, implementa um escalonador melhor
+
+  // 1. O processo que estava executando (se houver) pode continuar?
+  //    Para continuar, ele não pode ser inválido (-1) e precisa estar PRONTO.
+  if (self->processo_atual_idx != -1 &&
+      self->tabela_processos[self->processo_atual_idx].estado == PRONTO) {
+    // Sim, ele pode continuar. O escalonador não precisa fazer nada.
+    return;
+  }
+
+  // 2. Se o processo atual não pode continuar (está bloqueado, terminado ou não há um),
+  //    procura o próximo processo PRONTO na tabela.
+  //    Vamos fazer uma busca circular (Round-Robin).
+  int processo_inicial = self->processo_atual_idx;
+  if (processo_inicial == -1) {
+    processo_inicial = 0;
+  }
+
+  for (int i = 1; i <= MAX_PROCESSOS; i++) {
+    int idx_candidato = (processo_inicial + i) % MAX_PROCESSOS;
+    if (self->tabela_processos[idx_candidato].estado == PRONTO) {
+      // Encontrou um processo pronto! Escolhe ele e termina.
+      self->processo_atual_idx = idx_candidato;
+      return;
+    }
+  }
+
+  // 3. Se percorreu a tabela inteira e não encontrou ninguém PRONTO,
+  //    significa que não há nenhum processo para executar.
+  self->processo_atual_idx = -1;
 }
 
 static int so_despacha(so_t *self)
@@ -527,36 +556,110 @@ static void so_chamada_escr(so_t *self)
 // cria um processo
 static void so_chamada_cria_proc(so_t *self)
 {
-  // ainda sem suporte a processos, carrega programa e passa a executar ele
-  // quem chamou o sistema não vai mais ser executado, coitado!
-  // t2: deveria criar um novo processo
+  // o processo que está chamando a criação é o processo pai
+  processo_t *pai = &self->tabela_processos[self->processo_atual_idx];
 
-  // em X está o endereço onde está o nome do arquivo
-  int ender_proc;
-  // t2: deveria ler o X do descritor do processo criador
-  ender_proc = self->regX;
-  char nome[100];
-  if (copia_str_da_mem(100, nome, self->mem, ender_proc)) {
-    int ender_carga = so_carrega_programa(self, nome);
-    if (ender_carga > 0) {
-      // t2: deveria escrever no PC do descritor do processo criado
-      self->regPC = ender_carga;
-      return;
-    } // else?
+  // 1. Achar um slot livre na tabela de processos
+  int novo_idx = -1;
+  for (int i = 0; i < MAX_PROCESSOS; i++) {
+    if (self->tabela_processos[i].estado == TERMINADO) {
+      novo_idx = i;
+      break;
+    }
   }
-  // deveria escrever -1 (se erro) ou o PID do processo criado (se OK) no reg A
-  //   do processo que pediu a criação
-  self->regA = -1;
+
+  // Se não houver slot livre, retorna erro
+  if (novo_idx == -1) {
+    pai->regA = -1; // Retorno de erro: tabela de processos cheia
+    console_printf("SO: Nao foi possivel criar processo, tabela cheia.");
+    return;
+  }
+
+  // 2. Ler o nome do programa a ser executado da memória do processo pai
+  int ender_nome = pai->regX; // O endereço do nome está no registrador X do pai
+  char nome_prog[100];
+  if (!copia_str_da_mem(100, nome_prog, self->mem, ender_nome)) {
+    pai->regA = -1; // Retorno de erro: nome do programa inválido
+    console_printf("SO: Nao foi possivel ler o nome do programa para o novo processo.");
+    return;
+  }
+
+  // 3. Carregar o programa na memória
+  int ender_carga = so_carrega_programa(self, nome_prog);
+  if (ender_carga < 0) {
+    pai->regA = -1; // Retorno de erro: falha ao carregar o programa
+    console_printf("SO: Nao foi possivel carregar o programa '%s'.", nome_prog);
+    return;
+  }
+
+  // 4. Preencher o PCB do novo processo
+  processo_t *novo = &self->tabela_processos[novo_idx];
+  novo->pid = self->proximo_pid++;
+  novo->estado = PRONTO;
+  novo->regPC = ender_carga;
+  novo->regA = 0;
+  novo->regX = 0;
+  novo->regERRO = ERR_OK;
+  novo->pid_esperado = -1;
+
+  // O novo processo herda os dispositivos de E/S do pai
+  novo->disp_entrada = pai->disp_entrada;
+  novo->disp_saida = pai->disp_saida;
+
+  // 5. Retornar o PID do novo processo no registrador A do pai
+  pai->regA = novo->pid;
+
+  console_printf("SO: Processo '%s' criado com PID %d.", nome_prog, novo->pid);
+
 }
 
 // implementação da chamada se sistema SO_MATA_PROC
 // mata o processo com pid X (ou o processo corrente se X é 0)
 static void so_chamada_mata_proc(so_t *self)
 {
-  // t2: deveria matar um processo
-  // ainda sem suporte a processos, retorna erro -1
-  console_printf("SO: SO_MATA_PROC não implementada");
-  self->regA = -1;
+  processo_t *chamador = &self->tabela_processos[self->processo_atual_idx];
+  int pid_alvo = chamador->regX; // O PID a ser morto está no registrador X
+
+  // Se o PID alvo for 0, o processo quer se matar
+  if (pid_alvo == 0) {
+    pid_alvo = chamador->pid;
+  }
+
+  // 1. Encontrar o processo a ser morto na tabela
+  int idx_alvo = -1;
+  for (int i = 0; i < MAX_PROCESSOS; i++) {
+    if (self->tabela_processos[i].pid == pid_alvo &&
+        self->tabela_processos[i].estado != TERMINADO) {
+      idx_alvo = i;
+      break;
+    }
+  }
+
+  // Se não encontrou o processo, retorna erro
+  if (idx_alvo == -1) {
+    chamador->regA = -1; // Retorno de erro
+    console_printf("SO: Tentativa de matar processo com PID %d, mas ele nao existe.", pid_alvo);
+    return;
+  }
+
+  // 2. Mudar o estado do processo para TERMINADO
+  processo_t *alvo = &self->tabela_processos[idx_alvo];
+  alvo->estado = TERMINADO;
+  alvo->pid = -1; // Libera o PID
+
+  console_printf("SO: Processo com PID %d terminado.", pid_alvo);
+
+  // TODO: T2 - Desbloquear processos que estavam esperando por este
+
+  // Se o processo se matou, o escalonador precisará escolher outro.
+  // Forçamos o processo_atual_idx para -1 para garantir que o escalonador
+  // não tente continuar com o processo que acabou de morrer.
+  if (alvo->pid == chamador->pid) {
+      self->processo_atual_idx = -1;
+  }
+
+  // 3. Retornar 0 (sucesso) no registrador A do processo chamador
+  chamador->regA = 0;
 }
 
 // implementação da chamada se sistema SO_ESPERA_PROC
