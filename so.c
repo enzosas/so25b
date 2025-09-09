@@ -36,10 +36,19 @@ typedef enum {
   TERMINADO
 } processo_estado_t;
 
+// o motivo pelo qual um processo pode estar bloqueado
+typedef enum {
+  BLOQUEIO_NENHUM,
+  BLOQUEIO_LE,
+  BLOQUEIO_ESCR,
+  BLOQUEIO_ESPERA
+} processo_bloqueio_t;
+
 // a estrutura com as informações de um processo (Process Control Block)
 typedef struct {
   int pid;                      // identificador do processo
   processo_estado_t estado;     // estado atual do processo
+  processo_bloqueio_t tipo_bloqueio; // motivo pelo qual está bloqueado
   
   // contexto da CPU (registradores salvos)
   int regA;
@@ -207,6 +216,73 @@ static void so_trata_pendencias(so_t *self)
   // - desbloqueio de processos
   // - contabilidades
   // - etc
+
+  // Percorre a tabela de processos para encontrar processos bloqueados
+  for (int i = 0; i < MAX_PROCESSOS; i++) {
+    processo_t *p = &self->tabela_processos[i];
+
+    if (p->estado == BLOQUEADO) {
+      // O processo está bloqueado, verifica o motivo
+      
+      if (p->tipo_bloqueio == BLOQUEIO_LE) {
+        // Bloqueado à espera de LEITURA. O dispositivo já está livre?
+        dispositivo_id_t teclado = p->disp_entrada;
+        dispositivo_id_t teclado_ok = teclado + TERM_TECLADO_OK - TERM_TECLADO;
+        int estado_dev;
+        es_le(self->es, teclado_ok, &estado_dev);
+
+        if (estado_dev != 0) {
+          // Sim, o dispositivo está pronto! Completa a operação de leitura.
+          int dado;
+          es_le(self->es, teclado, &dado);
+          p->regA = dado; // Coloca o resultado no registador A
+          p->estado = PRONTO; // Desbloqueia o processo
+          p->tipo_bloqueio = BLOQUEIO_NENHUM;
+          console_printf("SO: Processo %d desbloqueado apos leitura.", p->pid);
+        }
+
+      } else if (p->tipo_bloqueio == BLOQUEIO_ESCR) {
+        // Bloqueado à espera de ESCRITA. O dispositivo já está livre?
+        dispositivo_id_t tela = p->disp_saida;
+        dispositivo_id_t tela_ok = tela + TERM_TELA_OK - TERM_TELA;
+        int estado_dev;
+        es_le(self->es, tela_ok, &estado_dev);
+
+        if (estado_dev != 0) {
+          // Sim, o dispositivo está pronto! Completa a operação de escrita.
+          int dado = p->regX; // O dado a escrever ainda está em regX
+          es_escreve(self->es, tela, dado);
+          p->regA = 0; // Retorna 0 (sucesso)
+          p->estado = PRONTO; // Desbloqueia o processo
+          p->tipo_bloqueio = BLOQUEIO_NENHUM;
+          console_printf("SO: Processo %d desbloqueado apos escrita.", p->pid);
+        }
+
+      } else if (p->tipo_bloqueio == BLOQUEIO_ESPERA) {
+        // Bloqueado à espera que outro processo morra. Já morreu?
+        int pid_esperado = p->pid_esperado;
+        bool esperado_terminou = true; // Assume que terminou, a não ser que o encontremos ativo
+        
+        // Procura o processo esperado na tabela
+        for (int j = 0; j < MAX_PROCESSOS; j++) {
+            if (self->tabela_processos[j].pid == pid_esperado) {
+                // Encontrou, então não terminou
+                esperado_terminou = false;
+                break;
+            }
+        }
+
+        if (esperado_terminou) {
+            // Sim, o processo esperado já não existe. Desbloqueia.
+            p->estado = PRONTO;
+            p->tipo_bloqueio = BLOQUEIO_NENHUM;
+            p->pid_esperado = -1;
+            p->regA = 0; // Sucesso na espera
+            console_printf("SO: Processo %d desbloqueado (pendencias) pois %d terminou.", p->pid, pid_esperado);
+        }
+      }
+    }
+  }
 }
 
 static void so_escalona(so_t *self)
@@ -493,36 +569,33 @@ static void so_chamada_le(so_t *self)
   dispositivo_id_t teclado = p->disp_entrada;
   dispositivo_id_t teclado_ok = teclado + TERM_TECLADO_OK - TERM_TECLADO;
   
-  
-  
-  for (;;) {  // espera ocupada!
-    int estado;
-    if (es_le(self->es, teclado_ok, &estado) != ERR_OK) {
-      console_printf("SO: problema no acesso ao estado do teclado do processo %d", p->pid);
-      self->erro_interno = true;
-      p->regA = -1; // Retorna erro
-      return;
-    }
-    if (estado != 0) break;
-    // como não está saindo do SO, a unidade de controle não está executando seu laço.
-    // esta gambiarra faz pelo menos a console ser atualizada
-    // t2: com a implementação de bloqueio de processo, esta gambiarra não
-    //   deve mais existir.
-    console_tictac(self->console);
-  }
-  int dado;
-  if (es_le(self->es, teclado, &dado) != ERR_OK) {
-    console_printf("SO: problema no acesso ao teclado do processo %d", p->pid);
+  // Verifica se o dispositivo de entrada está pronto
+  int estado;
+  if (es_le(self->es, teclado_ok, &estado) != ERR_OK) {
+    console_printf("SO: problema no acesso ao estado do teclado do processo %d", p->pid);
     self->erro_interno = true;
     p->regA = -1; // Retorna erro
     return;
   }
-  // escreve no reg A do processador
-  // (na verdade, na posição onde o processador vai pegar o A quando retornar da int)
-  // t2: se houvesse processo, deveria escrever no reg A do processo
-  // t2: o acesso só deve ser feito nesse momento se for possível; se não, o processo
-  //   é bloqueado, e o acesso só deve ser feito mais tarde (e o processo desbloqueado)
-  p->regA = dado; // Coloca o dado lido no registador A do processo
+
+  if (estado != 0) {
+    // Dispositivo pronto, realiza a leitura imediatamente
+    int dado;
+    if (es_le(self->es, teclado, &dado) != ERR_OK) {
+      console_printf("SO: problema no acesso ao teclado do processo %d", p->pid);
+      self->erro_interno = true;
+      p->regA = -1; // Retorna erro
+      return;
+    }
+    p->regA = dado; // Coloca o dado lido no registador A do processo
+  } else {
+    // Dispositivo não está pronto, bloqueia o processo
+    console_printf("SO: Processo %d bloqueado esperando por entrada.", p->pid);
+    p->estado = BLOQUEADO;
+    p->tipo_bloqueio = BLOQUEIO_LE;
+    // Força o escalonador a escolher outro processo
+    self->processo_atual_idx = -1;
+  }
 }
 
 // implementação da chamada se sistema SO_ESCR
@@ -538,34 +611,33 @@ static void so_chamada_escr(so_t *self)
   dispositivo_id_t tela = p->disp_saida;
   dispositivo_id_t tela_ok = tela + TERM_TELA_OK - TERM_TELA;
 
-  for (;;) {
-    int estado;
-    if (es_le(self->es, tela_ok, &estado) != ERR_OK) {
-      console_printf("SO: problema no acesso ao estado da tela do processo %d", p->pid);
-      self->erro_interno = true;
-      p->regA = -1; // Retorna erro
-      return;
-    }
-    if (estado != 0) break;
-    // como não está saindo do SO, a unidade de controle não está executando seu laço.
-    // esta gambiarra faz pelo menos a console ser atualizada
-    // t2: não deve mais existir quando houver suporte a processos, porque o SO não poderá
-    //   executar por muito tempo, permitindo a execução do laço da unidade de controle
-    console_tictac(self->console);
-  }
-  int dado;
-  // está lendo o valor de X e escrevendo o de A direto onde o processador colocou/vai pegar
-  // t2: deveria usar os registradores do processo que está realizando a E/S
-  // t2: caso o processo tenha sido bloqueado, esse acesso deve ser realizado em outra execução
-  //   do SO, quando ele verificar que esse acesso já pode ser feito.
-  dado = p->regX;
-  if (es_escreve(self->es, tela, dado) != ERR_OK) {
-    console_printf("SO: problema no acesso à tela do processo %d", p->pid);
+  // Verifica se o dispositivo de saída está pronto
+  int estado;
+  if (es_le(self->es, tela_ok, &estado) != ERR_OK) {
+    console_printf("SO: problema no acesso ao estado da tela do processo %d", p->pid);
     self->erro_interno = true;
     p->regA = -1; // Retorna erro
     return;
   }
-  p->regA = 0; // Retorna 0 (sucesso)
+  
+  if (estado != 0) {
+    // Dispositivo pronto, realiza a escrita imediatamente
+    int dado = p->regX; // O dado a escrever está no registador X do processo
+    if (es_escreve(self->es, tela, dado) != ERR_OK) {
+      console_printf("SO: problema no acesso à tela do processo %d", p->pid);
+      self->erro_interno = true;
+      p->regA = -1; // Retorna erro
+      return;
+    }
+    p->regA = 0; // Retorna 0 (sucesso)
+  } else {
+    // Dispositivo não está pronto, bloqueia o processo
+    console_printf("SO: Processo %d bloqueado esperando por saida.", p->pid);
+    p->estado = BLOQUEADO;
+    p->tipo_bloqueio = BLOQUEIO_ESCR;
+    // Força o escalonador a escolher outro processo
+    self->processo_atual_idx = -1;
+  }
 }
 
 // implementação da chamada se sistema SO_CRIA_PROC
@@ -612,6 +684,7 @@ static void so_chamada_cria_proc(so_t *self)
   processo_t *novo = &self->tabela_processos[novo_idx];
   novo->pid = self->proximo_pid++;
   novo->estado = PRONTO;
+  novo->tipo_bloqueio = BLOQUEIO_NENHUM;
   novo->regPC = ender_carga;
   novo->regA = 0;
   novo->regX = 0;
@@ -650,8 +723,7 @@ static void so_chamada_mata_proc(so_t *self)
   // 1. Encontrar o processo a ser morto na tabela
   int idx_alvo = -1;
   for (int i = 0; i < MAX_PROCESSOS; i++) {
-    if (self->tabela_processos[i].pid == pid_alvo &&
-        self->tabela_processos[i].estado != TERMINADO) {
+    if (self->tabela_processos[i].pid == pid_alvo && self->tabela_processos[i].estado != TERMINADO) {
       idx_alvo = i;
       break;
     }
@@ -666,12 +738,25 @@ static void so_chamada_mata_proc(so_t *self)
 
   // 2. Mudar o estado do processo para TERMINADO
   processo_t *alvo = &self->tabela_processos[idx_alvo];
+  int pid_morto = alvo->pid; // Guarda o PID antes de o invalidar
   alvo->estado = TERMINADO;
   alvo->pid = -1; // Libera o PID
 
   console_printf("SO: Processo com PID %d terminado.", pid_alvo);
 
-  // TODO: T2 - Desbloquear processos que estavam esperando por este
+  // 2a. Desbloqueia processos que estavam à espera do processo que morreu
+  for (int i = 0; i < MAX_PROCESSOS; i++) {
+    processo_t *p = &self->tabela_processos[i];
+    if (p->estado == BLOQUEADO && p->tipo_bloqueio == BLOQUEIO_ESPERA && p->pid_esperado == pid_morto) {
+      
+      p->estado = PRONTO;
+      p->tipo_bloqueio = BLOQUEIO_NENHUM;
+      p->pid_esperado = -1;
+      p->regA = 0; // Retorna 0 (sucesso) para a chamada SO_ESPERA_PROC
+
+      console_printf("SO: Processo %d desbloqueado pois processo %d terminou.", p->pid, pid_morto);
+    }
+  }
 
   // Se o processo se matou, o escalonador precisará escolher outro.
   // Forçamos o processo_atual_idx para -1 para garantir que o escalonador
@@ -688,10 +773,42 @@ static void so_chamada_mata_proc(so_t *self)
 // espera o fim do processo com pid X
 static void so_chamada_espera_proc(so_t *self)
 {
-  // t2: deveria bloquear o processo se for o caso (e desbloquear na morte do esperado)
-  // ainda sem suporte a processos, retorna erro -1
-  console_printf("SO: SO_ESPERA_PROC não implementada");
-  self->regA = -1;
+  processo_t *chamador = &self->tabela_processos[self->processo_atual_idx];
+  int pid_alvo = chamador->regX; // O PID a ser esperado está no registador X
+
+  // 1. Validar o PID alvo
+  // Não pode esperar por si mesmo
+  if (pid_alvo == chamador->pid) {
+    chamador->regA = -1; // Retorna erro
+    console_printf("SO: Processo %d tentou esperar por si mesmo.", chamador->pid);
+    return;
+  }
+
+  // O processo alvo tem de existir e não pode estar já terminado
+  int idx_alvo = -1;
+  for (int i = 0; i < MAX_PROCESSOS; i++) {
+    if (self->tabela_processos[i].pid == pid_alvo && self->tabela_processos[i].estado != TERMINADO) {
+      idx_alvo = i;
+      break;
+    }
+  }
+
+  // Se não encontrou um processo válido para esperar, retorna erro
+  if (idx_alvo == -1) {
+    chamador->regA = -1; // Retorna erro
+    console_printf("SO: Processo %d tentou esperar por PID %d, que nao existe.", chamador->pid, pid_alvo);
+    return;
+  }
+
+  // 2. Tudo válido, bloqueia o processo chamador
+  chamador->estado = BLOQUEADO;
+  chamador->tipo_bloqueio = BLOQUEIO_ESPERA;
+  chamador->pid_esperado = pid_alvo;
+
+  // Força o escalonador a escolher outro processo
+  self->processo_atual_idx = -1;
+
+  console_printf("SO: Processo %d bloqueado, esperando pelo processo %d.", chamador->pid, pid_alvo);
 }
 
 
