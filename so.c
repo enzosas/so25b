@@ -28,6 +28,9 @@
 // a tabela de processos
 #define MAX_PROCESSOS 10
 
+// Quantum do escalonador: número de interrupções de relógio por processo
+#define QUANTUM 2
+
 // os estados em que um processo pode se encontrar
 typedef enum {
   PRONTO,
@@ -77,6 +80,15 @@ struct so_t {
   processo_t tabela_processos[MAX_PROCESSOS];
   int processo_atual_idx;
   int proximo_pid;
+
+  // Fila de processos prontos (guarda os índices da tabela de processos)
+  int fila_prontos[MAX_PROCESSOS];
+  int inicio_fila;
+  int fim_fila;
+  int n_prontos;
+
+    // Controle de quantum
+  int quantum_restante;
 };
 
 
@@ -114,6 +126,14 @@ so_t *so_cria(cpu_t *cpu, mem_t *mem, es_t *es, console_t *console)
   self->processo_atual_idx = -1; // Nenhum processo executando inicialmente
   self->proximo_pid = 1;
 
+  // Inicializa a fila de prontos
+  self->inicio_fila = 0;
+  self->fim_fila = 0;
+  self->n_prontos = 0;
+
+  // Inicializa o quantum
+  self->quantum_restante = 0;
+
   // quando a CPU executar uma instrução CHAMAC, deve chamar a função
   //   so_trata_interrupcao, com primeiro argumento um ptr para o SO
   cpu_define_chamaC(self->cpu, so_trata_interrupcao, self);
@@ -127,6 +147,30 @@ void so_destroi(so_t *self)
   free(self);
 }
 
+// --- FUNÇÕES NOVAS PARA A FILA ---
+// Insere um processo (pelo seu índice na tabela) no fim da fila de prontos
+static void insere_fila_prontos(so_t *self, int processo_idx)
+{
+  if (self->n_prontos == MAX_PROCESSOS) {
+    console_printf("SO: ERRO! Fila de prontos cheia.");
+    return;
+  }
+  self->fila_prontos[self->fim_fila] = processo_idx;
+  self->fim_fila = (self->fim_fila + 1) % MAX_PROCESSOS;
+  self->n_prontos++;
+}
+
+// Remove e retorna o processo do início da fila de prontos
+static int remove_fila_prontos(so_t *self)
+{
+  if (self->n_prontos == 0) {
+    return -1; // Fila vazia
+  }
+  int processo_idx = self->fila_prontos[self->inicio_fila];
+  self->inicio_fila = (self->inicio_fila + 1) % MAX_PROCESSOS;
+  self->n_prontos--;
+  return processo_idx;
+}
 
 // ---------------------------------------------------------------------
 // TRATAMENTO DE INTERRUPÇÃO {{{1
@@ -237,6 +281,7 @@ static void so_trata_pendencias(so_t *self)
           es_le(self->es, teclado, &dado);
           p->regA = dado; // Coloca o resultado no registador A
           p->estado = PRONTO; // Desbloqueia o processo
+          insere_fila_prontos(self, i); // Adiciona na fila
           p->tipo_bloqueio = BLOQUEIO_NENHUM;
           console_printf("SO: Processo %d desbloqueado apos leitura.", p->pid);
         }
@@ -254,6 +299,7 @@ static void so_trata_pendencias(so_t *self)
           es_escreve(self->es, tela, dado);
           p->regA = 0; // Retorna 0 (sucesso)
           p->estado = PRONTO; // Desbloqueia o processo
+          insere_fila_prontos(self, i); // Adiciona na fila
           p->tipo_bloqueio = BLOQUEIO_NENHUM;
           console_printf("SO: Processo %d desbloqueado apos escrita.", p->pid);
         }
@@ -275,6 +321,7 @@ static void so_trata_pendencias(so_t *self)
         if (esperado_terminou) {
             // Sim, o processo esperado já não existe. Desbloqueia.
             p->estado = PRONTO;
+            insere_fila_prontos(self, i); // Adiciona na fila
             p->tipo_bloqueio = BLOQUEIO_NENHUM;
             p->pid_esperado = -1;
             p->regA = 0; // Sucesso na espera
@@ -293,34 +340,15 @@ static void so_escalona(so_t *self)
   //   corrente não possa continuar executando, senão deixa o mesmo processo.
   //   depois, implementa um escalonador melhor
 
-  // 1. O processo que estava executando (se houver) pode continuar?
-  //    Para continuar, ele não pode ser inválido (-1) e precisa estar PRONTO.
+  // Se o processo que estava a ser executado foi preemptido e ainda está PRONTO,
+  // ele deve voltar para o fim da fila.
   if (self->processo_atual_idx != -1 &&
       self->tabela_processos[self->processo_atual_idx].estado == PRONTO) {
-    // Sim, ele pode continuar. O escalonador não precisa fazer nada.
-    return;
+    insere_fila_prontos(self, self->processo_atual_idx);
   }
 
-  // 2. Se o processo atual não pode continuar (está bloqueado, terminado ou não há um),
-  //    procura o próximo processo PRONTO na tabela.
-  //    Vamos fazer uma busca circular (Round-Robin).
-  int processo_inicial = self->processo_atual_idx;
-  if (processo_inicial == -1) {
-    processo_inicial = 0;
-  }
-
-  for (int i = 1; i <= MAX_PROCESSOS; i++) {
-    int idx_candidato = (processo_inicial + i) % MAX_PROCESSOS;
-    if (self->tabela_processos[idx_candidato].estado == PRONTO) {
-      // Encontrou um processo pronto! Escolhe ele e termina.
-      self->processo_atual_idx = idx_candidato;
-      return;
-    }
-  }
-
-  // 3. Se percorreu a tabela inteira e não encontrou ninguém PRONTO,
-  //    significa que não há nenhum processo para executar.
-  self->processo_atual_idx = -1;
+  // O próximo a ser executado é o primeiro da fila de prontos
+  self->processo_atual_idx = remove_fila_prontos(self);
 }
 
 static int so_despacha(so_t *self)
@@ -338,6 +366,8 @@ static int so_despacha(so_t *self)
 
   // obtém um ponteiro para o PCB do processo que vai executar
   processo_t *p = &self->tabela_processos[self->processo_atual_idx];
+
+  self->quantum_restante = QUANTUM;
 
   // escreve o estado do processo na memória, de onde a CPU irá restaurá-lo
   if (mem_escreve(self->mem, CPU_END_PC, p->regPC) != ERR_OK ||
@@ -454,13 +484,16 @@ static void so_trata_reset(so_t *self)
   p->disp_entrada = D_TERM_A_TECLADO;
   p->disp_saida = D_TERM_A_TELA;
 
-  // 4. Define este como o processo que será executado a seguir
-  self->processo_atual_idx = processo_idx;
+  // 4. Coloca o primeiro processo na fila de prontos
+  insere_fila_prontos(self, processo_idx);
+
+  // Define o processo atual como -1 para que o escalonador o retire da fila
+  self->processo_atual_idx = -1;
 
   // Não alteramos mais self->regPC diretamente. O despachante usará o 
   // valor do processo atual.
   
-  console_printf("SO: processo 'init' criado com PID %d", p->pid);
+  console_printf("SO: processo 'init' criado com PID %d e inserido na fila.", p->pid);
 }
 
 // interrupção gerada quando a CPU identifica um erro
@@ -481,7 +514,11 @@ static void so_trata_irq_err_cpu(so_t *self)
 // interrupção gerada quando o timer expira
 static void so_trata_irq_relogio(so_t *self)
 {
-  // rearma o interruptor do relógio e reinicializa o timer para a próxima interrupção
+  // t2: deveria tratar a interrupção
+  //   por exemplo, decrementa o quantum do processo corrente, quando se tem
+  //   um escalonador com quantum
+  
+  //   Rearma o relógio para a próxima interrupção
   err_t e1, e2;
   e1 = es_escreve(self->es, D_RELOGIO_INTERRUPCAO, 0); // desliga o sinalizador de interrupção
   e2 = es_escreve(self->es, D_RELOGIO_TIMER, INTERVALO_INTERRUPCAO);
@@ -489,19 +526,23 @@ static void so_trata_irq_relogio(so_t *self)
     console_printf("SO: problema da reinicialização do timer");
     self->erro_interno = true;
   }
-  // t2: deveria tratar a interrupção
-  //   por exemplo, decrementa o quantum do processo corrente, quando se tem
-  //   um escalonador com quantum
   
-  // 2. Implementa a preempção
-  //    Se havia um processo a ser executado, ele já foi salvo e colocado no estado PRONTO.
-  //    Agora, forçamos o escalonador a reavaliar quem deve ser executado.
-  //    Ao definir o processo_atual_idx como -1, garantimos que o escalonador
-  //    não vai simplesmente continuar com o processo que foi interrompido,
-  //    mas sim procurar o próximo na fila circular.
-  if (self->processo_atual_idx != -1) {
-    console_printf("SO: Preempcao do processo %d devido ao relogio.", self->tabela_processos[self->processo_atual_idx].pid);
-    self->processo_atual_idx = -1;
+  // Se não havia processo a ser executado, não há quantum a decrementar
+  if (self->processo_atual_idx == -1) {
+    return;
+  }
+
+  // 2. Decrementa o quantum restante
+  self->quantum_restante--;
+  
+  console_printf("SO: Interrupcao do relogio, quantum restante = %d", self->quantum_restante);
+
+  // 3. Se o quantum acabou, força a preempção
+  if (self->quantum_restante <= 0) {
+    console_printf("SO: Quantum esgotado para o processo %d. Preempcao.",
+                   self->tabela_processos[self->processo_atual_idx].pid);
+    // O escalonador irá tratar de colocar o processo atual no fim da fila
+    // e escolher o próximo.
   }
 }
 
@@ -687,6 +728,7 @@ static void so_chamada_cria_proc(so_t *self)
   processo_t *novo = &self->tabela_processos[novo_idx];
   novo->pid = self->proximo_pid++;
   novo->estado = PRONTO;
+  insere_fila_prontos(self, novo_idx);
   novo->tipo_bloqueio = BLOQUEIO_NENHUM;
   novo->regPC = ender_carga;
   novo->regA = 0;
@@ -703,6 +745,9 @@ static void so_chamada_cria_proc(so_t *self)
   // Atribui os dispositivos de E/S corretos para o terminal calculado
   novo->disp_entrada = term_base + TERM_TECLADO;
   novo->disp_saida = term_base + TERM_TELA;
+
+  // Coloca o novo processo no fim da fila de prontos
+  insere_fila_prontos(self, novo_idx);
 
   // 5. Retornar o PID do novo processo no registrador A do pai
   pai->regA = novo->pid;
