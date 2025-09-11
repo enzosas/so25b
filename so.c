@@ -404,6 +404,17 @@ static void so_trata_reset(so_t *self)
   //   de interrupção (escrito em asm). esse programa deve conter a
   //   instrução CHAMAC, que vai chamar so_trata_interrupcao (como
   //   foi definido na inicialização do SO)
+  
+  // t2: deveria criar um processo para o init, e inicializar o estado do
+  //   processador para esse processo com os registradores zerados, exceto
+  //   o PC e o modo.
+  // como não tem suporte a processos, está carregando os valores dos
+  //   registradores diretamente no estado da CPU mantido pelo SO; daí vai
+  //   copiar para o início da memória pelo despachante, de onde a CPU vai
+  //   carregar para os seus registradores quando executar a instrução RETI
+  //   em bios.asm (que é onde está a instrução CHAMAC que causou a execução
+  //   deste código
+  
   int ender = so_carrega_programa(self, "trata_int.maq");
   if (ender != CPU_END_TRATADOR) {
     console_printf("SO: problema na carga do programa de tratamento de interrupção");
@@ -437,6 +448,7 @@ static void so_trata_reset(so_t *self)
   p->regX = 0;
   p->regERRO = ERR_OK;
   p->pid_esperado = -1; // Não está esperando por ninguém
+  p->tipo_bloqueio = BLOQUEIO_NENHUM;
 
   // Atribui os dispositivos de E/S padrão (Terminal A)
   p->disp_entrada = D_TERM_A_TECLADO;
@@ -447,28 +459,8 @@ static void so_trata_reset(so_t *self)
 
   // Não alteramos mais self->regPC diretamente. O despachante usará o 
   // valor do processo atual.
+  
   console_printf("SO: processo 'init' criado com PID %d", p->pid);
-
-  // t2: deveria criar um processo para o init, e inicializar o estado do
-  //   processador para esse processo com os registradores zerados, exceto
-  //   o PC e o modo.
-  // como não tem suporte a processos, está carregando os valores dos
-  //   registradores diretamente no estado da CPU mantido pelo SO; daí vai
-  //   copiar para o início da memória pelo despachante, de onde a CPU vai
-  //   carregar para os seus registradores quando executar a instrução RETI
-  //   em bios.asm (que é onde está a instrução CHAMAC que causou a execução
-  //   deste código
-
-  // coloca o programa init na memória
-  ender = so_carrega_programa(self, "init.maq");
-  if (ender != 100) {
-    console_printf("SO: problema na carga do programa inicial");
-    self->erro_interno = true;
-    return;
-  }
-
-  // altera o PC para o endereço de carga
-  self->regPC = ender; // deveria ser no processo
 }
 
 // interrupção gerada quando a CPU identifica um erro
@@ -500,7 +492,17 @@ static void so_trata_irq_relogio(so_t *self)
   // t2: deveria tratar a interrupção
   //   por exemplo, decrementa o quantum do processo corrente, quando se tem
   //   um escalonador com quantum
-  console_printf("SO: interrupção do relógio (não tratada)");
+  
+  // 2. Implementa a preempção
+  //    Se havia um processo a ser executado, ele já foi salvo e colocado no estado PRONTO.
+  //    Agora, forçamos o escalonador a reavaliar quem deve ser executado.
+  //    Ao definir o processo_atual_idx como -1, garantimos que o escalonador
+  //    não vai simplesmente continuar com o processo que foi interrompido,
+  //    mas sim procurar o próximo na fila circular.
+  if (self->processo_atual_idx != -1) {
+    console_printf("SO: Preempcao do processo %d devido ao relogio.", self->tabela_processos[self->processo_atual_idx].pid);
+    self->processo_atual_idx = -1;
+  }
 }
 
 // foi gerada uma interrupção para a qual o SO não está preparado
@@ -526,7 +528,8 @@ static void so_trata_irq_chamada_sistema(so_t *self)
 {
   // a identificação da chamada está no registrador A
   // t2: com processos, o reg A deve estar no descritor do processo corrente
-  int id_chamada = self->regA;
+  processo_t *p = &self->tabela_processos[self->processo_atual_idx];
+  int id_chamada = p->regA; 
   console_printf("SO: chamada de sistema %d", id_chamada);
   switch (id_chamada) {
     case SO_LE:
