@@ -16,6 +16,8 @@ typedef struct so_t so_t;
 so_t *so_cria(cpu_t *cpu, mem_t *mem, es_t *es, console_t *console);
 void so_destroi(so_t *self);
 
+void so_gera_relatorio(so_t *self); //gerar relatorio
+
 // Chamadas de sistema
 // Uma chamada de sistema é realizada colocando a identificação da
 //   chamada (um dos valores abaixo) no registrador A e executando a

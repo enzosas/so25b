@@ -22,6 +22,14 @@
 // CONSTANTES E TIPOS {{{1
 // ---------------------------------------------------------------------
 
+// --- CONFIGURAÇÃO DO ESCALONADOR ---
+#define ESCALONADOR_ROUND_ROBIN 1
+#define ESCALONADOR_PRIORIDADE  2
+
+// Para escolher qual escalonador usar, mude o valor abaixo e recompile.
+#define ESCALONADOR_ATIVO ESCALONADOR_ROUND_ROBIN
+//#define ESCALONADOR_ATIVO ESCALONADOR_PRIORIDADE
+
 // intervalo entre interrupções do relógio
 #define INTERVALO_INTERRUPCAO 50   // em instruções executadas
 
@@ -65,7 +73,27 @@ typedef struct {
 
   // para a chamada de sistema SO_ESPERA_PROC
   int pid_esperado;             // pid do processo que este está esperando
-  
+  // PARTE 3 - T2
+  float prioridade;             // Prioridade do processo
+  int tempo_inicio_execucao;     // tempo de início de execução do processo
+
+  // ---------METRICAS---------
+  int tempo_criacao;
+  int tempo_termino;
+  int num_preempcoes;
+  //entrada nos estados
+  int vezes_pronto;
+  int vezes_bloqueado;
+  int vezes_executando; 
+  //cont de tempo nos estados
+  long tempo_total_pronto;
+  long tempo_total_bloqueado;
+  long tempo_total_executando;
+  int tempo_entrou_no_estado_atual;
+  //tempo medio das respostas
+  long soma_tempo_resposta;
+  int n_respostas;
+  int tempo_desbloqueio;
 } processo_t;
 
 struct so_t {
@@ -86,6 +114,12 @@ struct so_t {
   int inicio_fila;
   int fim_fila;
   int n_prontos;
+
+  //métricas do sistema
+  int num_processos_criados;
+  long tempo_ocioso;
+  int cont_interrupcoes[N_IRQ]; // N_IRQ é uma constante já definida
+  int num_preempcoes_total;
 
     // Controle de quantum
   int quantum_restante;
@@ -117,6 +151,12 @@ so_t *so_cria(cpu_t *cpu, mem_t *mem, es_t *es, console_t *console)
   self->es = es;
   self->console = console;
   self->erro_interno = false;
+  self->num_processos_criados = 0;
+  self->tempo_ocioso = 0;
+  self->num_preempcoes_total = 0;
+  for (int i = 0; i < N_IRQ; i++) {
+    self->cont_interrupcoes[i] = 0;
+  }
 
   // Inicializa a tabela de processos
   for (int i = 0; i < MAX_PROCESSOS; i++) {
@@ -147,6 +187,8 @@ void so_destroi(so_t *self)
   free(self);
 }
 
+#if ESCALONADOR_ATIVO == ESCALONADOR_ROUND_ROBIN //devido a ter dois escalonadores
+
 // --- FUNÇÕES NOVAS PARA A FILA ---
 // Insere um processo (pelo seu índice na tabela) no fim da fila de prontos
 static void insere_fila_prontos(so_t *self, int processo_idx)
@@ -171,6 +213,69 @@ static int remove_fila_prontos(so_t *self)
   self->n_prontos--;
   return processo_idx;
 }
+
+#endif
+
+//GERAR RELATORIO
+void so_gera_relatorio(so_t *self)
+{
+    int tempo_final;
+  es_le(self->es, D_RELOGIO_INSTRUCOES, &tempo_final);
+
+  console_printf("\n\n--- RELATORIO FINAL DO SISTEMA ---");
+
+  // --- Métricas Globais ---
+  console_printf("\n[Metricas Globais]");
+  console_printf("  - Tempo total de execucao: %d instrucoes", tempo_final);
+  console_printf("  - Numero total de processos criados: %d", self->num_processos_criados);
+  console_printf("  - Tempo em que a CPU ficou ociosa: %ld instrucoes", self->tempo_ocioso);
+  console_printf("  - Numero total de preempcoes: %d", self->num_preempcoes_total);
+  console_printf("  - Numero de interrupcoes por tipo:");
+  for (int i = 0; i < N_IRQ; i++) {
+    if (self->cont_interrupcoes[i] > 0) {
+      console_printf("    > IRQ %d (%s): %d vezes", i, irq_nome(i), self->cont_interrupcoes[i]);
+    }
+  }
+
+  int cont=0;
+  // --- Métricas por Processo ---
+  console_printf("\n[Metricas por Processo]");
+  for (int i = 0; i < MAX_PROCESSOS; i++) {
+    processo_t *p = &self->tabela_processos[i];
+    if (p->tempo_criacao > 0) { // Imprime apenas para processos que existiram
+      console_printf("\n  >> Processo P%d:", cont); // O PID ainda será válido neste ponto
+      
+      // Tempo de retorno
+      if (p->tempo_termino > 0) {
+        console_printf("     - Tempo de retorno: %d instrucoes", (p->tempo_termino - p->tempo_criacao));
+      } else {
+        console_printf("     - (Processo ainda ativo no final da execucao)");
+      }
+      
+      // Preempções
+      console_printf("     - Numero de preempcoes: %d", p->num_preempcoes);
+
+      // Vezes em cada estado
+      console_printf("     - Entradas em PRONTO: %d, BLOQUEADO: %d, EXECUTANDO: %d",
+                   p->vezes_pronto, p->vezes_bloqueado, p->vezes_executando);
+      
+      // Tempo em cada estado
+      console_printf("     - Tempo total em PRONTO: %ld, BLOQUEADO: %ld, EXECUTANDO: %ld",
+                   p->tempo_total_pronto, p->tempo_total_bloqueado, p->tempo_total_executando);
+
+      // Tempo médio de resposta
+      if (p->n_respostas > 0) {
+        double tempo_medio = (double)p->soma_tempo_resposta / p->n_respostas;
+        console_printf("     - Tempo medio de resposta: %.2f instrucoes", tempo_medio);
+      } else {
+        console_printf("     - Tempo medio de resposta: N/A (nunca foi desbloqueado)");
+      }
+    }
+    cont++;
+  }
+  console_printf("\n--- FIM DO RELATORIO ---");
+}
+
 
 // ---------------------------------------------------------------------
 // TRATAMENTO DE INTERRUPÇÃO {{{1
@@ -201,6 +306,8 @@ static int so_trata_interrupcao(void *argC, int reg_A)
 {
   so_t *self = argC;
   irq_t irq = reg_A;
+
+  self->cont_interrupcoes[irq]++;
   // esse print polui bastante, recomendo tirar quando estiver com mais confiança
   console_printf("SO: recebi IRQ %d (%s)", irq, irq_nome(irq));
   // salva o estado da cpu no descritor do processo que foi interrompido
@@ -229,6 +336,24 @@ static void so_salva_estado_da_cpu(so_t *self)
   // obtém um ponteiro para o PCB do processo que estava executando
   processo_t *p = &self->tabela_processos[self->processo_atual_idx];
 
+  // PARTE 3 - T2
+  int tempo_agora;
+  if (es_le(self->es, D_RELOGIO_INSTRUCOES, &tempo_agora) == ERR_OK) {
+
+      // Para as métricas de tempo
+      p->tempo_total_executando += tempo_agora - p->tempo_entrou_no_estado_atual;
+      p->tempo_entrou_no_estado_atual = tempo_agora;
+
+      // Para o cálculo da prioridade (somente se estiver usando esse escalonador)
+      #if ESCALONADOR_ATIVO == ESCALONADOR_PRIORIDADE
+        int t_exec = tempo_agora - p->tempo_inicio_execucao;
+        double t_quantum = (double)(QUANTUM * INTERVALO_INTERRUPCAO);
+        if (t_quantum > 0) {
+            p->prioridade = (p->prioridade + (t_exec / t_quantum)) / 2.0;
+        }
+      #endif
+  }
+
   // lê o estado da CPU que foi salvo na memória pela interrupção
   int pc, a, erro, x;
   if (mem_le(self->mem, CPU_END_PC, &pc) != ERR_OK ||
@@ -249,6 +374,7 @@ static void so_salva_estado_da_cpu(so_t *self)
   // se o processo estava executando, agora ele está pronto para voltar pra fila
   if (p->estado == EXECUTANDO) {
     p->estado = PRONTO;
+    p->vezes_pronto++; //metricas
   }
 }
 
@@ -276,12 +402,23 @@ static void so_trata_pendencias(so_t *self)
         es_le(self->es, teclado_ok, &estado_dev);
 
         if (estado_dev != 0) {
+          //metricas
+          int tempo_agora;
+          es_le(self->es, D_RELOGIO_INSTRUCOES, &tempo_agora);
+          p->tempo_total_bloqueado += tempo_agora - p->tempo_entrou_no_estado_atual;
+          p->vezes_pronto++;
+          p->tempo_desbloqueio = tempo_agora;
+          p->tempo_entrou_no_estado_atual = tempo_agora;
+
+
           // Sim, o dispositivo está pronto! Completa a operação de leitura.
           int dado;
           es_le(self->es, teclado, &dado);
           p->regA = dado; // Coloca o resultado no registador A
           p->estado = PRONTO; // Desbloqueia o processo
+          #if ESCALONADOR_ATIVO == ESCALONADOR_ROUND_ROBIN
           insere_fila_prontos(self, i); // Adiciona na fila
+          #endif
           p->tipo_bloqueio = BLOQUEIO_NENHUM;
           console_printf("SO: Processo %d desbloqueado apos leitura.", p->pid);
         }
@@ -294,12 +431,22 @@ static void so_trata_pendencias(so_t *self)
         es_le(self->es, tela_ok, &estado_dev);
 
         if (estado_dev != 0) {
+          //metricas
+          int tempo_agora;
+          es_le(self->es, D_RELOGIO_INSTRUCOES, &tempo_agora);
+          p->tempo_total_bloqueado += tempo_agora - p->tempo_entrou_no_estado_atual;
+          p->vezes_pronto++;
+          p->tempo_desbloqueio = tempo_agora;
+          p->tempo_entrou_no_estado_atual = tempo_agora;
+
           // Sim, o dispositivo está pronto! Completa a operação de escrita.
           int dado = p->regX; // O dado a escrever ainda está em regX
           es_escreve(self->es, tela, dado);
           p->regA = 0; // Retorna 0 (sucesso)
           p->estado = PRONTO; // Desbloqueia o processo
-          insere_fila_prontos(self, i); // Adiciona na fila
+          #if ESCALONADOR_ATIVO == ESCALONADOR_ROUND_ROBIN
+          insere_fila_prontos(self, i); // Adiciona na fila]
+          #endif
           p->tipo_bloqueio = BLOQUEIO_NENHUM;
           console_printf("SO: Processo %d desbloqueado apos escrita.", p->pid);
         }
@@ -319,9 +466,20 @@ static void so_trata_pendencias(so_t *self)
         }
 
         if (esperado_terminou) {
+            //metricas
+            int tempo_agora;
+            es_le(self->es, D_RELOGIO_INSTRUCOES, &tempo_agora);
+            p->tempo_total_bloqueado += tempo_agora - p->tempo_entrou_no_estado_atual;
+            p->vezes_pronto++;
+            p->tempo_desbloqueio = tempo_agora;
+            p->tempo_entrou_no_estado_atual = tempo_agora;
+
+
             // Sim, o processo esperado já não existe. Desbloqueia.
             p->estado = PRONTO;
+            #if ESCALONADOR_ATIVO == ESCALONADOR_ROUND_ROBIN
             insere_fila_prontos(self, i); // Adiciona na fila
+            #endif
             p->tipo_bloqueio = BLOQUEIO_NENHUM;
             p->pid_esperado = -1;
             p->regA = 0; // Sucesso na espera
@@ -339,16 +497,68 @@ static void so_escalona(so_t *self)
   // t2: na primeira versão, escolhe um processo pronto caso o processo
   //   corrente não possa continuar executando, senão deixa o mesmo processo.
   //   depois, implementa um escalonador melhor
+  // A diretiva de pré-processador #if verifica o valor de ESCALONADOR_ATIVO
+  // antes mesmo de o programa ser compilado. Apenas o código do bloco
+  // correspondente será incluído no executável final.
+
+#if ESCALONADOR_ATIVO == ESCALONADOR_ROUND_ROBIN
+  console_printf("SO: Escalonador Round-Robin em acao.");
 
   // Se o processo que estava a ser executado foi preemptido e ainda está PRONTO,
   // ele deve voltar para o fim da fila.
   if (self->processo_atual_idx != -1 &&
       self->tabela_processos[self->processo_atual_idx].estado == PRONTO) {
-    insere_fila_prontos(self, self->processo_atual_idx);
+      #if ESCALONADOR_ATIVO == ESCALONADOR_ROUND_ROBIN
+      insere_fila_prontos(self, self->processo_atual_idx);
+      #endif
   }
 
   // O próximo a ser executado é o primeiro da fila de prontos
   self->processo_atual_idx = remove_fila_prontos(self);
+
+#elif ESCALONADOR_ATIVO == ESCALONADOR_PRIORIDADE
+
+  console_printf("SO: Escalonador por Prioridade em acao.");
+
+   // 1. Guarda quem estava executando ANTES de o escalonador rodar.
+  int idx_anterior = self->processo_atual_idx;//para contar preempcoes
+  
+  int melhor_idx = -1;
+  double menor_prio = 2.0; // Valor inicial > 1.0
+
+  // Percorre toda a tabela de processos em busca do candidato ideal.
+  for (int i = 0; i < MAX_PROCESSOS; i++) {
+    processo_t *p = &self->tabela_processos[i];
+    if (p->estado == PRONTO) {
+      if (p->prioridade < menor_prio) {
+        menor_prio = p->prioridade;
+        melhor_idx = i;
+      }
+    }
+  }
+
+  if (idx_anterior != -1 &&                      // Havia alguém executando
+      melhor_idx != -1 &&                        // Encontramos um próximo para executar
+      idx_anterior != melhor_idx &&               // E o escalonador escolheu um processo DIFERENTE
+      self->tabela_processos[idx_anterior].estado == PRONTO) // E o processo anterior ainda estava PRONTO para rodar
+  {
+      // Isto é uma preempção por prioridade!
+      processo_t *p_preemptado = &self->tabela_processos[idx_anterior];
+      p_preemptado->num_preempcoes++;
+      self->num_preempcoes_total++;
+      
+      console_printf("SO: Preempcao por prioridade! PID %d tomou a vez do PID %d",
+                   self->tabela_processos[melhor_idx].pid,
+                   p_preemptado->pid);
+  } //para contar preempcoes por prioridade
+
+  // Define o processo escolhido como o próximo a ser executado.
+  self->processo_atual_idx = melhor_idx;
+
+#else
+  // Se um valor inválido for definido em ESCALONADOR_ATIVO, o compilador dará um erro.
+  #error "Nenhum escalonador valido foi selecionado em ESCALONADOR_ATIVO!"
+#endif
 }
 
 static int so_despacha(so_t *self)
@@ -381,6 +591,23 @@ static int so_despacha(so_t *self)
   
   // marca o processo como executando
   p->estado = EXECUTANDO;
+  // PARTE 3 - T2
+  int tempo_agora;
+  if (es_le(self->es, D_RELOGIO_INSTRUCOES, &tempo_agora) == ERR_OK) {
+      // Para o cálculo da prioridade
+      p->tempo_inicio_execucao = tempo_agora;
+      // Para as métricas de tempo
+      p->tempo_total_pronto += tempo_agora - p->tempo_entrou_no_estado_atual;
+      p->vezes_executando++;
+      p->tempo_entrou_no_estado_atual = tempo_agora;
+
+      if (p->tempo_desbloqueio > 0) { //tempo medio de resposta
+          int tempo_resposta = tempo_agora - p->tempo_desbloqueio;
+          p->soma_tempo_resposta += tempo_resposta;
+          p->n_respostas++;
+          p->tempo_desbloqueio = 0; // Zera para a próxima vez
+      }
+  }
 
   // se houver algum erro interno no SO, para a CPU
   if (self->erro_interno) {
@@ -484,8 +711,10 @@ static void so_trata_reset(so_t *self)
   p->disp_entrada = D_TERM_A_TECLADO;
   p->disp_saida = D_TERM_A_TELA;
 
+  #if ESCALONADOR_ATIVO == ESCALONADOR_ROUND_ROBIN
   // 4. Coloca o primeiro processo na fila de prontos
   insere_fila_prontos(self, processo_idx);
+  #endif
 
   // Define o processo atual como -1 para que o escalonador o retire da fila
   self->processo_atual_idx = -1;
@@ -509,6 +738,7 @@ static void so_trata_irq_err_cpu(so_t *self)
   err_t err = self->regERRO;
   console_printf("SO: IRQ não tratada -- erro na CPU: %s", err_nome(err));
   self->erro_interno = true;
+
 }
 
 // interrupção gerada quando o timer expira
@@ -527,6 +757,11 @@ static void so_trata_irq_relogio(so_t *self)
     self->erro_interno = true;
   }
   
+  //metricas
+  if (self->processo_atual_idx == -1) {
+    self->tempo_ocioso += INTERVALO_INTERRUPCAO;
+  }
+
   // Se não havia processo a ser executado, não há quantum a decrementar
   if (self->processo_atual_idx == -1) {
     return;
@@ -539,6 +774,11 @@ static void so_trata_irq_relogio(so_t *self)
 
   // 3. Se o quantum acabou, força a preempção
   if (self->quantum_restante <= 0) {
+    //parte 3 t2
+    processo_t *p = &self->tabela_processos[self->processo_atual_idx];
+    p->num_preempcoes++; // metricas individual 
+    self->num_preempcoes_total++; //metricas do sistema
+
     console_printf("SO: Quantum esgotado para o processo %d. Preempcao.",
                    self->tabela_processos[self->processo_atual_idx].pid);
     // O escalonador irá tratar de colocar o processo atual no fim da fila
@@ -636,6 +876,7 @@ static void so_chamada_le(so_t *self)
     // Dispositivo não está pronto, bloqueia o processo
     console_printf("SO: Processo %d bloqueado esperando por entrada.", p->pid);
     p->estado = BLOQUEADO;
+    p->vezes_bloqueado++; //metricas
     p->tipo_bloqueio = BLOQUEIO_LE;
     // Força o escalonador a escolher outro processo
     self->processo_atual_idx = -1;
@@ -678,6 +919,7 @@ static void so_chamada_escr(so_t *self)
     // Dispositivo não está pronto, bloqueia o processo
     console_printf("SO: Processo %d bloqueado esperando por saida.", p->pid);
     p->estado = BLOQUEADO;
+    p->vezes_bloqueado++; //metricas
     p->tipo_bloqueio = BLOQUEIO_ESCR;
     // Força o escalonador a escolher outro processo
     self->processo_atual_idx = -1;
@@ -724,17 +966,44 @@ static void so_chamada_cria_proc(so_t *self)
     return;
   }
 
+  //incrementa a metrica
+  self->num_processos_criados++;
+
   // 4. Preencher o PCB do novo processo
   processo_t *novo = &self->tabela_processos[novo_idx];
   novo->pid = self->proximo_pid++;
   novo->estado = PRONTO;
+  /*
+  #if ESCALONADOR_ATIVO == ESCALONADOR_ROUND_ROBIN
   insere_fila_prontos(self, novo_idx);
+  #endif*/
   novo->tipo_bloqueio = BLOQUEIO_NENHUM;
   novo->regPC = ender_carga;
   novo->regA = 0;
   novo->regX = 0;
   novo->regERRO = ERR_OK;
   novo->pid_esperado = -1;
+  novo->prioridade = 0.5;
+  //metricas
+  novo->num_preempcoes = 0;
+  novo->vezes_pronto = 0;
+  novo->vezes_bloqueado = 0;
+  novo->vezes_executando = 0;
+  novo->tempo_total_pronto = 0;
+  novo->tempo_total_bloqueado = 0;
+  novo->tempo_total_executando = 0;
+  novo->soma_tempo_resposta = 0;
+  novo->n_respostas = 0;
+  novo->tempo_desbloqueio = 0;
+  novo->tempo_termino = 0;
+
+
+  // PARTE 3 - T2
+  int tempo_de_criacao;
+  if (es_le(self->es, D_RELOGIO_INSTRUCOES, &tempo_de_criacao) == ERR_OK) {
+    novo->tempo_criacao = tempo_de_criacao;
+    novo->tempo_entrou_no_estado_atual = tempo_de_criacao; // Importante para as métricas
+  }
 
   // Atribui um terminal com base no PID (0=A, 1=B, 2=C, 3=D)
   // Assumindo 4 terminais no total
@@ -746,8 +1015,10 @@ static void so_chamada_cria_proc(so_t *self)
   novo->disp_entrada = term_base + TERM_TECLADO;
   novo->disp_saida = term_base + TERM_TELA;
 
+  #if ESCALONADOR_ATIVO == ESCALONADOR_ROUND_ROBIN
   // Coloca o novo processo no fim da fila de prontos
   insere_fila_prontos(self, novo_idx);
+  #endif
 
   // 5. Retornar o PID do novo processo no registrador A do pai
   pai->regA = novo->pid;
@@ -786,6 +1057,13 @@ static void so_chamada_mata_proc(so_t *self)
 
   // 2. Mudar o estado do processo para TERMINADO
   processo_t *alvo = &self->tabela_processos[idx_alvo];
+
+  //metricas
+  int tempo_agora;
+  es_le(self->es, D_RELOGIO_INSTRUCOES, &tempo_agora);
+  alvo->tempo_termino = tempo_agora;
+
+  //continuacao do 2.
   int pid_morto = alvo->pid; // Guarda o PID antes de o invalidar
   alvo->estado = TERMINADO;
   alvo->pid = -1; // Libera o PID
@@ -850,6 +1128,7 @@ static void so_chamada_espera_proc(so_t *self)
 
   // 2. Tudo válido, bloqueia o processo chamador
   chamador->estado = BLOQUEADO;
+  chamador->vezes_bloqueado++; //metricas
   chamador->tipo_bloqueio = BLOQUEIO_ESPERA;
   chamador->pid_esperado = pid_alvo;
 
