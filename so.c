@@ -8,11 +8,14 @@
 // ---------------------------------------------------------------------
 
 #include "so.h"
+#include "cpu.h"
 #include "dispositivos.h"
 #include "err.h"
 #include "irq.h"
 #include "memoria.h"
 #include "programa.h"
+#include "tabpag.h"
+#include "mmu.h"
 
 #include <stdlib.h>
 #include <stdbool.h>
@@ -38,6 +41,9 @@
 
 // Quantum do escalonador: número de interrupções de relógio por processo
 #define QUANTUM 2
+
+#define NENHUM_PROCESSO -1
+#define ALGUM_PROCESSO 0
 
 // os estados em que um processo pode se encontrar
 typedef enum {
@@ -66,6 +72,7 @@ typedef struct {
   int regX;
   int regPC;
   int regERRO;
+  int regComplemento;
 
   // informações de E/S
   dispositivo_id_t disp_entrada;  // dispositivo de entrada do processo
@@ -94,16 +101,21 @@ typedef struct {
   long soma_tempo_resposta;
   int n_respostas;
   int tempo_desbloqueio;
+
+  // --- NOVO DO T3 ---
+  // Cada processo agora tem a sua própria tabela de páginas
+  tabpag_t *tabpag;
+
 } processo_t;
 
 struct so_t {
   cpu_t *cpu;
   mem_t *mem;
+  mmu_t *mmu;
   es_t *es;
   console_t *console;
   bool erro_interno;
 
-  int regA, regX, regPC, regERRO; // cópia do estado da CPU
   // t2: tabela de processos, processo corrente, pendências, etc
   processo_t tabela_processos[MAX_PROCESSOS];
   int processo_atual_idx;
@@ -121,33 +133,74 @@ struct so_t {
   int cont_interrupcoes[N_IRQ]; // N_IRQ é uma constante já definida
   int num_preempcoes_total;
 
-    // Controle de quantum
+  // Controle de quantum
   int quantum_restante;
+
+  // T3
+  // Gestão simples de memória física
+  int quadro_livre;
 };
 
+// --- DECLARAÇÕES ANTECIPADAS (PROTÓTIPOS) ---
 
+// Função de tratamento de interrupção (entrada no SO)
+static int so_trata_interrupcao(void *argC, int reg_A);
+
+// Funções auxiliares gerais
+static int so_carrega_programa(so_t *self, int processo_idx, char *nome_do_executavel);
+static int so_carrega_programa_na_memoria_fisica(so_t *self, programa_t *programa);
+static int so_carrega_programa_na_memoria_virtual(so_t *self, programa_t *programa, processo_t *processo, const char *nome_prog);
+static bool so_copia_str_do_processo(so_t *self, int tam, char str[tam], int end_virt, int processo_idx);
+
+// Funções do ciclo de tratamento de interrupção
+static void so_salva_estado_da_cpu(so_t *self);
+static void so_trata_irq(so_t *self, int irq);
+static void so_trata_pendencias(so_t *self);
+static void so_escalona(so_t *self);
+static int so_despacha(so_t *self);
+
+// Funções de tratamento para cada tipo de IRQ
+static void so_trata_reset(so_t *self);
+static void so_trata_irq_chamada_sistema(so_t *self);
+static void so_trata_irq_err_cpu(so_t *self);
+static void so_trata_irq_relogio(so_t *self);
+static void so_trata_irq_desconhecida(so_t *self, int irq);
+
+// Funções para cada chamada de sistema
+static void so_chamada_le(so_t *self);
+static void so_chamada_escr(so_t *self);
+static void so_chamada_cria_proc(so_t *self);
+static void so_chamada_mata_proc(so_t *self);
+static void so_chamada_espera_proc(so_t *self);
+
+#if ESCALONADOR_ATIVO == ESCALONADOR_ROUND_ROBIN
+// Funções da fila (apenas se Round Robin estiver ativo)
+static void insere_fila_prontos(so_t *self, int processo_idx);
+static int remove_fila_prontos(so_t *self);
+#endif
+
+// Função de relatório
+void so_gera_relatorio(so_t *self); // <-- Tornar esta não-estática se chamada de fora
 
 // função de tratamento de interrupção (entrada no SO)
 static int so_trata_interrupcao(void *argC, int reg_A);
 
 // funções auxiliares
 // carrega o programa contido no arquivo na memória do processador; retorna end. inicial
-static int so_carrega_programa(so_t *self, char *nome_do_executavel);
-// copia para str da memória do processador, até copiar um 0 (retorna true) ou tam bytes
-static bool copia_str_da_mem(int tam, char str[tam], mem_t *mem, int ender);
-
+static int so_carrega_programa(so_t *self, int processo_idx, char *nome_do_executavel);
 
 // ---------------------------------------------------------------------
 // CRIAÇÃO {{{1
 // ---------------------------------------------------------------------
 
-so_t *so_cria(cpu_t *cpu, mem_t *mem, es_t *es, console_t *console)
+so_t *so_cria(cpu_t *cpu, mem_t *mem, mmu_t *mmu, es_t *es, console_t *console)
 {
   so_t *self = malloc(sizeof(*self));
   if (self == NULL) return NULL;
 
   self->cpu = cpu;
   self->mem = mem;
+  self->mmu = mmu;
   self->es = es;
   self->console = console;
   self->erro_interno = false;
@@ -163,7 +216,7 @@ so_t *so_cria(cpu_t *cpu, mem_t *mem, es_t *es, console_t *console)
     self->tabela_processos[i].estado = TERMINADO; // Marcar todos como livres/terminados
     self->tabela_processos[i].pid = -1;
   }
-  self->processo_atual_idx = -1; // Nenhum processo executando inicialmente
+  self->processo_atual_idx = NENHUM_PROCESSO; // Nenhum processo executando inicialmente
   self->proximo_pid = 1;
 
   // Inicializa a fila de prontos
@@ -173,10 +226,19 @@ so_t *so_cria(cpu_t *cpu, mem_t *mem, es_t *es, console_t *console)
 
   // Inicializa o quantum
   self->quantum_restante = 0;
+  
+  // --- T3 ---
+  // Inicializa o gestor de memória (simplificado)
+  // O primeiro quadro livre é após a memória protegida pelo hardware
+  self->quadro_livre = CPU_END_FIM_PROT / TAM_PAGINA + 1;
 
   // quando a CPU executar uma instrução CHAMAC, deve chamar a função
   //   so_trata_interrupcao, com primeiro argumento um ptr para o SO
   cpu_define_chamaC(self->cpu, so_trata_interrupcao, self);
+
+  // --- T3 ---
+  // Desliga a MMU no início (sem tabela de páginas global)
+  mmu_define_tabpag(self->mmu, NULL);
 
   return self;
 }
@@ -184,6 +246,15 @@ so_t *so_cria(cpu_t *cpu, mem_t *mem, es_t *es, console_t *console)
 void so_destroi(so_t *self)
 {
   cpu_define_chamaC(self->cpu, NULL, NULL);
+
+  // --- T3 ---
+  // Limpa as tabelas de páginas de processos que possam ter sobrado
+  for (int i = 0; i < MAX_PROCESSOS; i++) {
+    if (self->tabela_processos[i].tabpag != NULL) {
+      tabpag_destroi(self->tabela_processos[i].tabpag);
+    }
+  }
+
   free(self);
 }
 
@@ -329,7 +400,7 @@ static void so_salva_estado_da_cpu(so_t *self)
   //   CPU na memória, nos endereços CPU_END_PC etc. O registrador X foi salvo
   //   pelo tratador de interrupção (ver trata_irq.asm) no endereço 59
   // se não houver processo corrente, não faz nada
-  if (self->processo_atual_idx == -1) {
+  if (self->processo_atual_idx == NENHUM_PROCESSO) {
     return;
   }
   
@@ -356,10 +427,13 @@ static void so_salva_estado_da_cpu(so_t *self)
 
   // lê o estado da CPU que foi salvo na memória pela interrupção
   int pc, a, erro, x;
+  int comp; // T3
+
   if (mem_le(self->mem, CPU_END_PC, &pc) != ERR_OK ||
       mem_le(self->mem, CPU_END_A, &a) != ERR_OK ||
       mem_le(self->mem, CPU_END_erro, &erro) != ERR_OK ||
-      mem_le(self->mem, 59, &x) != ERR_OK) { // X salvo pelo trata_int.asm
+      mem_le(self->mem, 59, &x) != ERR_OK || // X salvo pelo trata_int.asm
+      mem_le(self->mem, CPU_END_complemento, &comp) != ERR_OK) { 
     console_printf("SO: erro na leitura dos registradores ao salvar contexto.");
     self->erro_interno = true;
     return;
@@ -570,12 +644,19 @@ static int so_despacha(so_t *self)
   //   registrador A para o tratador de interrupção (ver trata_irq.asm).
   
   // se não há processo a executar, avisa a CPU para parar
-  if (self->processo_atual_idx == -1) {
+  if (self->processo_atual_idx == NENHUM_PROCESSO) {
+    // --- ADICIONADO T3 ---
+    // Diz à MMU para não usar nenhuma tabela (desliga a tradução)
+    mmu_define_tabpag(self->mmu, NULL);
     return 1; // Retorna 1 para o assembly, que fará a CPU parar (PARA)
   }
 
   // obtém um ponteiro para o PCB do processo que vai executar
   processo_t *p = &self->tabela_processos[self->processo_atual_idx];
+
+  // --- ADICIONADO T3 ---
+  // Diz à MMU para usar a tabela de páginas deste processo
+  mmu_define_tabpag(self->mmu, p->tabpag);
 
   self->quantum_restante = QUANTUM;
 
@@ -672,7 +753,7 @@ static void so_trata_reset(so_t *self)
   //   em bios.asm (que é onde está a instrução CHAMAC que causou a execução
   //   deste código
   
-  int ender = so_carrega_programa(self, "trata_int.maq");
+  int ender = so_carrega_programa(self, NENHUM_PROCESSO, "trata_int.maq");
   if (ender != CPU_END_TRATADOR) {
     console_printf("SO: problema na carga do programa de tratamento de interrupção");
     self->erro_interno = true;
@@ -685,25 +766,33 @@ static void so_trata_reset(so_t *self)
   }
 
   // Cria o primeiro processo (init)
-  // 1. Carrega o programa 'init.maq' na memória
-  ender = so_carrega_programa(self, "init.maq");
+  int processo_idx = 0; // O primeiro processo vai para o primeiro slot
+  processo_t *p = &self->tabela_processos[processo_idx];
+
+  // Cria a tabela de páginas para este processo ANTES de carregar
+  p->tabpag = tabpag_cria();
+  if (p->tabpag == NULL) {
+      console_printf("SO: Falha ao criar tabela de paginas para init!");
+      self->erro_interno = true;
+      return;
+  }
+  
+  // Carrega o programa 'init.maq' na memória VIRTUAL do processo
+  ender = so_carrega_programa(self, processo_idx, "init.maq");
   if (ender < 0) { // so_carrega_programa agora retorna -1 em caso de erro
     console_printf("SO: problema na carga do programa inicial");
     self->erro_interno = true;
     return;
   }
-
-  // 2. Encontra um slot livre na tabela de processos (será o 0)
-  int processo_idx = 0; // O primeiro processo vai para o primeiro slot
   
-  // 3. Preenche a estrutura do processo (PCB)
-  processo_t *p = &self->tabela_processos[processo_idx];
+  // Preenche a estrutura do processo (PCB)
   p->pid = self->proximo_pid++;
   p->estado = PRONTO; // Está pronto para executar, mas ainda não está na CPU
   p->regPC = ender;   // O contador de programa aponta para o início do init
   p->regA = 0;
   p->regX = 0;
   p->regERRO = ERR_OK;
+  p->regComplemento = 0; // (T3) Inicializa o novo registador
   p->pid_esperado = -1; // Não está esperando por ninguém
   p->tipo_bloqueio = BLOQUEIO_NENHUM;
 
@@ -735,9 +824,33 @@ static void so_trata_irq_err_cpu(so_t *self)
   // t2: com suporte a processos, deveria pegar o valor do registrador erro
   //   no descritor do processo corrente, e reagir de acordo com esse erro
   //   (em geral, matando o processo)
-  err_t err = self->regERRO;
-  console_printf("SO: IRQ não tratada -- erro na CPU: %s", err_nome(err));
-  self->erro_interno = true;
+  
+  // Se não havia processo (NENHUM_PROCESSO), é um erro grave do SO.
+  if (self->processo_atual_idx == NENHUM_PROCESSO) {
+    console_printf("SO: ERRO FATAL DE CPU SEM PROCESSO ATIVO!");
+    self->erro_interno = true;
+    return;
+  }
+
+  // Pega o erro do PCB do processo que o causou
+  processo_t *p = &self->tabela_processos[self->processo_atual_idx];
+  err_t err = p->regERRO;
+  int complemento = p->regComplemento; // (T3) Pega a info extra
+  
+  // (Lógica T3) Imprime uma mensagem de erro detalhada
+  console_printf("SO: Processo PID %d causou erro de CPU: %s", p->pid, err_nome(err));
+  if (err == ERR_PAG_AUSENTE) {
+    console_printf("SO:   -> PAGE FAULT no endereco virtual %d", complemento);
+    // (A info extra na Page Fault é o endereço que falhou)
+  } else {
+    console_printf("SO:   -> Info adicional (complemento): %d", complemento);
+  }
+
+  // Mata o processo que causou o erro.
+  // A forma mais limpa de fazer isso é forçar uma chamada de "suicídio"
+  // e deixar a função so_chamada_mata_proc fazer a limpeza.
+  p->regX = 0; // 0 significa "matar a si mesmo"
+  so_chamada_mata_proc(self);
 
 }
 
@@ -949,28 +1062,41 @@ static void so_chamada_cria_proc(so_t *self)
     return;
   }
 
-  // 2. Ler o nome do programa a ser executado da memória do processo pai
+  // T3
+  // 2. Ler o nome do programa a ser executado da memória VIRTUAL do processo pai
   int ender_nome = pai->regX; // O endereço do nome está no registrador X do pai
   char nome_prog[100];
-  if (!copia_str_da_mem(100, nome_prog, self->mem, ender_nome)) {
+  if (!so_copia_str_do_processo(self, 100, nome_prog, ender_nome, self->processo_atual_idx)) {
     pai->regA = -1; // Retorno de erro: nome do programa inválido
     console_printf("SO: Nao foi possivel ler o nome do programa para o novo processo.");
-    return;
-  }
-
-  // 3. Carregar o programa na memória
-  int ender_carga = so_carrega_programa(self, nome_prog);
-  if (ender_carga < 0) {
-    pai->regA = -1; // Retorno de erro: falha ao carregar o programa
-    console_printf("SO: Nao foi possivel carregar o programa '%s'.", nome_prog);
     return;
   }
 
   //incrementa a metrica
   self->num_processos_criados++;
 
-  // 4. Preencher o PCB do novo processo
+  // 3. Preencher o PCB do novo processo
   processo_t *novo = &self->tabela_processos[novo_idx];
+
+  // --- T3 ---
+  // 3a. Cria a tabela de páginas para este processo ANTES de carregar
+  novo->tabpag = tabpag_cria();
+  if (novo->tabpag == NULL) {
+      console_printf("SO: Falha ao criar tabela de paginas para PID %d!", self->proximo_pid);
+      pai->regA = -1;
+      return;
+  }
+  // 3b. Carregar o programa na memória VIRTUAL do novo processo
+  int ender_carga = so_carrega_programa(self, novo_idx, nome_prog);
+  if (ender_carga < 0) {
+    pai->regA = -1; // Retorno de erro: falha ao carregar o programa
+    console_printf("SO: Nao foi possivel carregar o programa '%s'.", nome_prog);
+    tabpag_destroi(novo->tabpag); // Limpa a tabela de páginas criada
+    novo->tabpag = NULL;
+    return;
+  }
+
+
   novo->pid = self->proximo_pid++;
   novo->estado = PRONTO;
   /*
@@ -982,9 +1108,10 @@ static void so_chamada_cria_proc(so_t *self)
   novo->regA = 0;
   novo->regX = 0;
   novo->regERRO = ERR_OK;
+  novo->regComplemento = 0; // (T3) Inicializa o novo registador
   novo->pid_esperado = -1;
-  novo->prioridade = 0.5;
   //metricas
+  novo->prioridade = 0.5;
   novo->num_preempcoes = 0;
   novo->vezes_pronto = 0;
   novo->vezes_bloqueado = 0;
@@ -1068,6 +1195,17 @@ static void so_chamada_mata_proc(so_t *self)
   alvo->estado = TERMINADO;
   alvo->pid = -1; // Libera o PID
 
+  // -----T3-----
+  // 3. Libertar os recursos de memória do processo morto
+  if (alvo->tabpag != NULL) {
+    console_printf("SO: Libertando tabela de paginas do PID %d.", pid_morto);
+    // TODO-T3: Percorrer a tabela e devolver os quadros para uma lista de livres
+    
+    // Liberta a estrutura da tabela de páginas
+    tabpag_destroi(alvo->tabpag);
+    alvo->tabpag = NULL;
+  }
+
   console_printf("SO: Processo com PID %d terminado.", pid_alvo);
 
   // 2a. Desbloqueia processos que estavam à espera do processo que morreu
@@ -1143,30 +1281,106 @@ static void so_chamada_espera_proc(so_t *self)
 // CARGA DE PROGRAMA {{{1
 // ---------------------------------------------------------------------
 
+static int so_carrega_programa_na_memoria_fisica(so_t *self, programa_t *programa);
+static int so_carrega_programa_na_memoria_virtual(so_t *self,
+                                                  programa_t *programa,
+                                                  processo_t *processo,
+                                                  const char *nome_prog);
+
 // carrega o programa na memória
+// se processo_idx for NENHUM_PROCESSO, carrega o programa na memória física
+//   senão, carrega na memória virtual do processo
 // retorna o endereço de carga ou -1
-static int so_carrega_programa(so_t *self, char *nome_do_executavel)
+static int so_carrega_programa(so_t *self, int processo_idx,
+                               char *nome_do_executavel)
 {
-  // programa para executar na nossa CPU
-  programa_t *prog = prog_cria(nome_do_executavel);
-  if (prog == NULL) {
+  console_printf("SO: carga de '%s'", nome_do_executavel);
+
+  programa_t *programa = prog_cria(nome_do_executavel);
+  if (programa == NULL) {
     console_printf("Erro na leitura do programa '%s'\n", nome_do_executavel);
     return -1;
   }
 
-  int end_ini = prog_end_carga(prog);
-  int end_fim = end_ini + prog_tamanho(prog);
+  int end_carga;
+  if (processo_idx == NENHUM_PROCESSO) {
+    end_carga = so_carrega_programa_na_memoria_fisica(self, programa);
+  } else {
+    processo_t *p = &self->tabela_processos[processo_idx];
+    end_carga = so_carrega_programa_na_memoria_virtual(self, programa, p, nome_do_executavel);
+  }
+
+  prog_destroi(programa);
+  return end_carga;
+}
+
+static int so_carrega_programa_na_memoria_fisica(so_t *self, programa_t *programa)
+{
+  int end_ini = prog_end_carga(programa);
+  int end_fim = end_ini + prog_tamanho(programa);
 
   for (int end = end_ini; end < end_fim; end++) {
-    if (mem_escreve(self->mem, end, prog_dado(prog, end)) != ERR_OK) {
+    if (mem_escreve(self->mem, end, prog_dado(programa, end)) != ERR_OK) {
       console_printf("Erro na carga da memória, endereco %d\n", end);
       return -1;
     }
   }
 
-  prog_destroi(prog);
-  console_printf("SO: carga de '%s' em %d-%d", nome_do_executavel, end_ini, end_fim);
+  console_printf("SO: carga na memória física %d-%d", end_ini, end_fim);
   return end_ini;
+}
+
+static int so_carrega_programa_na_memoria_virtual(so_t *self,
+                                                  programa_t *programa,
+                                                  processo_t *processo,
+                                                  const char *nome_prog)
+{
+  // A lógica do T3 para carregar na memória virtual
+  // Adaptada para usar a tabela de páginas do processo
+  
+  int end_virt_ini = prog_end_carga(programa);
+  // o código abaixo só funciona se o programa iniciar no início de uma página
+  if ((end_virt_ini % TAM_PAGINA) != 0) {
+      console_printf("SO: Erro! Programa '%s' nao inicia no comeco de pagina.", nome_prog);
+      return -1;
+  }
+  
+  int end_virt_fim = end_virt_ini + prog_tamanho(programa) - 1;
+  int pagina_ini = end_virt_ini / TAM_PAGINA;
+  int pagina_fim = end_virt_fim / TAM_PAGINA;
+  int n_paginas = pagina_fim - pagina_ini + 1;
+
+  // Aloca quadros de memória física para estas páginas
+  // (Usando a gestão de memória simples do T3, que apenas incrementa)
+  int quadro_ini = self->quadro_livre;
+  int quadro_fim = quadro_ini + n_paginas - 1;
+  // TODO-T3: Verificar se quadro_fim ultrapassa a memória física!
+  
+  console_printf("SO: Mapeando %d paginas (V:%d-%d) para quadros (F:%d-%d)",
+                 n_paginas, pagina_ini, pagina_fim, quadro_ini, quadro_fim);
+
+  // Mapeia as páginas na tabela de páginas do processo
+  for (int i = 0; i < n_paginas; i++) {
+    tabpag_define_quadro(processo->tabpag, pagina_ini + i, quadro_ini + i);
+  }
+  self->quadro_livre = quadro_fim + 1;
+
+  // Carrega o programa na memória física, quadro a quadro
+  int end_fis_ini = quadro_ini * TAM_PAGINA;
+  int end_fis = end_fis_ini;
+  for (int end_virt = end_virt_ini; end_virt <= end_virt_fim; end_virt++) {
+    if (mem_escreve(self->mem, end_fis, prog_dado(programa, end_virt)) != ERR_OK) {
+      console_printf("Erro na carga da memória, end virt %d fís %d\n", end_virt,
+                     end_fis);
+      // TODO-T3: Desfazer o mapeamento em caso de erro!
+      return -1;
+    }
+    end_fis++;
+  }
+  
+  console_printf("SO: carga na memória virtual V%d-%d F%d-%d npag=%d",
+                 end_virt_ini, end_virt_fim, end_fis_ini, end_fis - 1, n_paginas);
+  return end_virt_ini;
 }
 
 
@@ -1178,23 +1392,39 @@ static int so_carrega_programa(so_t *self, char *nome_do_executavel)
 // retorna false se erro (string maior que vetor, valor não char na memória,
 //   erro de acesso à memória)
 // t2: deveria verificar se a memória pertence ao processo
-static bool copia_str_da_mem(int tam, char str[tam], mem_t *mem, int ender)
+static bool so_copia_str_do_processo(so_t *self, int tam, char str[tam],
+  int end_virt, int processo_idx)
 {
-  for (int indice_str = 0; indice_str < tam; indice_str++) {
-    int caractere;
-    if (mem_le(mem, ender + indice_str, &caractere) != ERR_OK) {
-      return false;
-    }
-    if (caractere < 0 || caractere > 255) {
-      return false;
-    }
-    str[indice_str] = caractere;
-    if (caractere == 0) {
-      return true;
-    }
-  }
-  // estourou o tamanho de str
-  return false;
+if (processo_idx == NENHUM_PROCESSO) return false;
+
+// Define *temporariamente* a MMU para a tabela de páginas
+// do processo de onde queremos ler
+processo_t *p = &self->tabela_processos[processo_idx];
+tabpag_t *tabpag_original = self->tabela_processos[self->processo_atual_idx].tabpag;
+mmu_define_tabpag(self->mmu, p->tabpag);
+
+bool sucesso = true;
+for (int indice_str = 0; indice_str < tam; indice_str++) {
+int caractere;
+// Lê usando o modo usuário para forçar a tradução de endereços
+if (mmu_le(self->mmu, end_virt + indice_str, &caractere, usuario) != ERR_OK) {
+sucesso = false;
+break;
+}
+if (caractere < 0 || caractere > 255) {
+sucesso = false;
+break;
+}
+str[indice_str] = caractere;
+if (caractere == 0) {
+break; // Sucesso, string copiada
+}
+}
+
+// Restaura a tabela de páginas original (do processo que estava executando)
+mmu_define_tabpag(self->mmu, tabpag_original);
+
+return sucesso;
 }
 
 // vim: foldmethod=marker
