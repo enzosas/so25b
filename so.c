@@ -339,6 +339,8 @@ void so_gera_relatorio(so_t *self)
         console_printf("     - (Processo ainda ativo no final da execucao)");
       }
       
+      console_printf("     - Numero de Faltas de Pagina: %d", p->num_page_faults);
+      
       // Preempções
       console_printf("     - Numero de preempcoes: %d", p->num_preempcoes);
 
