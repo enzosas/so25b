@@ -32,7 +32,7 @@
 
 // Para escolher qual escalonador usar, mude o valor abaixo e recompile.
 #define ESCALONADOR_ATIVO ESCALONADOR_ROUND_ROBIN
-//#define ESCALONADOR_ATIVO ESCALONADOR_PRIORIDADE
+// #define ESCALONADOR_ATIVO ESCALONADOR_PRIORIDADE
 
 // --- CONFIGURACAO DO ALGORITMO DE SUBSTITUICAO ---
 #define ALGORITMO_SUBST_FIFO 1
@@ -511,7 +511,7 @@ static void so_salva_estado_da_cpu(so_t *self)
   p->regX = x;
   p->regComplemento = comp;
 
-  console_printf("SO: ESSE AQUI EH O COMP: %d", comp);
+  console_printf("~SALVANDO ESTADO NA IRQ: PC lido = %d, COMP lido = %d", pc, comp);
 
   // se o processo estava executando, agora ele está pronto para voltar pra fila
   if (p->estado == EXECUTANDO) {
@@ -1704,6 +1704,7 @@ static void so_trata_falta_de_pagina(so_t *self)
   
   // Forca o escalonador a escolher outro processo
   self->processo_atual_idx = -1;
+  p->regERRO = ERR_OK;
 }
 
 
