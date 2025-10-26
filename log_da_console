@@ -1,0 +1,3392 @@
+CMD: 'c'
+SO: recebi IRQ 0 (Reset)
+SO: carga de 'trata_int.maq'
+SO: carga na memória física 60-72
+SO: carga de 'init.maq'
+SO: 'init.maq' registrado para paginacao por demanda. Tamanho: 170 bytes (EndVirt: 0 a 169).
+SO: processo 'init' criado com PID 1 e inserido na fila.
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 1 (Erro de execução)
+SO: Processo PID 1 causou erro de CPU: Página ausente
+SO:   -> PAGE FAULT no endereco virtual 0
+SO: PF Handler: ERRO! Endereco 0 fora dos limites (0 - -1).
+SO: Matando processo 1 por Segmentation Fault.
+SO: Libertando tabela de paginas do PID 1.
+SO: Processo com PID 1 terminado.
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+CMD: 'd'
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E

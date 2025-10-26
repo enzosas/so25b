@@ -1511,6 +1511,8 @@ static int so_encontra_quadro_livre(so_t *self)
   }
 }
 
+#if ALGORITMO_SUBST_ATIVO == ALGORITMO_SUBST_LRU
+
 // Implementacao do algoritmo de substituicao LRU (Aging)
 static int so_substitui_pagina_lru(so_t *self, long *tempo_swap_out)
 {
@@ -1566,6 +1568,10 @@ static int so_substitui_pagina_lru(so_t *self, long *tempo_swap_out)
   return quadro_vitima;
 }
 
+#endif
+
+#if ALGORITMO_SUBST_ATIVO == ALGORITMO_SUBST_FIFO
+
 // Implementacao do algoritmo de substituicao FIFO
 static int so_substitui_pagina_fifo(so_t *self, long *tempo_swap_out)
 {
@@ -1599,14 +1605,11 @@ static int so_substitui_pagina_fifo(so_t *self, long *tempo_swap_out)
   // 4. Invalida a pagina na tabela de paginas do processo vitima
   tabpag_invalida_pagina(proc_vitima->tabpag, pag_virt_vitima);
 
-  // 5. Adiciona o quadro (agora livre) no FIM da fila FIFO
-  //    (pois ele sera usado pelo novo processo)
-  self->fila_quadros_fifo[self->fim_fila_fifo] = quadro_vitima;
-  self->fim_fila_fifo = (self->fim_fila_fifo + 1) % self->max_quadros_fisicos;
-
-  // 6. Retorna o quadro que esta pronto para ser usado
+  // 5. Retorna o quadro que esta pronto para ser usado
   return quadro_vitima;
 }
+
+#endif
 
 static void so_trata_falta_de_pagina(so_t *self)
 {
@@ -1638,7 +1641,6 @@ static void so_trata_falta_de_pagina(so_t *self)
 
   // 3. Encontrar um quadro livre na memoria fisica
   int quadro_destino = so_encontra_quadro_livre(self);
-  bool substituindo = false;
   long tempo_swap_out = 0; // Custo de E/S para salvar pagina suja
 
   // 4. Se nao ha quadros livres (quadro_destino == -1),
