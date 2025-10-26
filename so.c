@@ -149,6 +149,17 @@ struct so_t {
   int quadro_livre;
 
   long tempo_disco_livre; // Tempo global em que o disco ficara livre
+
+  int max_quadros_fisicos;      // Quantidade total de quadros na RAM
+  int n_quadros_ocupados;       // Quantos quadros estao em uso
+  int *fila_quadros_fifo;       // Fila para o algoritmo FIFO (armazena n_quadro)
+  int inicio_fila_fifo;
+  int fim_fila_fifo;
+
+  struct {
+    int processo_idx;     // Indice do processo dono (-1 se livre)
+    int pagina_virtual;   // Pagina virtual mapeada neste quadro
+  } *tabela_quadros_invertida;
 };
 
 // --- DECLARAÇÕES ANTECIPADAS (PROTÓTIPOS) ---
@@ -249,6 +260,30 @@ so_t *so_cria(cpu_t *cpu, mem_t *mem, mmu_t *mmu, es_t *es, console_t *console)
 
   self->tempo_disco_livre = 0; // Disco comeca livre
 
+  self->max_quadros_fisicos = mem_tam(self->mem) / TAM_PAGINA;
+  self->n_quadros_ocupados = 0;
+  self->inicio_fila_fifo = 0;
+  self->fim_fila_fifo = 0;
+
+  // Aloca a fila FIFO e a tabela invertida
+  self->fila_quadros_fifo = calloc(self->max_quadros_fisicos, sizeof(int));
+  self->tabela_quadros_invertida = calloc(self->max_quadros_fisicos, sizeof(self->tabela_quadros_invertida[0]));
+
+  if (self->fila_quadros_fifo == NULL || self->tabela_quadros_invertida == NULL) {
+    console_printf("SO: ERRO FATAL ao alocar estruturas de paginacao!");
+    self->erro_interno = true;
+  } 
+
+  // Inicializa a tabela invertida (marca todos os quadros como livres)
+  for (int i = 0; i < self->max_quadros_fisicos; i++) {
+    self->tabela_quadros_invertida[i].processo_idx = -1; // -1 = livre
+    self->tabela_quadros_invertida[i].pagina_virtual = -1;
+  }
+  
+  // O quadro 0 ate self->quadro_livre (SO, ROM, etc) ja estao ocupados
+  // (O seu 'quadro_livre' comeca depois da ROM, o que esta correto)
+  self->n_quadros_ocupados = self->quadro_livre;
+
   // quando a CPU executar uma instrução CHAMAC, deve chamar a função
   //   so_trata_interrupcao, com primeiro argumento um ptr para o SO
   cpu_define_chamaC(self->cpu, so_trata_interrupcao, self);
@@ -271,6 +306,9 @@ void so_destroi(so_t *self)
       tabpag_destroi(self->tabela_processos[i].tabpag);
     }
   }
+
+  free(self->fila_quadros_fifo);
+  free(self->tabela_quadros_invertida);
 
   free(self);
 }
@@ -1406,24 +1444,70 @@ static void so_carrega_pagina_do_disco(so_t *self, processo_t *p, int pagina_vir
 // Esta e a implementacao mais simples. Nao ha substituicao de pagina.
 static int so_encontra_quadro_livre(so_t *self)
 {
-  // Gestao de memoria simples: apenas incrementa o contador de quadros
-  
-  // Precisamos saber o tamanho da memoria fisica.
-  // Vamos assumir que mem_tam() existe (ela esta em memoria.h)
-  int max_quadros = mem_tam(self->mem) / TAM_PAGINA;
-  
-  int quadro = self->quadro_livre;
+  if (self->n_quadros_ocupados < self->max_quadros_fisicos) 
+  {
+    // Ainda ha espaco fisico total
+    
+    // O self->quadro_livre e nosso ponteiro para o proximo quadro
+    // que nunca foi usado.
+    int quadro = self->quadro_livre;
+    self->quadro_livre++;
+    
+    // self->n_quadros_ocupados sera incrementado pelo chamador
+    
+    console_printf("SO: PF Handler: Alocando novo quadro fisico livre: %d", quadro);
+    return quadro;
 
-  if (quadro >= max_quadros) {
+  } 
+  else 
+  {
      // MEMORIA CHEIA!
+     console_printf("SO: PF Handler: Memoria fisica cheia. (Ocupados: %d)", self->n_quadros_ocupados);
      return -1; // Sinaliza que precisa de substituicao
   }
-
-  self->quadro_livre++;
-  console_printf("SO: PF Handler: Alocando novo quadro fisico livre: %d", quadro);
-  return quadro;
 }
 
+// Implementacao do algoritmo de substituicao FIFO
+static int so_substitui_pagina_fifo(so_t *self, long *tempo_swap_out)
+{
+  *tempo_swap_out = 0; // Por padrao, sem custo de escrita
+
+  // 1. Encontra a vitima (o quadro no inicio da fila FIFO)
+  int quadro_vitima = self->fila_quadros_fifo[self->inicio_fila_fifo];
+  self->inicio_fila_fifo = (self->inicio_fila_fifo + 1) % self->max_quadros_fisicos;
+
+  // 2. Descobre quem era o dono desse quadro
+  int proc_idx_vitima = self->tabela_quadros_invertida[quadro_vitima].processo_idx;
+  int pag_virt_vitima = self->tabela_quadros_invertida[quadro_vitima].pagina_virtual;
+  processo_t *proc_vitima = &self->tabela_processos[proc_idx_vitima];
+
+  console_printf("SO: SUBSTITUICAO FIFO: Quadro %d (P%d, Pag %d) e a vitima.",
+                 quadro_vitima, proc_vitima->pid, pag_virt_vitima);
+
+  // 3. Verifica se a pagina esta "suja" (Dirty Bit)
+  //    (Conforme T3: "copiar a página para a memória secundária se for necessário")
+  if (tabpag_bit_alteracao(proc_vitima->tabpag, pag_virt_vitima)) {
+    console_printf("SO: FIFO: Pagina vitima esta 'suja'. Escrevendo no disco (SWAP OUT).");
+    
+    // TODO-T3: Implementar a escrita real no Swap.
+    // Por enquanto, apenas simulamos o tempo de E/S.
+    *tempo_swap_out = TEMPO_TRANSFERENCIA_DISCO;
+    
+    // (A logica de 'so_trata_falta_de_pagina' ira adicionar
+    // este tempo ao 'tempo_disco_livre')
+  }
+
+  // 4. Invalida a pagina na tabela de paginas do processo vitima
+  tabpag_invalida_pagina(proc_vitima->tabpag, pag_virt_vitima);
+
+  // 5. Adiciona o quadro (agora livre) no FIM da fila FIFO
+  //    (pois ele sera usado pelo novo processo)
+  self->fila_quadros_fifo[self->fim_fila_fifo] = quadro_vitima;
+  self->fim_fila_fifo = (self->fim_fila_fifo + 1) % self->max_quadros_fisicos;
+
+  // 6. Retorna o quadro que esta pronto para ser usado
+  return quadro_vitima;
+}
 
 static void so_trata_falta_de_pagina(so_t *self)
 {
@@ -1455,17 +1539,23 @@ static void so_trata_falta_de_pagina(so_t *self)
 
   // 3. Encontrar um quadro livre na memoria fisica
   int quadro_destino = so_encontra_quadro_livre(self);
+  bool substituindo = false;
+  long tempo_swap_out = 0; // Custo de E/S para salvar pagina suja
 
   // 4. Se nao ha quadros livres (quadro_destino == -1),
   //    precisamos rodar o algoritmo de substituicao.
   if (quadro_destino == -1) {
-    // TODO-T3: Chamar o algoritmo de substituicao (FIFO ou LRU)
-    console_printf("SO: PF Handler: MEMORIA CHEIA! Substituicao de pagina ainda nao implementada.");
-    console_printf("SO: Matando processo %d.", p->pid);
-    // Por enquanto, vamos matar o processo
-    p->regX = 0;
-    so_chamada_mata_proc(self);
-    return;
+    // Chama o algoritmo de substituicao
+    quadro_destino = so_substitui_pagina_fifo(self, &tempo_swap_out);
+    substituindo = true;
+  }
+  else
+  {
+    // Se encontramos um quadro novo (nao substituido),
+    // ele deve ser adicionado a fila FIFO.
+    self->fila_quadros_fifo[self->fim_fila_fifo] = quadro_destino;
+    self->fim_fila_fifo = (self->fim_fila_fifo + 1) % self->max_quadros_fisicos;
+    self->n_quadros_ocupados++;
   }
 
   // 5. Carregar a pagina da "memoria secundaria" (arquivo .maq)
@@ -1475,23 +1565,29 @@ static void so_trata_falta_de_pagina(so_t *self)
   // 6. Atualizar a tabela de paginas do processo
   tabpag_define_quadro(p->tabpag, pagina_virtual, quadro_destino);
 
+  // 6b. Atualizar a tabela de quadros invertida
+  self->tabela_quadros_invertida[quadro_destino].processo_idx = self->processo_atual_idx;
+  self->tabela_quadros_invertida[quadro_destino].pagina_virtual = pagina_virtual;
+
   // 7. Simular o bloqueio por E/S de disco
   int tempo_agora;
   es_le(self->es, D_RELOGIO_INSTRUCOES, &tempo_agora);
+
+  // O tempo de transferencia total e o Swap Out (se houver) + Swap In
+  long tempo_transferencia_total = tempo_swap_out + TEMPO_TRANSFERENCIA_DISCO;
   
   long tempo_termino_io;
   if (tempo_agora > self->tempo_disco_livre) {
     // Disco estava livre
-    tempo_termino_io = tempo_agora + TEMPO_TRANSFERENCIA_DISCO;
+    tempo_termino_io = tempo_agora + tempo_transferencia_total;
   } else {
     // Disco estava ocupado, entra na "fila"
-    tempo_termino_io = self->tempo_disco_livre + TEMPO_TRANSFERENCIA_DISCO;
+    tempo_termino_io = self->tempo_disco_livre + tempo_transferencia_total;
   }
   self->tempo_disco_livre = tempo_termino_io;
 
   // 8. Bloquear o processo
-  console_printf("SO: PF Handler: Bloqueando processo %d por E/S de disco ate %ld",
-                   p->pid, tempo_termino_io);
+  console_printf("SO: PF Handler: Bloqueando processo %d por E/S de disco ate %ld", p->pid, tempo_termino_io);
   p->estado = BLOQUEADO;
   p->vezes_bloqueado++; //metricas
   p->tipo_bloqueio = BLOQUEIO_PAGINACAO;
