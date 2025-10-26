@@ -178,7 +178,7 @@ static int so_trata_interrupcao(void *argC, int reg_A);
 // Funções auxiliares gerais
 static int so_carrega_programa(so_t *self, int processo_idx, char *nome_do_executavel);
 static int so_carrega_programa_na_memoria_fisica(so_t *self, programa_t *programa);
-static int so_carrega_programa_na_memoria_virtual(so_t *self, programa_t *programa, processo_t *processo, const char *nome_prog);
+static int so_carrega_programa_na_memoria_virtual(so_t *self, programa_t *programa, processo_t *processo, const char *nome_prog, int processo_idx);
 static bool so_copia_str_do_processo(so_t *self, int tam, char str[tam], int end_virt, int processo_idx);
 
 // Funções do ciclo de tratamento de interrupção
@@ -891,8 +891,6 @@ static void so_trata_reset(so_t *self)
   p->pid_esperado = -1; // Não está esperando por ninguém
 
   // --- NOVO T3 ---
-  p->tam_memoria = 0; // Sera definido por so_carrega_programa
-  p->nome_executavel[0] = '\0'; // Sera definido por so_carrega_programa
   p->tempo_termino_io_disco = 0;
   p->num_page_faults = 0; // O init nao deve ter page faults se for carregado direto
 
@@ -1714,7 +1712,8 @@ static int so_carrega_programa_na_memoria_fisica(so_t *self, programa_t *program
 static int so_carrega_programa_na_memoria_virtual(so_t *self,
                                                   programa_t *programa,
                                                   processo_t *processo,
-                                                  const char *nome_prog);
+                                                  const char *nome_prog,
+                                                  int processo_idx);
 
 // carrega o programa na memória
 // se processo_idx for NENHUM_PROCESSO, carrega o programa na memória física
@@ -1736,7 +1735,7 @@ static int so_carrega_programa(so_t *self, int processo_idx,
     end_carga = so_carrega_programa_na_memoria_fisica(self, programa);
   } else {
     processo_t *p = &self->tabela_processos[processo_idx];
-    end_carga = so_carrega_programa_na_memoria_virtual(self, programa, p, nome_do_executavel);
+    end_carga = so_carrega_programa_na_memoria_virtual(self, programa, p, nome_do_executavel, processo_idx);
   }
 
   prog_destroi(programa);
@@ -1762,7 +1761,8 @@ static int so_carrega_programa_na_memoria_fisica(so_t *self, programa_t *program
 static int so_carrega_programa_na_memoria_virtual(so_t *self,
                                                   programa_t *programa,
                                                   processo_t *processo,
-                                                  const char *nome_prog)
+                                                  const char *nome_prog,
+                                                  int processo_idx)
 {
   // A lógica do T3 para carregar na memória virtual
   // Adaptada para usar a tabela de páginas do processo
@@ -1785,44 +1785,72 @@ static int so_carrega_programa_na_memoria_virtual(so_t *self,
                    nome_prog, processo->tam_memoria - end_virt_ini, end_virt_ini, processo->tam_memoria - 1);
   
 
-  /*
-  int end_virt_fim = end_virt_ini + prog_tamanho(programa) - 1;
-  int pagina_ini = end_virt_ini / TAM_PAGINA;
-  int pagina_fim = end_virt_fim / TAM_PAGINA;
-  int n_paginas = pagina_fim - pagina_ini + 1;
+  // --- INICIO DA CORRECAO DE LOOP DO INIT ---
+  // O processo 0 (init) nao pode ser paginado por demanda,
+  // pois ele precisa estar na memoria para carregar outros processos.
+  // Vamos pre-carregar todas as suas paginas.
+  if (processo_idx == 0) {
+    console_printf("SO: Pre-carregando 'init.maq' (PID %d) fisicamente...", processo->pid);
 
-  // Aloca quadros de memória física para estas páginas
-  // (Usando a gestão de memória simples do T3, que apenas incrementa)
-  int quadro_ini = self->quadro_livre;
-  int quadro_fim = quadro_ini + n_paginas - 1;
-  // TODO-T3: Verificar se quadro_fim ultrapassa a memória física!
-  
-  console_printf("SO: Mapeando %d paginas (V:%d-%d) para quadros (F:%d-%d)",
-                 n_paginas, pagina_ini, pagina_fim, quadro_ini, quadro_fim);
+    // (Este bloco e o codigo original de carga, adaptado)
+    int end_virt_fim = end_virt_ini + prog_tamanho(programa) - 1;
+    int pagina_ini = end_virt_ini / TAM_PAGINA;
+    int pagina_fim = end_virt_fim / TAM_PAGINA;
+    int n_paginas = pagina_fim - pagina_ini + 1;
 
-  // Mapeia as páginas na tabela de páginas do processo
-  for (int i = 0; i < n_paginas; i++) {
-    tabpag_define_quadro(processo->tabpag, pagina_ini + i, quadro_ini + i);
-  }
-  self->quadro_livre = quadro_fim + 1;
+    // Aloca quadros de memória física para estas páginas
+    int quadro_ini = self->quadro_livre;
+    int quadro_fim = quadro_ini + n_paginas - 1;
 
-  // Carrega o programa na memória física, quadro a quadro
-  int end_fis_ini = quadro_ini * TAM_PAGINA;
-  int end_fis = end_fis_ini;
-  for (int end_virt = end_virt_ini; end_virt <= end_virt_fim; end_virt++) {
-    if (mem_escreve(self->mem, end_fis, prog_dado(programa, end_virt)) != ERR_OK) {
-      console_printf("Erro na carga da memória, end virt %d fís %d\n", end_virt,
-                     end_fis);
-      // TODO-T3: Desfazer o mapeamento em caso de erro!
-      return -1;
+    if (quadro_fim >= self->max_quadros_fisicos) {
+        console_printf("SO: Erro fatal! Nao ha memoria fisica para carregar o 'init.maq'!");
+        self->erro_interno = true;
+        return -1;
     }
-    end_fis++;
-  }
-  
-  console_printf("SO: carga na memória virtual V%d-%d F%d-%d npag=%d",
-                 end_virt_ini, end_virt_fim, end_fis_ini, end_fis - 1, n_paginas);
 
-  */
+    console_printf("SO: Mapeando %d paginas (V:%d-%d) para quadros (F:%d-%d)",
+                   n_paginas, pagina_ini, pagina_fim, quadro_ini, quadro_fim);
+
+    // Mapeia as páginas na tabela de páginas do processo
+    for (int i = 0; i < n_paginas; i++) {
+      int pagina_atual = pagina_ini + i;
+      int quadro_atual = quadro_ini + i;
+
+      tabpag_define_quadro(processo->tabpag, pagina_atual, quadro_atual);
+
+      // Atualiza a tabela invertida (IMPORTANTE)
+      self->tabela_quadros_invertida[quadro_atual].processo_idx = processo_idx;
+      self->tabela_quadros_invertida[quadro_atual].pagina_virtual = pagina_atual;
+      self->tabela_quadros_invertida[quadro_atual].age = 0; // Para LRU
+
+      // Adiciona na fila FIFO (IMPORTANTE)
+      #if ALGORITMO_SUBST_ATIVO == ALGORITMO_SUBST_FIFO
+      self->fila_quadros_fifo[self->fim_fila_fifo] = quadro_atual;
+      self->fim_fila_fifo = (self->fim_fila_fifo + 1) % self->max_quadros_fisicos;
+      #endif
+    }
+    self->quadro_livre = quadro_fim + 1;
+    self->n_quadros_ocupados += n_paginas; // Atualiza contador de quadros
+
+    // Carrega o programa na memória física, quadro a quadro
+    int end_fis_ini = quadro_ini * TAM_PAGINA;
+    int end_fis = end_fis_ini;
+    for (int end_virt = end_virt_ini; end_virt <= end_virt_fim; end_virt++) {
+      if (mem_escreve(self->mem, end_fis, prog_dado(programa, end_virt)) != ERR_OK) {
+        console_printf("Erro na carga da memoria, end virt %d fís %d\n", end_virt,
+                       end_fis);
+        return -1; 
+      }
+      end_fis++;
+    }
+    
+    console_printf("SO: carga na memória virtual V%d-%d F%d-%d npag=%d",
+                   end_virt_ini, end_virt_fim, end_fis_ini, end_fis - 1, n_paginas);
+
+  } // Fim do if (processo_idx == 0)
+  // --- FIM DA CORRECAO ---
+
+  // O "return end_virt_ini;" (linha 1681) deve permanecer
   return end_virt_ini;
 }
 
