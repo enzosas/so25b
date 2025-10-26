@@ -58,7 +58,8 @@ typedef enum {
   BLOQUEIO_NENHUM,
   BLOQUEIO_LE,
   BLOQUEIO_ESCR,
-  BLOQUEIO_ESPERA
+  BLOQUEIO_ESPERA,
+  BLOQUEIO_PAGINACAO
 } processo_bloqueio_t;
 
 // a estrutura com as informações de um processo (Process Control Block)
@@ -145,6 +146,8 @@ struct so_t {
   // T3
   // Gestão simples de memória física
   int quadro_livre;
+
+  long tempo_disco_livre; // Tempo global em que o disco ficara livre
 };
 
 // --- DECLARAÇÕES ANTECIPADAS (PROTÓTIPOS) ---
@@ -178,6 +181,11 @@ static void so_chamada_escr(so_t *self);
 static void so_chamada_cria_proc(so_t *self);
 static void so_chamada_mata_proc(so_t *self);
 static void so_chamada_espera_proc(so_t *self);
+
+// --- NOVOS PROTOTIPOS T3 ---
+static void so_trata_falta_de_pagina(so_t *self);
+static int so_encontra_quadro_livre(so_t *self);
+static void so_carrega_pagina_do_disco(so_t *self, processo_t *p, int pagina_virtual, int quadro_destino);
 
 #if ESCALONADOR_ATIVO == ESCALONADOR_ROUND_ROBIN
 // Funções da fila (apenas se Round Robin estiver ativo)
@@ -237,6 +245,8 @@ so_t *so_cria(cpu_t *cpu, mem_t *mem, mmu_t *mmu, es_t *es, console_t *console)
   // Inicializa o gestor de memória (simplificado)
   // O primeiro quadro livre é após a memória protegida pelo hardware
   self->quadro_livre = CPU_END_FIM_PROT / TAM_PAGINA + 1;
+
+  self->tempo_disco_livre = 0; // Disco comeca livre
 
   // quando a CPU executar uma instrução CHAMAC, deve chamar a função
   //   so_trata_interrupcao, com primeiro argumento um ptr para o SO
@@ -852,16 +862,27 @@ static void so_trata_irq_err_cpu(so_t *self)
   
   // (Lógica T3) Imprime uma mensagem de erro detalhada
   console_printf("SO: Processo PID %d causou erro de CPU: %s", p->pid, err_nome(err));
-  if (err == ERR_PAG_AUSENTE) {
+  if (err == ERR_PAG_AUSENTE) 
+  {
     console_printf("SO:   -> PAGE FAULT no endereco virtual %d", complemento);
-    // (A info extra na Page Fault é o endereço que falhou)
-  } else {
+    // Chama o tratador especifico
+    so_trata_falta_de_pagina(self);
+    return; // O tratador decide se mata ou bloqueia o processo
+
+  } 
+  else if (err == ERR_END_INV) 
+  {
+    console_printf("SO:   -> ENDERECO INVALIDO (fisico) %d. Erro grave do SO.", complemento);
+  } 
+  else 
+  {
     console_printf("SO:   -> Info adicional (complemento): %d", complemento);
   }
 
   // Mata o processo que causou o erro.
   // A forma mais limpa de fazer isso é forçar uma chamada de "suicídio"
   // e deixar a função so_chamada_mata_proc fazer a limpeza.
+  console_printf("SO: Matando processo %d devido ao erro.", p->pid);
   p->regX = 0; // 0 significa "matar a si mesmo"
   so_chamada_mata_proc(self);
 
@@ -1294,6 +1315,159 @@ static void so_chamada_espera_proc(so_t *self)
   self->processo_atual_idx = -1;
 
   console_printf("SO: Processo %d bloqueado, esperando pelo processo %d.", chamador->pid, pid_alvo);
+}
+
+
+
+// ---------------------------------------------------------------------
+// TRATAMENTO DE FALTA DE PAGINA (T3) {{{1
+// ---------------------------------------------------------------------
+
+// Define o tempo de "transferencia" do disco (em instrucoes)
+#define TEMPO_TRANSFERENCIA_DISCO 100
+
+// Carrega uma pagina do "disco" (o arquivo .maq) para um quadro da memoria fisica
+static void so_carrega_pagina_do_disco(so_t *self, processo_t *p, int pagina_virtual, int quadro_destino)
+{
+  // 1. Abre o programa
+  programa_t *prog = prog_cria(p->nome_executavel);
+  if (prog == NULL) {
+    console_printf("SO: PF Handler: ERRO FATAL! Nao foi possivel abrir '%s'", p->nome_executavel);
+    // Nao ha muito o que fazer aqui, o processo vai morrer
+    self->erro_interno = true;
+    return;
+  }
+
+  // 2. Calcula o offset no arquivo e o endereco fisico na memoria
+  int end_virt_ini_prog = prog_end_carga(prog);
+  int end_virt_pagina = pagina_virtual * TAM_PAGINA;
+  int end_fis_quadro = quadro_destino * TAM_PAGINA;
+
+  int offset_no_prog = end_virt_pagina - end_virt_ini_prog;
+
+  console_printf("SO: PF Handler: Carregando pagina virtual %d (end %d) do disco...",
+                   pagina_virtual, end_virt_pagina);
+  console_printf("SO: PF Handler: ... para quadro fisico %d (end %d). Offset prog: %d",
+                   quadro_destino, end_fis_quadro, offset_no_prog);
+
+  // 3. Copia a pagina (byte a byte) do programa para a memoria fisica
+  for (int i = 0; i < TAM_PAGINA; i++) {
+    int end_virt_dado = end_virt_ini_prog + offset_no_prog + i;
+    int end_fis_dado = end_fis_quadro + i;
+
+    // O processo pode ser menor que a pagina inteira
+    // E o endereco virtual do dado deve ser >= endereco de carga
+    if (end_virt_dado >= end_virt_ini_prog && end_virt_dado < p->tam_memoria) {
+      int dado = prog_dado(prog, end_virt_dado);
+      mem_escreve(self->mem, end_fis_dado, dado);
+    } else {
+      // Preenche o resto da pagina com 0 (se for fora do .maq)
+      mem_escreve(self->mem, end_fis_dado, 0);
+    }
+  }
+
+  prog_destroi(prog);
+}
+
+// Encontra um quadro livre. Por enquanto, so incrementa o contador global
+// Esta e a implementacao mais simples. Nao ha substituicao de pagina.
+static int so_encontra_quadro_livre(so_t *self)
+{
+  // Gestao de memoria simples: apenas incrementa o contador de quadros
+  
+  // Precisamos saber o tamanho da memoria fisica.
+  // Vamos assumir que mem_tam() existe (ela esta em memoria.h)
+  int max_quadros = mem_tam(self->mem) / TAM_PAGINA;
+  
+  int quadro = self->quadro_livre;
+
+  if (quadro >= max_quadros) {
+     // MEMORIA CHEIA!
+     return -1; // Sinaliza que precisa de substituicao
+  }
+
+  self->quadro_livre++;
+  console_printf("SO: PF Handler: Alocando novo quadro fisico livre: %d", quadro);
+  return quadro;
+}
+
+
+static void so_trata_falta_de_pagina(so_t *self)
+{
+  processo_t *p = &self->tabela_processos[self->processo_atual_idx];
+  int end_falha = p->regComplemento; // Endereco virtual que causou a falha
+  int pagina_virtual = end_falha / TAM_PAGINA;
+
+  // 1. Verificar se o endereco e valido
+  // O endereco de carga e salvo em programa_t, mas nao no processo_t
+  // Vamos assumir que o endereco de carga e 0 para programas paginados
+  // (O .maq do T3 e montado para 0).
+  // A unica checagem e contra o tamanho maximo.
+  if (end_falha < 0 || end_falha >= p->tam_memoria) {
+    // Endereco invalido! E um "Segmentation Fault"
+    console_printf("SO: PF Handler: ERRO! Endereco %d fora dos limites (0 - %d).",
+                     end_falha, p->tam_memoria - 1);
+    console_printf("SO: Matando processo %d por Segmentation Fault.", p->pid);
+    
+    // Forca o suicidio do processo
+    p->regX = 0;
+    so_chamada_mata_proc(self);
+    return;
+  }
+
+  // 2. Endereco valido. E uma falta de pagina real.
+  p->num_page_faults++; // Metrica
+  console_printf("SO: PF Handler: Falta de pagina valida para PID %d, end %d (Pagina %d). PF total: %d",
+                   p->pid, end_falha, pagina_virtual, p->num_page_faults);
+
+  // 3. Encontrar um quadro livre na memoria fisica
+  int quadro_destino = so_encontra_quadro_livre(self);
+
+  // 4. Se nao ha quadros livres (quadro_destino == -1),
+  //    precisamos rodar o algoritmo de substituicao.
+  if (quadro_destino == -1) {
+    // TODO-T3: Chamar o algoritmo de substituicao (FIFO ou LRU)
+    console_printf("SO: PF Handler: MEMORIA CHEIA! Substituicao de pagina ainda nao implementada.");
+    console_printf("SO: Matando processo %d.", p->pid);
+    // Por enquanto, vamos matar o processo
+    p->regX = 0;
+    so_chamada_mata_proc(self);
+    return;
+  }
+
+  // 5. Carregar a pagina da "memoria secundaria" (arquivo .maq)
+  //    para o quadro fisico encontrado.
+  so_carrega_pagina_do_disco(self, p, pagina_virtual, quadro_destino);
+
+  // 6. Atualizar a tabela de paginas do processo
+  tabpag_define_quadro(p->tabpag, pagina_virtual, quadro_destino);
+
+  // 7. Simular o bloqueio por E/S de disco
+  int tempo_agora;
+  es_le(self->es, D_RELOGIO_INSTRUCOES, &tempo_agora);
+  
+  long tempo_termino_io;
+  if (tempo_agora > self->tempo_disco_livre) {
+    // Disco estava livre
+    tempo_termino_io = tempo_agora + TEMPO_TRANSFERENCIA_DISCO;
+  } else {
+    // Disco estava ocupado, entra na "fila"
+    tempo_termino_io = self->tempo_disco_livre + TEMPO_TRANSFERENCIA_DISCO;
+  }
+  self->tempo_disco_livre = tempo_termino_io;
+
+  // 8. Bloquear o processo
+  console_printf("SO: PF Handler: Bloqueando processo %d por E/S de disco ate %ld",
+                   p->pid, tempo_termino_io);
+  p->estado = BLOQUEADO;
+  p->vezes_bloqueado++; //metricas
+  p->tipo_bloqueio = BLOQUEIO_PAGINACAO;
+  
+  // Guarda o tempo de termino em nosso novo campo
+  p->tempo_termino_io_disco = tempo_termino_io;
+  
+  // Forca o escalonador a escolher outro processo
+  self->processo_atual_idx = -1;
 }
 
 
