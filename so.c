@@ -106,6 +106,12 @@ typedef struct {
   // Cada processo agora tem a sua própria tabela de páginas
   tabpag_t *tabpag;
 
+  // --- NOVOS DO T3 (Implementacao) ---
+  char nome_executavel[100]; // Nome do arquivo para recarregar paginas
+  int tam_memoria;           // Tamanho total (em bytes) da memoria virtual
+  long tempo_termino_io_disco; // Tempo que a E/S de disco terminara
+  int num_page_faults;       // Metrica: contagem de page faults
+
 } processo_t;
 
 struct so_t {
@@ -794,6 +800,13 @@ static void so_trata_reset(so_t *self)
   p->regERRO = ERR_OK;
   p->regComplemento = 0; // (T3) Inicializa o novo registador
   p->pid_esperado = -1; // Não está esperando por ninguém
+
+  // --- NOVO T3 ---
+  p->tam_memoria = 0; // Sera definido por so_carrega_programa
+  p->nome_executavel[0] = '\0'; // Sera definido por so_carrega_programa
+  p->tempo_termino_io_disco = 0;
+  p->num_page_faults = 0; // O init nao deve ter page faults se for carregado direto
+
   p->tipo_bloqueio = BLOQUEIO_NENHUM;
 
   // Atribui os dispositivos de E/S padrão (Terminal A)
@@ -1110,6 +1123,13 @@ static void so_chamada_cria_proc(so_t *self)
   novo->regERRO = ERR_OK;
   novo->regComplemento = 0; // (T3) Inicializa o novo registador
   novo->pid_esperado = -1;
+
+  // --- NOVO T3 ---
+  novo->tam_memoria = 0; // Sera definido por so_carrega_programa
+  novo->nome_executavel[0] = '\0'; // Sera definido por so_carrega_programa
+  novo->tempo_termino_io_disco = 0;
+  novo->num_page_faults = 0;
+
   //metricas
   novo->prioridade = 0.5;
   novo->num_preempcoes = 0;
