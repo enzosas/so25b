@@ -575,6 +575,36 @@ static void so_trata_pendencias(so_t *self)
             p->regA = 0; // Sucesso na espera
             console_printf("SO: Processo %d desbloqueado (pendencias) pois %d terminou.", p->pid, pid_esperado);
         }
+      } else if (p->tipo_bloqueio == BLOQUEIO_PAGINACAO) {
+        // --- NOVO T3 ---
+        // Bloqueado a espera de E/S de disco (Page Fault)
+        int tempo_agora;
+        es_le(self->es, D_RELOGIO_INSTRUCOES, &tempo_agora);
+        long tempo_termino_io = p->tempo_termino_io_disco;
+
+        if (tempo_agora >= tempo_termino_io) {
+          // E/S de disco terminada! Desbloqueia o processo.
+          console_printf("SO: Processo %d desbloqueado apos E/S de disco (Page Fault).", p->pid);
+          
+          //metricas
+          p->tempo_total_bloqueado += tempo_agora - p->tempo_entrou_no_estado_atual;
+          p->vezes_pronto++;
+          p->tempo_desbloqueio = tempo_agora; // Correto para a metrica de tempo de resposta
+          p->tempo_entrou_no_estado_atual = tempo_agora;
+
+          // Desbloqueia
+          p->estado = PRONTO;
+          #if ESCALONADOR_ATIVO == ESCALONADOR_ROUND_ROBIN
+          insere_fila_prontos(self, i); // Adiciona na fila
+          #endif
+          p->tipo_bloqueio = BLOQUEIO_NENHUM;
+          p->tempo_termino_io_disco = 0;
+
+          // IMPORTANTE: O processo foi interrompido *antes* de executar
+          // a instrucao que causou a falha. O PC salvo aponta
+          // para essa instrucao. Ao retornar, a CPU ira executa-la
+          // novamente, mas agora a pagina esta mapeada.
+        }
       }
     }
   }
