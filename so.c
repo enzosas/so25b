@@ -509,6 +509,9 @@ static void so_salva_estado_da_cpu(so_t *self)
   p->regA = a;
   p->regERRO = erro;
   p->regX = x;
+  p->regComplemento = comp;
+
+  console_printf("SO: ESSE AQUI EH O COMP: %d", comp);
 
   // se o processo estava executando, agora ele está pronto para voltar pra fila
   if (p->estado == EXECUTANDO) {
@@ -1259,8 +1262,8 @@ static void so_chamada_cria_proc(so_t *self)
   novo->pid_esperado = -1;
 
   // --- NOVO T3 ---
-  novo->tam_memoria = 0; // Sera definido por so_carrega_programa
-  novo->nome_executavel[0] = '\0'; // Sera definido por so_carrega_programa
+  // novo->tam_memoria = 0; // Sera definido por so_carrega_programa
+  // novo->nome_executavel[0] = '\0'; // Sera definido por so_carrega_programa
   novo->tempo_termino_io_disco = 0;
   novo->num_page_faults = 0;
 

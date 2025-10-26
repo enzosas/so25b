@@ -10,275 +10,295 @@ SO: carga na memória virtual V0-169 F100-269 npag=17
 SO: processo 'init' criado com PID 1 e inserido na fila.
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 2 (Chamada de sistema)
+SO: ESSE AQUI EH O COMP: 0
 SO: chamada de sistema 2
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 1
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 2 (Chamada de sistema)
+SO: ESSE AQUI EH O COMP: 0
 SO: chamada de sistema 2
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 3 (E/S: relógio)
+SO: ESSE AQUI EH O COMP: 0
 SO: Interrupcao do relogio, quantum restante = 1
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 2 (Chamada de sistema)
+SO: ESSE AQUI EH O COMP: 0
 SO: chamada de sistema 2
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 2 (Chamada de sistema)
+SO: ESSE AQUI EH O COMP: 0
 SO: chamada de sistema 2
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 3 (E/S: relógio)
+SO: ESSE AQUI EH O COMP: 0
 SO: Interrupcao do relogio, quantum restante = 1
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 2 (Chamada de sistema)
+SO: ESSE AQUI EH O COMP: 0
 SO: chamada de sistema 2
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 2 (Chamada de sistema)
+SO: ESSE AQUI EH O COMP: 0
+SO: chamada de sistema 2
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: ESSE AQUI EH O COMP: 0
 SO: chamada de sistema 2
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 3 (E/S: relógio)
+SO: ESSE AQUI EH O COMP: 0
 SO: Interrupcao do relogio, quantum restante = 1
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 2 (Chamada de sistema)
+SO: ESSE AQUI EH O COMP: 0
 SO: chamada de sistema 2
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 2 (Chamada de sistema)
+SO: ESSE AQUI EH O COMP: 0
 SO: chamada de sistema 2
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 3 (E/S: relógio)
+SO: ESSE AQUI EH O COMP: 0
 SO: Interrupcao do relogio, quantum restante = 1
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 2 (Chamada de sistema)
+SO: ESSE AQUI EH O COMP: 0
 SO: chamada de sistema 2
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 2 (Chamada de sistema)
+SO: ESSE AQUI EH O COMP: 0
 SO: chamada de sistema 2
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 3 (E/S: relógio)
+SO: ESSE AQUI EH O COMP: 0
 SO: Interrupcao do relogio, quantum restante = 1
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 2 (Chamada de sistema)
+SO: ESSE AQUI EH O COMP: 0
 SO: chamada de sistema 2
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 2 (Chamada de sistema)
+SO: ESSE AQUI EH O COMP: 0
 SO: chamada de sistema 2
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 3 (E/S: relógio)
+SO: ESSE AQUI EH O COMP: 0
 SO: Interrupcao do relogio, quantum restante = 1
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 2 (Chamada de sistema)
+SO: ESSE AQUI EH O COMP: 0
 SO: chamada de sistema 2
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 2 (Chamada de sistema)
+SO: ESSE AQUI EH O COMP: 0
 SO: chamada de sistema 2
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 3 (E/S: relógio)
+SO: ESSE AQUI EH O COMP: 0
 SO: Interrupcao do relogio, quantum restante = 1
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 2 (Chamada de sistema)
+SO: ESSE AQUI EH O COMP: 0
 SO: chamada de sistema 2
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 2 (Chamada de sistema)
+SO: ESSE AQUI EH O COMP: 0
+SO: chamada de sistema 2
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: ESSE AQUI EH O COMP: 0
 SO: chamada de sistema 2
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 3 (E/S: relógio)
+SO: ESSE AQUI EH O COMP: 0
 SO: Interrupcao do relogio, quantum restante = 1
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 2 (Chamada de sistema)
+SO: ESSE AQUI EH O COMP: 0
 SO: chamada de sistema 2
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 2 (Chamada de sistema)
+SO: ESSE AQUI EH O COMP: 0
 SO: chamada de sistema 2
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 3 (E/S: relógio)
+SO: ESSE AQUI EH O COMP: 0
 SO: Interrupcao do relogio, quantum restante = 1
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 2 (Chamada de sistema)
+SO: ESSE AQUI EH O COMP: 0
+SO: chamada de sistema 2
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: ESSE AQUI EH O COMP: 0
+SO: chamada de sistema 2
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: ESSE AQUI EH O COMP: 0
+SO: Interrupcao do relogio, quantum restante = 1
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: ESSE AQUI EH O COMP: 0
 SO: chamada de sistema 7
 SO: carga de 'p1.maq'
 SO: 'p1.maq' registrado para paginacao por demanda. Tamanho: 241 bytes (EndVirt: 0 a 240).
 SO: Processo 'p1.maq' criado com PID 2.
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 1 (Erro de execução)
+SO: ESSE AQUI EH O COMP: 0
 SO: Processo PID 2 causou erro de CPU: Página ausente
 SO:   -> PAGE FAULT no endereco virtual 0
-SO: PF Handler: ERRO! Endereco 0 fora dos limites (0 - -1).
-SO: Matando processo 2 por Segmentation Fault.
-SO: Libertando tabela de paginas do PID 2.
-SO: Processo com PID 2 terminado.
+SO: PF Handler: Falta de pagina valida para PID 2, end 0 (Pagina 0). PF total: 1
+SO: PF Handler: Alocando novo quadro fisico livre: 27
+SO: PF Handler: Carregando pagina virtual 0 (end 0) do disco...
+SO: PF Handler: ... para quadro fisico 27 (end 270). Offset prog: 0
+SO: PF Handler: Bloqueando processo 2 por E/S de disco ate 665
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 2 (Chamada de sistema)
+SO: ESSE AQUI EH O COMP: 0
 SO: chamada de sistema 7
 SO: carga de 'p2.maq'
 SO: 'p2.maq' registrado para paginacao por demanda. Tamanho: 243 bytes (EndVirt: 0 a 242).
 SO: Processo 'p2.maq' criado com PID 3.
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 1 (Erro de execução)
+SO: ESSE AQUI EH O COMP: 0
 SO: Processo PID 3 causou erro de CPU: Página ausente
 SO:   -> PAGE FAULT no endereco virtual 0
-SO: PF Handler: ERRO! Endereco 0 fora dos limites (0 - -1).
-SO: Matando processo 3 por Segmentation Fault.
-SO: Libertando tabela de paginas do PID 3.
-SO: Processo com PID 3 terminado.
+SO: PF Handler: Falta de pagina valida para PID 3, end 0 (Pagina 0). PF total: 1
+SO: PF Handler: Alocando novo quadro fisico livre: 28
+SO: PF Handler: Carregando pagina virtual 0 (end 0) do disco...
+SO: PF Handler: ... para quadro fisico 28 (end 280). Offset prog: 0
+SO: PF Handler: Bloqueando processo 3 por E/S de disco ate 765
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 3 (E/S: relógio)
+SO: ESSE AQUI EH O COMP: 0
 SO: Interrupcao do relogio, quantum restante = 1
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 2 (Chamada de sistema)
+SO: ESSE AQUI EH O COMP: 0
 SO: chamada de sistema 7
 SO: carga de 'p3.maq'
 SO: 'p3.maq' registrado para paginacao por demanda. Tamanho: 241 bytes (EndVirt: 0 a 240).
 SO: Processo 'p3.maq' criado com PID 4.
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 1 (Erro de execução)
+SO: ESSE AQUI EH O COMP: 0
 SO: Processo PID 4 causou erro de CPU: Página ausente
 SO:   -> PAGE FAULT no endereco virtual 0
-SO: PF Handler: ERRO! Endereco 0 fora dos limites (0 - -1).
-SO: Matando processo 4 por Segmentation Fault.
-SO: Libertando tabela de paginas do PID 4.
-SO: Processo com PID 4 terminado.
+SO: PF Handler: Falta de pagina valida para PID 4, end 0 (Pagina 0). PF total: 1
+SO: PF Handler: Alocando novo quadro fisico livre: 29
+SO: PF Handler: Carregando pagina virtual 0 (end 0) do disco...
+SO: PF Handler: ... para quadro fisico 29 (end 290). Offset prog: 0
+SO: PF Handler: Bloqueando processo 4 por E/S de disco ate 865
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 2 (Chamada de sistema)
+SO: ESSE AQUI EH O COMP: 0
 SO: chamada de sistema 9
-SO: Processo 1 tentou esperar por PID 2, que nao existe.
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 9
-SO: Processo 1 tentou esperar por PID 3, que nao existe.
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 1
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 9
-SO: Processo 1 tentou esperar por PID 4, que nao existe.
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 1
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 1
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 1
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 1
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 1
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 1
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 1
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 1
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 8
-SO: Libertando tabela de paginas do PID 1.
-SO: Processo com PID 1 terminado.
+SO: Processo 1 bloqueado, esperando pelo processo 2.
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 3 (E/S: relógio)
+SO: Processo 2 desbloqueado apos E/S de disco (Page Fault).
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 1 (Erro de execução)
+SO: ESSE AQUI EH O COMP: 0
+SO: Processo PID 2 causou erro de CPU: Página ausente
+SO:   -> PAGE FAULT no endereco virtual 0
+SO: PF Handler: Falta de pagina valida para PID 2, end 0 (Pagina 0). PF total: 2
+SO: PF Handler: Alocando novo quadro fisico livre: 30
+SO: PF Handler: Carregando pagina virtual 0 (end 0) do disco...
+SO: PF Handler: ... para quadro fisico 30 (end 300). Offset prog: 0
+SO: PF Handler: Bloqueando processo 2 por E/S de disco ate 965
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 3 (E/S: relógio)
+SO: Processo 3 desbloqueado apos E/S de disco (Page Fault).
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 1 (Erro de execução)
+SO: ESSE AQUI EH O COMP: 0
+SO: Processo PID 3 causou erro de CPU: Página ausente
+SO:   -> PAGE FAULT no endereco virtual 0
+SO: PF Handler: Falta de pagina valida para PID 3, end 0 (Pagina 0). PF total: 2
+SO: PF Handler: Alocando novo quadro fisico livre: 31
+SO: PF Handler: Carregando pagina virtual 0 (end 0) do disco...
+SO: PF Handler: ... para quadro fisico 31 (end 310). Offset prog: 0
+SO: PF Handler: Bloqueando processo 3 por E/S de disco ate 1065
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 3 (E/S: relógio)
+SO: Processo 4 desbloqueado apos E/S de disco (Page Fault).
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 1 (Erro de execução)
+SO: ESSE AQUI EH O COMP: 0
+SO: Processo PID 4 causou erro de CPU: Página ausente
+SO:   -> PAGE FAULT no endereco virtual 0
+SO: PF Handler: Falta de pagina valida para PID 4, end 0 (Pagina 0). PF total: 2
+SO: PF Handler: Alocando novo quadro fisico livre: 32
+SO: PF Handler: Carregando pagina virtual 0 (end 0) do disco...
+SO: PF Handler: ... para quadro fisico 32 (end 320). Offset prog: 0
+SO: PF Handler: Bloqueando processo 4 por E/S de disco ate 1165
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Processo 2 desbloqueado apos E/S de disco (Page Fault).
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 1 (Erro de execução)
+SO: ESSE AQUI EH O COMP: 0
+SO: Processo PID 2 causou erro de CPU: Página ausente
+SO:   -> PAGE FAULT no endereco virtual 0
+SO: PF Handler: Falta de pagina valida para PID 2, end 0 (Pagina 0). PF total: 3
+SO: PF Handler: Alocando novo quadro fisico livre: 33
+SO: PF Handler: Carregando pagina virtual 0 (end 0) do disco...
+SO: PF Handler: ... para quadro fisico 33 (end 330). Offset prog: 0
+SO: PF Handler: Bloqueando processo 2 por E/S de disco ate 1265
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 3 (E/S: relógio)
+SO: Processo 3 desbloqueado apos E/S de disco (Page Fault).
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 1 (Erro de execução)
+SO: ESSE AQUI EH O COMP: 0
+SO: Processo PID 3 causou erro de CPU: Página ausente
+SO:   -> PAGE FAULT no endereco virtual 0
+SO: PF Handler: Falta de pagina valida para PID 3, end 0 (Pagina 0). PF total: 3
+SO: PF Handler: Alocando novo quadro fisico livre: 34
+SO: PF Handler: Carregando pagina virtual 0 (end 0) do disco...
+SO: PF Handler: ... para quadro fisico 34 (end 340). Offset prog: 0
+SO: PF Handler: Bloqueando processo 3 por E/S de disco ate 1365
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 3 (E/S: relógio)
+SO: Processo 4 desbloqueado apos E/S de disco (Page Fault).
+SO: Escalonador Round-Robin em acao.
+SO: recebi IRQ 1 (Erro de execução)
+SO: ESSE AQUI EH O COMP: 0
+SO: Processo PID 4 causou erro de CPU: Página ausente
+SO:   -> PAGE FAULT no endereco virtual 0
+SO: PF Handler: Falta de pagina valida para PID 4, end 0 (Pagina 0). PF total: 3
+SO: PF Handler: Alocando novo quadro fisico livre: 35
+SO: PF Handler: Carregando pagina virtual 0 (end 0) do disco...
+SO: PF Handler: ... para quadro fisico 35 (end 350). Offset prog: 0
+SO: PF Handler: Bloqueando processo 4 por E/S de disco ate 1465
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 3 (E/S: relógio)
+SO: Processo 2 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Escalonador Round-Robin em acao.
-SO: recebi IRQ 3 (E/S: relógio)
+SO: recebi IRQ 1 (Erro de execução)
+SO: ESSE AQUI EH O COMP: 0
+SO: Processo PID 2 causou erro de CPU: Página ausente
+SO:   -> PAGE FAULT no endereco virtual 0
+SO: PF Handler: Falta de pagina valida para PID 2, end 0 (Pagina 0). PF total: 4
+SO: PF Handler: Alocando novo quadro fisico livre: 36
+SO: PF Handler: Carregando pagina virtual 0 (end 0) do disco...
+SO: PF Handler: ... para quadro fisico 36 (end 360). Offset prog: 0
+SO: PF Handler: Bloqueando processo 2 por E/S de disco ate 1565
 SO: Escalonador Round-Robin em acao.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
