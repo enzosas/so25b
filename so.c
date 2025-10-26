@@ -1364,7 +1364,19 @@ static int so_carrega_programa_na_memoria_virtual(so_t *self,
       console_printf("SO: Erro! Programa '%s' nao inicia no comeco de pagina.", nome_prog);
       return -1;
   }
+
+  // --- ALTERACAO T3: Salvar metadados no PCB ---
+  // Salva o nome e o tamanho total da memoria virtual no PCB
+  // O tamanho e o endereco final + 1 (ou tamanho + endereco inicial)
+  processo->tam_memoria = end_virt_ini + prog_tamanho(programa);
+  strncpy(processo->nome_executavel, nome_prog, 99);
+  processo->nome_executavel[99] = '\0';
+
+  console_printf("SO: '%s' registrado para paginacao por demanda. Tamanho: %d bytes (EndVirt: %d a %d).",
+                   nome_prog, processo->tam_memoria - end_virt_ini, end_virt_ini, processo->tam_memoria - 1);
   
+
+  /*
   int end_virt_fim = end_virt_ini + prog_tamanho(programa) - 1;
   int pagina_ini = end_virt_ini / TAM_PAGINA;
   int pagina_fim = end_virt_fim / TAM_PAGINA;
@@ -1400,6 +1412,8 @@ static int so_carrega_programa_na_memoria_virtual(so_t *self,
   
   console_printf("SO: carga na memória virtual V%d-%d F%d-%d npag=%d",
                  end_virt_ini, end_virt_fim, end_fis_ini, end_fis - 1, n_paginas);
+
+  */
   return end_virt_ini;
 }
 
