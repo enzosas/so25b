@@ -19,6 +19,7 @@
 
 #include <stdlib.h>
 #include <stdbool.h>
+#include <string.h>
 
 
 // ---------------------------------------------------------------------
@@ -31,7 +32,14 @@
 
 // Para escolher qual escalonador usar, mude o valor abaixo e recompile.
 #define ESCALONADOR_ATIVO ESCALONADOR_ROUND_ROBIN
-//#define ESCALONADOR_ATIVO ESCALONADOR_PRIORIDADE
+// #define ESCALONADOR_ATIVO ESCALONADOR_PRIORIDADE
+
+// --- CONFIGURACAO DO ALGORITMO DE SUBSTITUICAO ---
+#define ALGORITMO_SUBST_FIFO 1
+#define ALGORITMO_SUBST_LRU  2
+
+// Mude o valor abaixo para ALGORITMO_SUBST_LRU para trocar
+#define ALGORITMO_SUBST_ATIVO ALGORITMO_SUBST_FIFO
 
 // intervalo entre interrupções do relógio
 #define INTERVALO_INTERRUPCAO 50   // em instruções executadas
@@ -58,7 +66,8 @@ typedef enum {
   BLOQUEIO_NENHUM,
   BLOQUEIO_LE,
   BLOQUEIO_ESCR,
-  BLOQUEIO_ESPERA
+  BLOQUEIO_ESPERA,
+  BLOQUEIO_PAGINACAO
 } processo_bloqueio_t;
 
 // a estrutura com as informações de um processo (Process Control Block)
@@ -106,6 +115,12 @@ typedef struct {
   // Cada processo agora tem a sua própria tabela de páginas
   tabpag_t *tabpag;
 
+  // --- NOVOS DO T3 (Implementacao) ---
+  char nome_executavel[100]; // Nome do arquivo para recarregar paginas
+  int tam_memoria;           // Tamanho total (em bytes) da memoria virtual
+  long tempo_termino_io_disco; // Tempo que a E/S de disco terminara
+  int num_page_faults;       // Metrica: contagem de page faults
+
 } processo_t;
 
 struct so_t {
@@ -139,6 +154,20 @@ struct so_t {
   // T3
   // Gestão simples de memória física
   int quadro_livre;
+
+  long tempo_disco_livre; // Tempo global em que o disco ficara livre
+
+  int max_quadros_fisicos;      // Quantidade total de quadros na RAM
+  int n_quadros_ocupados;       // Quantos quadros estao em uso
+  int *fila_quadros_fifo;       // Fila para o algoritmo FIFO (armazena n_quadro)
+  int inicio_fila_fifo;
+  int fim_fila_fifo;
+
+  struct {
+    int processo_idx;     // Indice do processo dono (-1 se livre)
+    int pagina_virtual;   // Pagina virtual mapeada neste quadro
+    unsigned int age;     // Contador de envelhecimento
+  } *tabela_quadros_invertida;
 };
 
 // --- DECLARAÇÕES ANTECIPADAS (PROTÓTIPOS) ---
@@ -149,7 +178,7 @@ static int so_trata_interrupcao(void *argC, int reg_A);
 // Funções auxiliares gerais
 static int so_carrega_programa(so_t *self, int processo_idx, char *nome_do_executavel);
 static int so_carrega_programa_na_memoria_fisica(so_t *self, programa_t *programa);
-static int so_carrega_programa_na_memoria_virtual(so_t *self, programa_t *programa, processo_t *processo, const char *nome_prog);
+static int so_carrega_programa_na_memoria_virtual(so_t *self, programa_t *programa, processo_t *processo, const char *nome_prog, int processo_idx);
 static bool so_copia_str_do_processo(so_t *self, int tam, char str[tam], int end_virt, int processo_idx);
 
 // Funções do ciclo de tratamento de interrupção
@@ -172,6 +201,11 @@ static void so_chamada_escr(so_t *self);
 static void so_chamada_cria_proc(so_t *self);
 static void so_chamada_mata_proc(so_t *self);
 static void so_chamada_espera_proc(so_t *self);
+
+// --- NOVOS PROTOTIPOS T3 ---
+static void so_trata_falta_de_pagina(so_t *self);
+static int so_encontra_quadro_livre(so_t *self);
+static void so_carrega_pagina_do_disco(so_t *self, processo_t *p, int pagina_virtual, int quadro_destino);
 
 #if ESCALONADOR_ATIVO == ESCALONADOR_ROUND_ROBIN
 // Funções da fila (apenas se Round Robin estiver ativo)
@@ -232,6 +266,32 @@ so_t *so_cria(cpu_t *cpu, mem_t *mem, mmu_t *mmu, es_t *es, console_t *console)
   // O primeiro quadro livre é após a memória protegida pelo hardware
   self->quadro_livre = CPU_END_FIM_PROT / TAM_PAGINA + 1;
 
+  self->tempo_disco_livre = 0; // Disco comeca livre
+
+  self->max_quadros_fisicos = mem_tam(self->mem) / TAM_PAGINA;
+  self->n_quadros_ocupados = 0;
+  self->inicio_fila_fifo = 0;
+  self->fim_fila_fifo = 0;
+
+  // Aloca a fila FIFO e a tabela invertida
+  self->fila_quadros_fifo = calloc(self->max_quadros_fisicos, sizeof(int));
+  self->tabela_quadros_invertida = calloc(self->max_quadros_fisicos, sizeof(self->tabela_quadros_invertida[0]));
+
+  if (self->fila_quadros_fifo == NULL || self->tabela_quadros_invertida == NULL) {
+    console_printf("SO: ERRO FATAL ao alocar estruturas de paginacao!");
+    self->erro_interno = true;
+  } 
+
+  // Inicializa a tabela invertida (marca todos os quadros como livres)
+  for (int i = 0; i < self->max_quadros_fisicos; i++) {
+    self->tabela_quadros_invertida[i].processo_idx = -1; // -1 = livre
+    self->tabela_quadros_invertida[i].pagina_virtual = -1;
+  }
+  
+  // O quadro 0 ate self->quadro_livre (SO, ROM, etc) ja estao ocupados
+  // (O seu 'quadro_livre' comeca depois da ROM, o que esta correto)
+  self->n_quadros_ocupados = self->quadro_livre;
+
   // quando a CPU executar uma instrução CHAMAC, deve chamar a função
   //   so_trata_interrupcao, com primeiro argumento um ptr para o SO
   cpu_define_chamaC(self->cpu, so_trata_interrupcao, self);
@@ -254,6 +314,9 @@ void so_destroi(so_t *self)
       tabpag_destroi(self->tabela_processos[i].tabpag);
     }
   }
+
+  free(self->fila_quadros_fifo);
+  free(self->tabela_quadros_invertida);
 
   free(self);
 }
@@ -322,6 +385,8 @@ void so_gera_relatorio(so_t *self)
       } else {
         console_printf("     - (Processo ainda ativo no final da execucao)");
       }
+      
+      console_printf("     - Numero de Faltas de Pagina: %d", p->num_page_faults);
       
       // Preempções
       console_printf("     - Numero de preempcoes: %d", p->num_preempcoes);
@@ -444,6 +509,9 @@ static void so_salva_estado_da_cpu(so_t *self)
   p->regA = a;
   p->regERRO = erro;
   p->regX = x;
+  p->regComplemento = comp;
+
+  console_printf("~SALVANDO ESTADO NA IRQ: PC lido = %d, COMP lido = %d", pc, comp);
 
   // se o processo estava executando, agora ele está pronto para voltar pra fila
   if (p->estado == EXECUTANDO) {
@@ -558,6 +626,36 @@ static void so_trata_pendencias(so_t *self)
             p->pid_esperado = -1;
             p->regA = 0; // Sucesso na espera
             console_printf("SO: Processo %d desbloqueado (pendencias) pois %d terminou.", p->pid, pid_esperado);
+        }
+      } else if (p->tipo_bloqueio == BLOQUEIO_PAGINACAO) {
+        // --- NOVO T3 ---
+        // Bloqueado a espera de E/S de disco (Page Fault)
+        int tempo_agora;
+        es_le(self->es, D_RELOGIO_INSTRUCOES, &tempo_agora);
+        long tempo_termino_io = p->tempo_termino_io_disco;
+
+        if (tempo_agora >= tempo_termino_io) {
+          // E/S de disco terminada! Desbloqueia o processo.
+          console_printf("SO: Processo %d desbloqueado apos E/S de disco (Page Fault).", p->pid);
+          
+          //metricas
+          p->tempo_total_bloqueado += tempo_agora - p->tempo_entrou_no_estado_atual;
+          p->vezes_pronto++;
+          p->tempo_desbloqueio = tempo_agora; // Correto para a metrica de tempo de resposta
+          p->tempo_entrou_no_estado_atual = tempo_agora;
+
+          // Desbloqueia
+          p->estado = PRONTO;
+          #if ESCALONADOR_ATIVO == ESCALONADOR_ROUND_ROBIN
+          insere_fila_prontos(self, i); // Adiciona na fila
+          #endif
+          p->tipo_bloqueio = BLOQUEIO_NENHUM;
+          p->tempo_termino_io_disco = 0;
+
+          // IMPORTANTE: O processo foi interrompido *antes* de executar
+          // a instrucao que causou a falha. O PC salvo aponta
+          // para essa instrucao. Ao retornar, a CPU ira executa-la
+          // novamente, mas agora a pagina esta mapeada.
         }
       }
     }
@@ -794,6 +892,11 @@ static void so_trata_reset(so_t *self)
   p->regERRO = ERR_OK;
   p->regComplemento = 0; // (T3) Inicializa o novo registador
   p->pid_esperado = -1; // Não está esperando por ninguém
+
+  // --- NOVO T3 ---
+  p->tempo_termino_io_disco = 0;
+  p->num_page_faults = 0; // O init nao deve ter page faults se for carregado direto
+
   p->tipo_bloqueio = BLOQUEIO_NENHUM;
 
   // Atribui os dispositivos de E/S padrão (Terminal A)
@@ -839,16 +942,27 @@ static void so_trata_irq_err_cpu(so_t *self)
   
   // (Lógica T3) Imprime uma mensagem de erro detalhada
   console_printf("SO: Processo PID %d causou erro de CPU: %s", p->pid, err_nome(err));
-  if (err == ERR_PAG_AUSENTE) {
+  if (err == ERR_PAG_AUSENTE) 
+  {
     console_printf("SO:   -> PAGE FAULT no endereco virtual %d", complemento);
-    // (A info extra na Page Fault é o endereço que falhou)
-  } else {
+    // Chama o tratador especifico
+    so_trata_falta_de_pagina(self);
+    return; // O tratador decide se mata ou bloqueia o processo
+
+  } 
+  else if (err == ERR_END_INV) 
+  {
+    console_printf("SO:   -> ENDERECO INVALIDO (fisico) %d. Erro grave do SO.", complemento);
+  } 
+  else 
+  {
     console_printf("SO:   -> Info adicional (complemento): %d", complemento);
   }
 
   // Mata o processo que causou o erro.
   // A forma mais limpa de fazer isso é forçar uma chamada de "suicídio"
   // e deixar a função so_chamada_mata_proc fazer a limpeza.
+  console_printf("SO: Matando processo %d devido ao erro.", p->pid);
   p->regX = 0; // 0 significa "matar a si mesmo"
   so_chamada_mata_proc(self);
 
@@ -870,6 +984,42 @@ static void so_trata_irq_relogio(so_t *self)
     self->erro_interno = true;
   }
   
+  // LRU AGING
+  #if ALGORITMO_SUBST_ATIVO == ALGORITMO_SUBST_LRU
+  // Se o LRU estiver ativo, envelhece as paginas
+
+  // O T3 pede para envelhecer apenas as paginas do processo corrente.
+  // Uma implementacao alternativa (e comum) e envelhecer TODAS as paginas
+  // na memoria. Vamos seguir o T3.
+
+  if (self->processo_atual_idx != NENHUM_PROCESSO) {
+    processo_t *p_atual = &self->tabela_processos[self->processo_atual_idx];
+    
+    // Itera por TODOS os quadros fisicos
+    for (int q = 0; q < self->max_quadros_fisicos; q++) {
+      // Verifica se este quadro pertence ao processo atual
+      if (self->tabela_quadros_invertida[q].processo_idx == self->processo_atual_idx) {
+        
+        int pag_virt = self->tabela_quadros_invertida[q].pagina_virtual;
+        unsigned int *age = &self->tabela_quadros_invertida[q].age;
+        
+        // 1. Divide por 2 (rodando a direita)
+        *age = *age >> 1; 
+        
+        // 2. Verifica o bit de acesso (R-bit)
+        if (tabpag_bit_acesso(p_atual->tabpag, pag_virt)) {
+          // 3. Adiciona o bit mais significativo
+          // (Assume unsigned int de 32 bits. 1U << 31)
+          *age = *age | (1U << (sizeof(unsigned int) * 8 - 1));
+          
+          // 4. Zera o bit de acesso na tabela de paginas
+          tabpag_zera_bit_acesso(p_atual->tabpag, pag_virt);
+        }
+      }
+    }
+  }
+  #endif
+
   //metricas
   if (self->processo_atual_idx == -1) {
     self->tempo_ocioso += INTERVALO_INTERRUPCAO;
@@ -1110,6 +1260,13 @@ static void so_chamada_cria_proc(so_t *self)
   novo->regERRO = ERR_OK;
   novo->regComplemento = 0; // (T3) Inicializa o novo registador
   novo->pid_esperado = -1;
+
+  // --- NOVO T3 ---
+  // novo->tam_memoria = 0; // Sera definido por so_carrega_programa
+  // novo->nome_executavel[0] = '\0'; // Sera definido por so_carrega_programa
+  novo->tempo_termino_io_disco = 0;
+  novo->num_page_faults = 0;
+
   //metricas
   novo->prioridade = 0.5;
   novo->num_preempcoes = 0;
@@ -1277,6 +1434,280 @@ static void so_chamada_espera_proc(so_t *self)
 }
 
 
+
+// ---------------------------------------------------------------------
+// TRATAMENTO DE FALTA DE PAGINA (T3) {{{1
+// ---------------------------------------------------------------------
+
+// Define o tempo de "transferencia" do disco (em instrucoes)
+#define TEMPO_TRANSFERENCIA_DISCO 100
+
+// Carrega uma pagina do "disco" (o arquivo .maq) para um quadro da memoria fisica
+static void so_carrega_pagina_do_disco(so_t *self, processo_t *p, int pagina_virtual, int quadro_destino)
+{
+  // 1. Abre o programa
+  programa_t *prog = prog_cria(p->nome_executavel);
+  if (prog == NULL) {
+    console_printf("SO: PF Handler: ERRO FATAL! Nao foi possivel abrir '%s'", p->nome_executavel);
+    // Nao ha muito o que fazer aqui, o processo vai morrer
+    self->erro_interno = true;
+    return;
+  }
+
+  // 2. Calcula o offset no arquivo e o endereco fisico na memoria
+  int end_virt_ini_prog = prog_end_carga(prog);
+  int end_virt_pagina = pagina_virtual * TAM_PAGINA;
+  int end_fis_quadro = quadro_destino * TAM_PAGINA;
+
+  int offset_no_prog = end_virt_pagina - end_virt_ini_prog;
+
+  console_printf("SO: PF Handler: Carregando pagina virtual %d (end %d) do disco...",
+                   pagina_virtual, end_virt_pagina);
+  console_printf("SO: PF Handler: ... para quadro fisico %d (end %d). Offset prog: %d",
+                   quadro_destino, end_fis_quadro, offset_no_prog);
+
+  // 3. Copia a pagina (byte a byte) do programa para a memoria fisica
+  for (int i = 0; i < TAM_PAGINA; i++) {
+    int end_virt_dado = end_virt_ini_prog + offset_no_prog + i;
+    int end_fis_dado = end_fis_quadro + i;
+
+    // O processo pode ser menor que a pagina inteira
+    // E o endereco virtual do dado deve ser >= endereco de carga
+    if (end_virt_dado >= end_virt_ini_prog && end_virt_dado < p->tam_memoria) {
+      int dado = prog_dado(prog, end_virt_dado);
+      mem_escreve(self->mem, end_fis_dado, dado);
+    } else {
+      // Preenche o resto da pagina com 0 (se for fora do .maq)
+      mem_escreve(self->mem, end_fis_dado, 0);
+    }
+  }
+
+  prog_destroi(prog);
+}
+
+// Encontra um quadro livre. Por enquanto, so incrementa o contador global
+// Esta e a implementacao mais simples. Nao ha substituicao de pagina.
+static int so_encontra_quadro_livre(so_t *self)
+{
+  if (self->n_quadros_ocupados < self->max_quadros_fisicos) 
+  {
+    // Ainda ha espaco fisico total
+    
+    // O self->quadro_livre e nosso ponteiro para o proximo quadro
+    // que nunca foi usado.
+    int quadro = self->quadro_livre;
+    self->quadro_livre++;
+    
+    // self->n_quadros_ocupados sera incrementado pelo chamador
+    
+    console_printf("SO: PF Handler: Alocando novo quadro fisico livre: %d", quadro);
+    return quadro;
+
+  } 
+  else 
+  {
+     // MEMORIA CHEIA!
+     console_printf("SO: PF Handler: Memoria fisica cheia. (Ocupados: %d)", self->n_quadros_ocupados);
+     return -1; // Sinaliza que precisa de substituicao
+  }
+}
+
+#if ALGORITMO_SUBST_ATIVO == ALGORITMO_SUBST_LRU
+
+// Implementacao do algoritmo de substituicao LRU (Aging)
+static int so_substitui_pagina_lru(so_t *self, long *tempo_swap_out)
+{
+  *tempo_swap_out = 0;
+
+  // 1. Encontra a vitima (quadro com o menor 'age')
+  int quadro_vitima = -1;
+  unsigned int menor_age = -1; // -1 em unsigned e o maior valor possivel
+
+  // Itera por todos os quadros fisicos
+  for (int q = 0; q < self->max_quadros_fisicos; q++) {
+    // So podemos substituir quadros que estao em uso
+    if (self->tabela_quadros_invertida[q].processo_idx != -1) {
+      // (Quadros do SO/ROM terao processo_idx = -1, entao estao seguros)
+      
+      if (self->tabela_quadros_invertida[q].age < menor_age) {
+        menor_age = self->tabela_quadros_invertida[q].age;
+        quadro_vitima = q;
+      }
+    }
+  }
+
+  // Se (por algum motivo) nao achou (ex: memoria so com ROM), e um erro
+  if (quadro_vitima == -1) {
+      console_printf("SO: LRU ERRO: Nao achou vitima para substituir!");
+      self->erro_interno = true;
+      return 0; // Vai causar um erro mais a frente
+  }
+
+  // 2. Descobre quem era o dono desse quadro
+  int proc_idx_vitima = self->tabela_quadros_invertida[quadro_vitima].processo_idx;
+  int pag_virt_vitima = self->tabela_quadros_invertida[quadro_vitima].pagina_virtual;
+  processo_t *proc_vitima = &self->tabela_processos[proc_idx_vitima];
+
+  console_printf("SO: SUBSTITUICAO LRU: Quadro %d (P%d, Pag %d, Age %u) e a vitima.",
+                 quadro_vitima, proc_vitima->pid, pag_virt_vitima, menor_age);
+
+  // 3. Verifica se a pagina esta "suja" (Dirty Bit)
+  if (tabpag_bit_alteracao(proc_vitima->tabpag, pag_virt_vitima)) {
+    console_printf("SO: LRU: Pagina vitima esta 'suja'. Escrevendo no disco (SWAP OUT).");
+    *tempo_swap_out = TEMPO_TRANSFERENCIA_DISCO;
+  }
+
+  // 4. Invalida a pagina na tabela de paginas do processo vitima
+  tabpag_invalida_pagina(proc_vitima->tabpag, pag_virt_vitima);
+  
+  // 5. Zera os metadados do quadro vitima na tabela invertida
+  // (o processo_idx e pagina_virtual serao atualizados pelo chamador,
+  // mas o 'age' deve ser zerado aqui)
+  self->tabela_quadros_invertida[quadro_vitima].age = 0;
+  
+  // 6. Retorna o quadro que esta pronto para ser usado
+  return quadro_vitima;
+}
+
+#endif
+
+#if ALGORITMO_SUBST_ATIVO == ALGORITMO_SUBST_FIFO
+
+// Implementacao do algoritmo de substituicao FIFO
+static int so_substitui_pagina_fifo(so_t *self, long *tempo_swap_out)
+{
+  *tempo_swap_out = 0; // Por padrao, sem custo de escrita
+
+  // 1. Encontra a vitima (o quadro no inicio da fila FIFO)
+  int quadro_vitima = self->fila_quadros_fifo[self->inicio_fila_fifo];
+  self->inicio_fila_fifo = (self->inicio_fila_fifo + 1) % self->max_quadros_fisicos;
+
+  // 2. Descobre quem era o dono desse quadro
+  int proc_idx_vitima = self->tabela_quadros_invertida[quadro_vitima].processo_idx;
+  int pag_virt_vitima = self->tabela_quadros_invertida[quadro_vitima].pagina_virtual;
+  processo_t *proc_vitima = &self->tabela_processos[proc_idx_vitima];
+
+  console_printf("SO: SUBSTITUICAO FIFO: Quadro %d (P%d, Pag %d) e a vitima.",
+                 quadro_vitima, proc_vitima->pid, pag_virt_vitima);
+
+  // 3. Verifica se a pagina esta "suja" (Dirty Bit)
+  //    (Conforme T3: "copiar a página para a memória secundária se for necessário")
+  if (tabpag_bit_alteracao(proc_vitima->tabpag, pag_virt_vitima)) {
+    console_printf("SO: FIFO: Pagina vitima esta 'suja'. Escrevendo no disco (SWAP OUT).");
+    
+    // TODO-T3: Implementar a escrita real no Swap.
+    // Por enquanto, apenas simulamos o tempo de E/S.
+    *tempo_swap_out = TEMPO_TRANSFERENCIA_DISCO;
+    
+    // (A logica de 'so_trata_falta_de_pagina' ira adicionar
+    // este tempo ao 'tempo_disco_livre')
+  }
+
+  // 4. Invalida a pagina na tabela de paginas do processo vitima
+  tabpag_invalida_pagina(proc_vitima->tabpag, pag_virt_vitima);
+
+  // 5. Retorna o quadro que esta pronto para ser usado
+  return quadro_vitima;
+}
+
+#endif
+
+static void so_trata_falta_de_pagina(so_t *self)
+{
+  processo_t *p = &self->tabela_processos[self->processo_atual_idx];
+  int end_falha = p->regComplemento; // Endereco virtual que causou a falha
+  int pagina_virtual = end_falha / TAM_PAGINA;
+
+  // 1. Verificar se o endereco e valido
+  // O endereco de carga e salvo em programa_t, mas nao no processo_t
+  // Vamos assumir que o endereco de carga e 0 para programas paginados
+  // (O .maq do T3 e montado para 0).
+  // A unica checagem e contra o tamanho maximo.
+  if (end_falha < 0 || end_falha >= p->tam_memoria) {
+    // Endereco invalido! E um "Segmentation Fault"
+    console_printf("SO: PF Handler: ERRO! Endereco %d fora dos limites (0 - %d).",
+                     end_falha, p->tam_memoria - 1);
+    console_printf("SO: Matando processo %d por Segmentation Fault.", p->pid);
+    
+    // Forca o suicidio do processo
+    p->regX = 0;
+    so_chamada_mata_proc(self);
+    return;
+  }
+
+  // 2. Endereco valido. E uma falta de pagina real.
+  p->num_page_faults++; // Metrica
+  console_printf("SO: PF Handler: Falta de pagina valida para PID %d, end %d (Pagina %d). PF total: %d",
+                   p->pid, end_falha, pagina_virtual, p->num_page_faults);
+
+  // 3. Encontrar um quadro livre na memoria fisica
+  int quadro_destino = so_encontra_quadro_livre(self);
+  long tempo_swap_out = 0; // Custo de E/S para salvar pagina suja
+
+  // 4. Se nao ha quadros livres (quadro_destino == -1),
+  //    precisamos rodar o algoritmo de substituicao.
+  if (quadro_destino == -1) {
+    #if ALGORITMO_SUBST_ATIVO == ALGORITMO_SUBST_FIFO
+    quadro_destino = so_substitui_pagina_fifo(self, &tempo_swap_out);
+    #elif ALGORITMO_SUBST_ATIVO == ALGORITMO_SUBST_LRU
+        quadro_destino = so_substitui_pagina_lru(self, &tempo_swap_out);
+    #else
+        #error "Nenhum algoritmo de substituicao valido foi selecionado!"
+    #endif
+  }
+  else
+  {
+    #if ALGORITMO_SUBST_ATIVO == ALGORITMO_SUBST_FIFO
+      self->fila_quadros_fifo[self->fim_fila_fifo] = quadro_destino;
+      self->fim_fila_fifo = (self->fim_fila_fifo + 1) % self->max_quadros_fisicos;
+    #endif
+    self->n_quadros_ocupados++;
+  }
+
+  // 5. Carregar a pagina da "memoria secundaria" (arquivo .maq)
+  //    para o quadro fisico encontrado.
+  so_carrega_pagina_do_disco(self, p, pagina_virtual, quadro_destino);
+
+  // 6. Atualizar a tabela de paginas do processo
+  tabpag_define_quadro(p->tabpag, pagina_virtual, quadro_destino);
+
+  // 6b. Atualizar a tabela de quadros invertida
+  self->tabela_quadros_invertida[quadro_destino].processo_idx = self->processo_atual_idx;
+  self->tabela_quadros_invertida[quadro_destino].pagina_virtual = pagina_virtual;
+  self->tabela_quadros_invertida[quadro_destino].age = 0;
+
+  // 7. Simular o bloqueio por E/S de disco
+  int tempo_agora;
+  es_le(self->es, D_RELOGIO_INSTRUCOES, &tempo_agora);
+
+  // O tempo de transferencia total e o Swap Out (se houver) + Swap In
+  long tempo_transferencia_total = tempo_swap_out + TEMPO_TRANSFERENCIA_DISCO;
+  
+  long tempo_termino_io;
+  if (tempo_agora > self->tempo_disco_livre) {
+    // Disco estava livre
+    tempo_termino_io = tempo_agora + tempo_transferencia_total;
+  } else {
+    // Disco estava ocupado, entra na "fila"
+    tempo_termino_io = self->tempo_disco_livre + tempo_transferencia_total;
+  }
+  self->tempo_disco_livre = tempo_termino_io;
+
+  // 8. Bloquear o processo
+  console_printf("SO: PF Handler: Bloqueando processo %d por E/S de disco ate %ld", p->pid, tempo_termino_io);
+  p->estado = BLOQUEADO;
+  p->vezes_bloqueado++; //metricas
+  p->tipo_bloqueio = BLOQUEIO_PAGINACAO;
+  
+  // Guarda o tempo de termino em nosso novo campo
+  p->tempo_termino_io_disco = tempo_termino_io;
+  
+  // Forca o escalonador a escolher outro processo
+  self->processo_atual_idx = -1;
+  p->regERRO = ERR_OK;
+}
+
+
 // ---------------------------------------------------------------------
 // CARGA DE PROGRAMA {{{1
 // ---------------------------------------------------------------------
@@ -1285,7 +1716,8 @@ static int so_carrega_programa_na_memoria_fisica(so_t *self, programa_t *program
 static int so_carrega_programa_na_memoria_virtual(so_t *self,
                                                   programa_t *programa,
                                                   processo_t *processo,
-                                                  const char *nome_prog);
+                                                  const char *nome_prog,
+                                                  int processo_idx);
 
 // carrega o programa na memória
 // se processo_idx for NENHUM_PROCESSO, carrega o programa na memória física
@@ -1307,7 +1739,7 @@ static int so_carrega_programa(so_t *self, int processo_idx,
     end_carga = so_carrega_programa_na_memoria_fisica(self, programa);
   } else {
     processo_t *p = &self->tabela_processos[processo_idx];
-    end_carga = so_carrega_programa_na_memoria_virtual(self, programa, p, nome_do_executavel);
+    end_carga = so_carrega_programa_na_memoria_virtual(self, programa, p, nome_do_executavel, processo_idx);
   }
 
   prog_destroi(programa);
@@ -1333,7 +1765,8 @@ static int so_carrega_programa_na_memoria_fisica(so_t *self, programa_t *program
 static int so_carrega_programa_na_memoria_virtual(so_t *self,
                                                   programa_t *programa,
                                                   processo_t *processo,
-                                                  const char *nome_prog)
+                                                  const char *nome_prog,
+                                                  int processo_idx)
 {
   // A lógica do T3 para carregar na memória virtual
   // Adaptada para usar a tabela de páginas do processo
@@ -1344,42 +1777,84 @@ static int so_carrega_programa_na_memoria_virtual(so_t *self,
       console_printf("SO: Erro! Programa '%s' nao inicia no comeco de pagina.", nome_prog);
       return -1;
   }
+
+  // --- ALTERACAO T3: Salvar metadados no PCB ---
+  // Salva o nome e o tamanho total da memoria virtual no PCB
+  // O tamanho e o endereco final + 1 (ou tamanho + endereco inicial)
+  processo->tam_memoria = end_virt_ini + prog_tamanho(programa);
+  strncpy(processo->nome_executavel, nome_prog, 99);
+  processo->nome_executavel[99] = '\0';
+
+  console_printf("SO: '%s' registrado para paginacao por demanda. Tamanho: %d bytes (EndVirt: %d a %d).",
+                   nome_prog, processo->tam_memoria - end_virt_ini, end_virt_ini, processo->tam_memoria - 1);
   
-  int end_virt_fim = end_virt_ini + prog_tamanho(programa) - 1;
-  int pagina_ini = end_virt_ini / TAM_PAGINA;
-  int pagina_fim = end_virt_fim / TAM_PAGINA;
-  int n_paginas = pagina_fim - pagina_ini + 1;
 
-  // Aloca quadros de memória física para estas páginas
-  // (Usando a gestão de memória simples do T3, que apenas incrementa)
-  int quadro_ini = self->quadro_livre;
-  int quadro_fim = quadro_ini + n_paginas - 1;
-  // TODO-T3: Verificar se quadro_fim ultrapassa a memória física!
-  
-  console_printf("SO: Mapeando %d paginas (V:%d-%d) para quadros (F:%d-%d)",
-                 n_paginas, pagina_ini, pagina_fim, quadro_ini, quadro_fim);
+  // --- INICIO DA CORRECAO DE LOOP DO INIT ---
+  // O processo 0 (init) nao pode ser paginado por demanda,
+  // pois ele precisa estar na memoria para carregar outros processos.
+  // Vamos pre-carregar todas as suas paginas.
+  if (processo_idx == 0) {
+    console_printf("SO: Pre-carregando 'init.maq' (PID %d) fisicamente...", processo->pid);
 
-  // Mapeia as páginas na tabela de páginas do processo
-  for (int i = 0; i < n_paginas; i++) {
-    tabpag_define_quadro(processo->tabpag, pagina_ini + i, quadro_ini + i);
-  }
-  self->quadro_livre = quadro_fim + 1;
+    // (Este bloco e o codigo original de carga, adaptado)
+    int end_virt_fim = end_virt_ini + prog_tamanho(programa) - 1;
+    int pagina_ini = end_virt_ini / TAM_PAGINA;
+    int pagina_fim = end_virt_fim / TAM_PAGINA;
+    int n_paginas = pagina_fim - pagina_ini + 1;
 
-  // Carrega o programa na memória física, quadro a quadro
-  int end_fis_ini = quadro_ini * TAM_PAGINA;
-  int end_fis = end_fis_ini;
-  for (int end_virt = end_virt_ini; end_virt <= end_virt_fim; end_virt++) {
-    if (mem_escreve(self->mem, end_fis, prog_dado(programa, end_virt)) != ERR_OK) {
-      console_printf("Erro na carga da memória, end virt %d fís %d\n", end_virt,
-                     end_fis);
-      // TODO-T3: Desfazer o mapeamento em caso de erro!
-      return -1;
+    // Aloca quadros de memória física para estas páginas
+    int quadro_ini = self->quadro_livre;
+    int quadro_fim = quadro_ini + n_paginas - 1;
+
+    if (quadro_fim >= self->max_quadros_fisicos) {
+        console_printf("SO: Erro fatal! Nao ha memoria fisica para carregar o 'init.maq'!");
+        self->erro_interno = true;
+        return -1;
     }
-    end_fis++;
-  }
-  
-  console_printf("SO: carga na memória virtual V%d-%d F%d-%d npag=%d",
-                 end_virt_ini, end_virt_fim, end_fis_ini, end_fis - 1, n_paginas);
+
+    console_printf("SO: Mapeando %d paginas (V:%d-%d) para quadros (F:%d-%d)",
+                   n_paginas, pagina_ini, pagina_fim, quadro_ini, quadro_fim);
+
+    // Mapeia as páginas na tabela de páginas do processo
+    for (int i = 0; i < n_paginas; i++) {
+      int pagina_atual = pagina_ini + i;
+      int quadro_atual = quadro_ini + i;
+
+      tabpag_define_quadro(processo->tabpag, pagina_atual, quadro_atual);
+
+      // Atualiza a tabela invertida (IMPORTANTE)
+      self->tabela_quadros_invertida[quadro_atual].processo_idx = processo_idx;
+      self->tabela_quadros_invertida[quadro_atual].pagina_virtual = pagina_atual;
+      self->tabela_quadros_invertida[quadro_atual].age = 0; // Para LRU
+
+      // Adiciona na fila FIFO (IMPORTANTE)
+      #if ALGORITMO_SUBST_ATIVO == ALGORITMO_SUBST_FIFO
+      self->fila_quadros_fifo[self->fim_fila_fifo] = quadro_atual;
+      self->fim_fila_fifo = (self->fim_fila_fifo + 1) % self->max_quadros_fisicos;
+      #endif
+    }
+    self->quadro_livre = quadro_fim + 1;
+    self->n_quadros_ocupados += n_paginas; // Atualiza contador de quadros
+
+    // Carrega o programa na memória física, quadro a quadro
+    int end_fis_ini = quadro_ini * TAM_PAGINA;
+    int end_fis = end_fis_ini;
+    for (int end_virt = end_virt_ini; end_virt <= end_virt_fim; end_virt++) {
+      if (mem_escreve(self->mem, end_fis, prog_dado(programa, end_virt)) != ERR_OK) {
+        console_printf("Erro na carga da memoria, end virt %d fís %d\n", end_virt,
+                       end_fis);
+        return -1; 
+      }
+      end_fis++;
+    }
+    
+    console_printf("SO: carga na memória virtual V%d-%d F%d-%d npag=%d",
+                   end_virt_ini, end_virt_fim, end_fis_ini, end_fis - 1, n_paginas);
+
+  } // Fim do if (processo_idx == 0)
+  // --- FIM DA CORRECAO ---
+
+  // O "return end_virt_ini;" (linha 1681) deve permanecer
   return end_virt_ini;
 }
 
