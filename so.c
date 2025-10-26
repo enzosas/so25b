@@ -34,6 +34,13 @@
 #define ESCALONADOR_ATIVO ESCALONADOR_ROUND_ROBIN
 //#define ESCALONADOR_ATIVO ESCALONADOR_PRIORIDADE
 
+// --- CONFIGURACAO DO ALGORITMO DE SUBSTITUICAO ---
+#define ALGORITMO_SUBST_FIFO 1
+#define ALGORITMO_SUBST_LRU  2
+
+// Mude o valor abaixo para ALGORITMO_SUBST_LRU para trocar
+#define ALGORITMO_SUBST_ATIVO ALGORITMO_SUBST_FIFO
+
 // intervalo entre interrupções do relógio
 #define INTERVALO_INTERRUPCAO 50   // em instruções executadas
 
@@ -159,6 +166,7 @@ struct so_t {
   struct {
     int processo_idx;     // Indice do processo dono (-1 se livre)
     int pagina_virtual;   // Pagina virtual mapeada neste quadro
+    unsigned int age;     // Contador de envelhecimento
   } *tabela_quadros_invertida;
 };
 
@@ -975,6 +983,42 @@ static void so_trata_irq_relogio(so_t *self)
     self->erro_interno = true;
   }
   
+  // LRU AGING
+  #if ALGORITMO_SUBST_ATIVO == ALGORITMO_SUBST_LRU
+  // Se o LRU estiver ativo, envelhece as paginas
+
+  // O T3 pede para envelhecer apenas as paginas do processo corrente.
+  // Uma implementacao alternativa (e comum) e envelhecer TODAS as paginas
+  // na memoria. Vamos seguir o T3.
+
+  if (self->processo_atual_idx != NENHUM_PROCESSO) {
+    processo_t *p_atual = &self->tabela_processos[self->processo_atual_idx];
+    
+    // Itera por TODOS os quadros fisicos
+    for (int q = 0; q < self->max_quadros_fisicos; q++) {
+      // Verifica se este quadro pertence ao processo atual
+      if (self->tabela_quadros_invertida[q].processo_idx == self->processo_atual_idx) {
+        
+        int pag_virt = self->tabela_quadros_invertida[q].pagina_virtual;
+        unsigned int *age = &self->tabela_quadros_invertida[q].age;
+        
+        // 1. Divide por 2 (rodando a direita)
+        *age = *age >> 1; 
+        
+        // 2. Verifica o bit de acesso (R-bit)
+        if (tabpag_bit_acesso(p_atual->tabpag, pag_virt)) {
+          // 3. Adiciona o bit mais significativo
+          // (Assume unsigned int de 32 bits. 1U << 31)
+          *age = *age | (1U << (sizeof(unsigned int) * 8 - 1));
+          
+          // 4. Zera o bit de acesso na tabela de paginas
+          tabpag_zera_bit_acesso(p_atual->tabpag, pag_virt);
+        }
+      }
+    }
+  }
+  #endif
+
   //metricas
   if (self->processo_atual_idx == -1) {
     self->tempo_ocioso += INTERVALO_INTERRUPCAO;
@@ -1467,6 +1511,61 @@ static int so_encontra_quadro_livre(so_t *self)
   }
 }
 
+// Implementacao do algoritmo de substituicao LRU (Aging)
+static int so_substitui_pagina_lru(so_t *self, long *tempo_swap_out)
+{
+  *tempo_swap_out = 0;
+
+  // 1. Encontra a vitima (quadro com o menor 'age')
+  int quadro_vitima = -1;
+  unsigned int menor_age = -1; // -1 em unsigned e o maior valor possivel
+
+  // Itera por todos os quadros fisicos
+  for (int q = 0; q < self->max_quadros_fisicos; q++) {
+    // So podemos substituir quadros que estao em uso
+    if (self->tabela_quadros_invertida[q].processo_idx != -1) {
+      // (Quadros do SO/ROM terao processo_idx = -1, entao estao seguros)
+      
+      if (self->tabela_quadros_invertida[q].age < menor_age) {
+        menor_age = self->tabela_quadros_invertida[q].age;
+        quadro_vitima = q;
+      }
+    }
+  }
+
+  // Se (por algum motivo) nao achou (ex: memoria so com ROM), e um erro
+  if (quadro_vitima == -1) {
+      console_printf("SO: LRU ERRO: Nao achou vitima para substituir!");
+      self->erro_interno = true;
+      return 0; // Vai causar um erro mais a frente
+  }
+
+  // 2. Descobre quem era o dono desse quadro
+  int proc_idx_vitima = self->tabela_quadros_invertida[quadro_vitima].processo_idx;
+  int pag_virt_vitima = self->tabela_quadros_invertida[quadro_vitima].pagina_virtual;
+  processo_t *proc_vitima = &self->tabela_processos[proc_idx_vitima];
+
+  console_printf("SO: SUBSTITUICAO LRU: Quadro %d (P%d, Pag %d, Age %u) e a vitima.",
+                 quadro_vitima, proc_vitima->pid, pag_virt_vitima, menor_age);
+
+  // 3. Verifica se a pagina esta "suja" (Dirty Bit)
+  if (tabpag_bit_alteracao(proc_vitima->tabpag, pag_virt_vitima)) {
+    console_printf("SO: LRU: Pagina vitima esta 'suja'. Escrevendo no disco (SWAP OUT).");
+    *tempo_swap_out = TEMPO_TRANSFERENCIA_DISCO;
+  }
+
+  // 4. Invalida a pagina na tabela de paginas do processo vitima
+  tabpag_invalida_pagina(proc_vitima->tabpag, pag_virt_vitima);
+  
+  // 5. Zera os metadados do quadro vitima na tabela invertida
+  // (o processo_idx e pagina_virtual serao atualizados pelo chamador,
+  // mas o 'age' deve ser zerado aqui)
+  self->tabela_quadros_invertida[quadro_vitima].age = 0;
+  
+  // 6. Retorna o quadro que esta pronto para ser usado
+  return quadro_vitima;
+}
+
 // Implementacao do algoritmo de substituicao FIFO
 static int so_substitui_pagina_fifo(so_t *self, long *tempo_swap_out)
 {
@@ -1545,16 +1644,20 @@ static void so_trata_falta_de_pagina(so_t *self)
   // 4. Se nao ha quadros livres (quadro_destino == -1),
   //    precisamos rodar o algoritmo de substituicao.
   if (quadro_destino == -1) {
-    // Chama o algoritmo de substituicao
+    #if ALGORITMO_SUBST_ATIVO == ALGORITMO_SUBST_FIFO
     quadro_destino = so_substitui_pagina_fifo(self, &tempo_swap_out);
-    substituindo = true;
+    #elif ALGORITMO_SUBST_ATIVO == ALGORITMO_SUBST_LRU
+        quadro_destino = so_substitui_pagina_lru(self, &tempo_swap_out);
+    #else
+        #error "Nenhum algoritmo de substituicao valido foi selecionado!"
+    #endif
   }
   else
   {
-    // Se encontramos um quadro novo (nao substituido),
-    // ele deve ser adicionado a fila FIFO.
-    self->fila_quadros_fifo[self->fim_fila_fifo] = quadro_destino;
-    self->fim_fila_fifo = (self->fim_fila_fifo + 1) % self->max_quadros_fisicos;
+    #if ALGORITMO_SUBST_ATIVO == ALGORITMO_SUBST_FIFO
+      self->fila_quadros_fifo[self->fim_fila_fifo] = quadro_destino;
+      self->fim_fila_fifo = (self->fim_fila_fifo + 1) % self->max_quadros_fisicos;
+    #endif
     self->n_quadros_ocupados++;
   }
 
@@ -1568,6 +1671,7 @@ static void so_trata_falta_de_pagina(so_t *self)
   // 6b. Atualizar a tabela de quadros invertida
   self->tabela_quadros_invertida[quadro_destino].processo_idx = self->processo_atual_idx;
   self->tabela_quadros_invertida[quadro_destino].pagina_virtual = pagina_virtual;
+  self->tabela_quadros_invertida[quadro_destino].age = 0;
 
   // 7. Simular o bloqueio por E/S de disco
   int tempo_agora;
