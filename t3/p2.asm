@@ -7,7 +7,7 @@ N        define 200  ; até quanto vai contar
 CADA     define 25   ; a cada tantos, imprime o valor atual
 
          desv main
-prog     string 'p2  (média CPU, média E/S)                                         '
+prog     string 'p2  (media CPU, media E/S)                                         '
 
 ; chamadas de sistema (ver so.h)
 SO_LE          define 1
