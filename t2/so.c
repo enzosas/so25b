@@ -547,6 +547,7 @@ static void so_escalona(so_t *self)
   // Se um valor inválido for definido em ESCALONADOR_ATIVO, o compilador dará um erro.
   #error "Nenhum escalonador valido foi selecionado em ESCALONADOR_ATIVO!"
 #endif
+  console_printf("SO: Processo escolhido. PID = %d", self->processo_atual_idx);
 }
 
 static int so_despacha(so_t *self)
