@@ -30,18 +30,18 @@
 
 // ESCALONADOR ATIVO ----- MUDE AQUI --------
 #define ESCALONADOR_ATIVO ESCALONADOR_ROUND_ROBIN
-//#define ESCALONADOR_ATIVO ESCALONADOR_PRIORIDADE
+// #define ESCALONADOR_ATIVO ESCALONADOR_PRIORIDADE
 
 
 
 // intervalo entre interrupções do relogio
-#define INTERVALO_INTERRUPCAO 50   // numero de instrucoes executadas entre duas interrupcoes de relogio
+#define INTERVALO_INTERRUPCAO 10   // numero de instrucoes executadas entre duas interrupcoes de relogio
 
 // tamanho da tabela de processos
 #define MAX_PROCESSOS 10
 
 // quantum do escalonador: quantidade de interrupcoes relogio que um processo recebe a partir da execucao (eh resetado em cada execucao)
-#define QUANTUM 2
+#define QUANTUM 10
 
 // os estados em que um processo pode se encontrar
 typedef enum {
@@ -491,11 +491,27 @@ static void so_trata_pendencias(so_t *self)
 
 static void so_escalona(so_t *self)
 {
+  // guarda quem estava executando antes de o escalonador rodar.
+  int idx_anterior = self->processo_atual_idx;
+
+  processo_t *p_atual = NULL;
+  if (self->processo_atual_idx != -1) {
+    p_atual = &self->tabela_processos[self->processo_atual_idx];
+  }
+
   #if ESCALONADOR_ATIVO == ESCALONADOR_ROUND_ROBIN
   console_printf("SO: Escalonador Round-Robin em acao.");
-  // Se o processo que estava a ser executado foi preemptido e ainda está PRONTO,
-  // ele deve voltar para o fim da fila.
-  if (self->processo_atual_idx != -1 && self->tabela_processos[self->processo_atual_idx].estado == PRONTO) 
+
+  // se o processo ainda tem quantum em uma irq relogio, deve voltar para a cpu
+  if (self->processo_atual_idx != -1 && p_atual->estado == PRONTO && self->quantum_restante > 0)  
+  {
+    console_printf("SO: Processo atual ainda tem quantum. Sem escalonamento.");
+    console_printf("SO: Processo segue. PID = %d", self->processo_atual_idx);
+    return;
+  }
+
+  // se o processo que estava a ser executado foi preemptido e ainda está PRONTO, ele deve voltar para o fim da fila.
+  if (self->processo_atual_idx != -1 && p_atual->estado == PRONTO) 
   {
     #if ESCALONADOR_ATIVO == ESCALONADOR_ROUND_ROBIN
     insere_fila_prontos(self, self->processo_atual_idx);
@@ -504,12 +520,9 @@ static void so_escalona(so_t *self)
   // O próximo a ser executado é o primeiro da fila de prontos
   self->processo_atual_idx = remove_fila_prontos(self);
 
-
-
   #elif ESCALONADOR_ATIVO == ESCALONADOR_PRIORIDADE
   console_printf("SO: Escalonador por Prioridade em acao.");
-  // guarda quem estava executando ANTES de o escalonador rodar.
-  int idx_anterior = self->processo_atual_idx;//para contar preempcoes
+  
   
   int melhor_idx = -1;
   double menor_prio = 2.0; // Valor inicial > 1.0
@@ -543,10 +556,16 @@ static void so_escalona(so_t *self)
   // Define o processo escolhido como o próximo a ser executado.
   self->processo_atual_idx = melhor_idx;
 
-#else
+  #else
   // Se um valor inválido for definido em ESCALONADOR_ATIVO, o compilador dará um erro.
   #error "Nenhum escalonador valido foi selecionado em ESCALONADOR_ATIVO!"
-#endif
+  #endif
+  
+  // Se mudou o processo OU se o quantum do anterior acabou
+  if (self->processo_atual_idx != idx_anterior || self->quantum_restante <= 0) 
+  {
+    self->quantum_restante = QUANTUM;
+  }
   console_printf("SO: Processo escolhido. PID = %d", self->processo_atual_idx);
 }
 
@@ -560,8 +579,6 @@ static int so_despacha(so_t *self)
 
   // obtém um ponteiro para o PCB do processo que vai executar
   processo_t *p = &self->tabela_processos[self->processo_atual_idx];
-
-  self->quantum_restante = QUANTUM;
 
   // escreve o estado do processo na memória, de onde a CPU irá restaurá-lo
   if (mem_escreve(self->mem, CPU_END_PC, p->regPC) != ERR_OK ||
@@ -850,6 +867,7 @@ static void so_chamada_escr(so_t *self)
   if (estado != 0) 
   {
     // Dispositivo pronto, realiza a escrita imediatamente
+    console_printf("SO: escrita imediata.");
     int dado = p->regX; // O dado a escrever está no registador X do processo
     if (es_escreve(self->es, tela, dado) != ERR_OK) 
     {
