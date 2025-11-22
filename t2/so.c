@@ -698,7 +698,7 @@ static void so_trata_reset(so_t *self)
 // interrupção gerada quando a CPU identifica um erro
 static void so_trata_irq_err_cpu(so_t *self)
 {
-  err_t err = self->regERRO;
+  err_t err = self->regERRO;  //SDFKSMNKJSEMNFCESLFNMCSLEFNC,SKEFNCLSEKNCF,LESFN
   console_printf("SO: IRQ não tratada -- erro na CPU: %s", err_nome(err));
   self->erro_interno = true;
 }
@@ -907,9 +907,10 @@ static void so_chamada_cria_proc(so_t *self)
     return;
   }
 
-  // 3. Carregar o programa na memória
+  // carregar o programa na memória
   int ender_carga = so_carrega_programa(self, nome_prog);
-  if (ender_carga < 0) {
+  if (ender_carga < 0) 
+  {
     pai->regA = -1; // Retorno de erro: falha ao carregar o programa
     console_printf("SO: Nao foi possivel carregar o programa '%s'.", nome_prog);
     return;
@@ -968,7 +969,7 @@ static void so_chamada_cria_proc(so_t *self)
   insere_fila_prontos(self, novo_idx);
   #endif
 
-  // 5. Retornar o PID do novo processo no registrador A do pai
+  // Retornar o PID do novo processo no registrador A do pai
   pai->regA = novo->pid;
 
   console_printf("SO: Processo '%s' criado com PID %d.", nome_prog, novo->pid);
@@ -1007,7 +1008,7 @@ static void so_chamada_mata_proc(so_t *self)
     return;
   }
 
-  // 2. Mudar o estado do processo para TERMINADO
+  // Mudar o estado do processo para TERMINADO
   processo_t *alvo = &self->tabela_processos[idx_alvo];
 
   //metricas
