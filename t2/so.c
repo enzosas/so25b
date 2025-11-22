@@ -35,7 +35,7 @@
 
 
 // intervalo entre interrupções do relogio
-#define INTERVALO_INTERRUPCAO 10   // numero de instrucoes executadas entre duas interrupcoes de relogio
+#define INTERVALO_INTERRUPCAO 20   // numero de instrucoes executadas entre duas interrupcoes de relogio
 
 // tamanho da tabela de processos
 #define MAX_PROCESSOS 10
