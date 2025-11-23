@@ -675,7 +675,7 @@ static void so_escalona(so_t *self)
   if (self->processo_atual_idx != -1 && p_atual->estado == PRONTO && self->quantum_restante > 0)  
   {
     console_printf("SO: Processo atual ainda tem quantum. Sem escalonamento.");
-    console_printf("SO: Processo segue. PID = %d", self->processo_atual_idx);
+    console_printf("SO: Processo segue. PID = %d", self->tabela_processos[self->processo_atual_idx].pid);
     return;
   }
 
@@ -735,7 +735,7 @@ static void so_escalona(so_t *self)
   {
     self->quantum_restante = QUANTUM;
   }
-  console_printf("SO: Processo escolhido. PID = %d", self->processo_atual_idx);
+  console_printf("SO: Processo escolhido. PID = %d", self->tabela_processos[self->processo_atual_idx].pid);
 }
 
 static int so_despacha(so_t *self)
