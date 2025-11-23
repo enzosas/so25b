@@ -879,7 +879,7 @@ static void so_trata_reset(so_t *self)
 
   // T3
   p->tempo_termino_io_disco = 0;
-  p->num_page_faults = 0; // O init nao deve ter page faults se for carregado direto
+  p->num_page_faults = 0; 
 
   p->tipo_bloqueio = BLOQUEIO_NENHUM;
 
@@ -1744,7 +1744,6 @@ static int so_carrega_programa_na_memoria_virtual(so_t *self,
                    nome_prog, processo->tam_memoria - end_virt_ini, end_virt_ini, processo->tam_memoria - 1);
   
 
-  // --- INICIO DA CORRECAO DE LOOP DO INIT ---
   // O processo 0 (init) nao pode ser paginado por demanda,
   // pois ele precisa estar na memoria para carregar outros processos.
   // Vamos pre-carregar todas as suas paginas.
@@ -1807,7 +1806,6 @@ static int so_carrega_programa_na_memoria_virtual(so_t *self,
                    end_virt_ini, end_virt_fim, end_fis_ini, end_fis - 1, n_paginas);
 
   } // Fim do if (processo_idx == 0)
-  // --- FIM DA CORRECAO ---
 
   // O "return end_virt_ini;" (linha 1681) deve permanecer
   return end_virt_ini;
