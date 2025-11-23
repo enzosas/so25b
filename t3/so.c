@@ -504,8 +504,6 @@ static void so_salva_estado_da_cpu(so_t *self)
   p->regX = x;
   p->regComplemento = comp;
 
-  console_printf("~SALVANDO ESTADO NA IRQ: PC lido = %d, COMP lido = %d", pc, comp);
-
   // se o processo estava executando, agora ele está pronto para voltar pra fila
   if (p->estado == EXECUTANDO) {
     p->estado = PRONTO;
@@ -735,7 +733,11 @@ static void so_escalona(so_t *self)
   {
     self->quantum_restante = QUANTUM;
   }
-  console_printf("SO: Processo escolhido. PID = %d", self->tabela_processos[self->processo_atual_idx].pid);
+  if (self->processo_atual_idx != -1) {
+    console_printf("SO: Processo escolhido. PID = %d", self->tabela_processos[self->processo_atual_idx].pid);
+  } else {
+    console_printf("SO: Nenhum processo pronto. CPU ociosa.");
+  }
 }
 
 static int so_despacha(so_t *self)
@@ -1748,7 +1750,7 @@ static int so_carrega_programa_na_memoria_virtual(so_t *self,
   // pois ele precisa estar na memoria para carregar outros processos.
   // Vamos pre-carregar todas as suas paginas.
   if (processo_idx == 0) {
-    console_printf("SO: Pre-carregando 'init.maq' (PID %d) fisicamente...", processo->pid);
+    console_printf("SO: Pre-carregando 'init.maq' (PID %d) fisicamente...", self->proximo_pid);
 
     // (Este bloco e o codigo original de carga, adaptado)
     int end_virt_fim = end_virt_ini + prog_tamanho(programa) - 1;

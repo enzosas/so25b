@@ -566,7 +566,11 @@ static void so_escalona(so_t *self)
   {
     self->quantum_restante = QUANTUM;
   }
-  console_printf("SO: Processo escolhido. PID = %d", self->tabela_processos[self->processo_atual_idx].pid);
+  if (self->processo_atual_idx != -1) {
+    console_printf("SO: Processo escolhido. PID = %d", self->tabela_processos[self->processo_atual_idx].pid);
+  } else {
+    console_printf("SO: Nenhum processo pronto. CPU ociosa.");
+  }
 }
 
 static int so_despacha(so_t *self)
