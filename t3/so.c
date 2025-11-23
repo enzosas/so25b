@@ -1281,7 +1281,7 @@ static void so_chamada_mata_proc(so_t *self)
     pid_alvo = chamador->pid;
   }
 
-  // 1. Encontrar o processo a ser morto na tabela
+  // encontrar o processo a ser morto na tabela
   int idx_alvo = -1;
   for (int i = 0; i < MAX_PROCESSOS; i++) 
   {
@@ -1292,7 +1292,7 @@ static void so_chamada_mata_proc(so_t *self)
     }
   }
 
-  // Se não encontrou o processo, retorna erro
+  // se não encontrou o processo, retorna erro
   if (idx_alvo == -1) 
   {
     chamador->regA = -1; // Retorno de erro
@@ -1300,7 +1300,7 @@ static void so_chamada_mata_proc(so_t *self)
     return;
   }
 
-  // Mudar o estado do processo para TERMINADO
+  // mudar o estado do processo para TERMINADO
   processo_t *alvo = &self->tabela_processos[idx_alvo];
 
   //metricas
@@ -1316,9 +1316,16 @@ static void so_chamada_mata_proc(so_t *self)
   // Libertar os recursos de memória do processo morto
   if (alvo->tabpag != NULL) {
     console_printf("SO: Libertando tabela de paginas do PID %d.", pid_morto);
-    // TODO-T3: Percorrer a tabela e devolver os quadros para uma lista de livres
-    
-    // AERKJGVMELRAVAEMLKJRVMALEKJRVMALEKRVMALEKRVGMAELRKJVMALEKRJVAMLKEJRVMLK
+
+    for (int i = 0; i < self->max_quadros_fisicos; i++) {
+      // se o quadro i pertence ao processo que está morrendo
+      if (self->tabela_quadros_invertida[i].processo_idx == idx_alvo) {
+        // Marca como livre (-1)
+        self->tabela_quadros_invertida[i].processo_idx = -1;
+        self->tabela_quadros_invertida[i].pagina_virtual = -1;
+        self->tabela_quadros_invertida[i].age = 0; 
+      }
+    }
 
     // Liberta a estrutura da tabela de páginas
     tabpag_destroi(alvo->tabpag);
@@ -1546,6 +1553,12 @@ static int so_substitui_pagina_fifo(so_t *self, long *tempo_swap_out)
 
   // descobre quem era o dono desse quadro
   int proc_idx_vitima = self->tabela_quadros_invertida[quadro_vitima].processo_idx;
+
+  if (proc_idx_vitima == -1) {
+    console_printf("SO: FIFO: Quadro %d estava livre (processo morreu). Reutilizando.", quadro_vitima);
+    return quadro_vitima;
+  }
+
   int pag_virt_vitima = self->tabela_quadros_invertida[quadro_vitima].pagina_virtual;
   processo_t *proc_vitima = &self->tabela_processos[proc_idx_vitima];
 

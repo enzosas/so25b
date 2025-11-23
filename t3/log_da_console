@@ -25,7 +25,6 @@ SO: chamada de sistema 2
 SO: Escalonador Round-Robin em acao.
 SO: Processo atual ainda tem quantum. Sem escalonamento.
 SO: Processo segue. PID = 1
-CMD: 'd 0'
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Interrupcao do relogio, quantum restante = 8
 SO: Escalonador Round-Robin em acao.
@@ -41,6 +40,7 @@ SO: Interrupcao do relogio, quantum restante = 7
 SO: Escalonador Round-Robin em acao.
 SO: Processo atual ainda tem quantum. Sem escalonamento.
 SO: Processo segue. PID = 1
+CMD: 'd 0'
 SO: recebi IRQ 2 (Chamada de sistema)
 SO: chamada de sistema 2
 SO: Escalonador Round-Robin em acao.
@@ -309,16 +309,16 @@ SO: PF Handler: Carregando pagina virtual 0 (end 0) do disco...
 SO: PF Handler: ... para quadro fisico 29 (end 290). Offset prog: 0
 SO: PF Handler: Bloqueando processo 4 por E/S de disco ate 1024
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 2 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -332,19 +332,19 @@ SO: PF Handler: Carregando pagina virtual 7 (end 70) do disco...
 SO: PF Handler: ... para quadro fisico 30 (end 300). Offset prog: 70
 SO: PF Handler: Bloqueando processo 2 por E/S de disco ate 1124
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 3 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -358,16 +358,16 @@ SO: PF Handler: Carregando pagina virtual 7 (end 70) do disco...
 SO: PF Handler: ... para quadro fisico 31 (end 310). Offset prog: 70
 SO: PF Handler: Bloqueando processo 3 por E/S de disco ate 1224
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 4 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -381,16 +381,16 @@ SO: PF Handler: Carregando pagina virtual 7 (end 70) do disco...
 SO: PF Handler: ... para quadro fisico 32 (end 320). Offset prog: 70
 SO: PF Handler: Bloqueando processo 4 por E/S de disco ate 1324
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 2 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -404,19 +404,19 @@ SO: PF Handler: Carregando pagina virtual 8 (end 80) do disco...
 SO: PF Handler: ... para quadro fisico 33 (end 330). Offset prog: 80
 SO: PF Handler: Bloqueando processo 2 por E/S de disco ate 1424
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 3 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -430,16 +430,16 @@ SO: PF Handler: Carregando pagina virtual 9 (end 90) do disco...
 SO: PF Handler: ... para quadro fisico 34 (end 340). Offset prog: 90
 SO: PF Handler: Bloqueando processo 3 por E/S de disco ate 1524
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 4 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -453,19 +453,19 @@ SO: PF Handler: Carregando pagina virtual 8 (end 80) do disco...
 SO: PF Handler: ... para quadro fisico 35 (end 350). Offset prog: 80
 SO: PF Handler: Bloqueando processo 4 por E/S de disco ate 1624
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 2 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -479,16 +479,16 @@ SO: PF Handler: Carregando pagina virtual 9 (end 90) do disco...
 SO: PF Handler: ... para quadro fisico 36 (end 360). Offset prog: 90
 SO: PF Handler: Bloqueando processo 2 por E/S de disco ate 1724
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 3 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -502,16 +502,16 @@ SO: PF Handler: Carregando pagina virtual 14 (end 140) do disco...
 SO: PF Handler: ... para quadro fisico 37 (end 370). Offset prog: 140
 SO: PF Handler: Bloqueando processo 3 por E/S de disco ate 1824
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 4 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -525,19 +525,19 @@ SO: PF Handler: Carregando pagina virtual 9 (end 90) do disco...
 SO: PF Handler: ... para quadro fisico 38 (end 380). Offset prog: 90
 SO: PF Handler: Bloqueando processo 4 por E/S de disco ate 1924
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 2 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -551,16 +551,16 @@ SO: PF Handler: Carregando pagina virtual 14 (end 140) do disco...
 SO: PF Handler: ... para quadro fisico 39 (end 390). Offset prog: 140
 SO: PF Handler: Bloqueando processo 2 por E/S de disco ate 2024
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 3 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -574,16 +574,16 @@ SO: PF Handler: Carregando pagina virtual 15 (end 150) do disco...
 SO: PF Handler: ... para quadro fisico 40 (end 400). Offset prog: 150
 SO: PF Handler: Bloqueando processo 3 por E/S de disco ate 2124
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 4 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -597,19 +597,19 @@ SO: PF Handler: Carregando pagina virtual 14 (end 140) do disco...
 SO: PF Handler: ... para quadro fisico 41 (end 410). Offset prog: 140
 SO: PF Handler: Bloqueando processo 4 por E/S de disco ate 2224
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 2 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -623,16 +623,16 @@ SO: PF Handler: Carregando pagina virtual 15 (end 150) do disco...
 SO: PF Handler: ... para quadro fisico 42 (end 420). Offset prog: 150
 SO: PF Handler: Bloqueando processo 2 por E/S de disco ate 2324
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 3 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -646,16 +646,16 @@ SO: PF Handler: Carregando pagina virtual 16 (end 160) do disco...
 SO: PF Handler: ... para quadro fisico 43 (end 430). Offset prog: 160
 SO: PF Handler: Bloqueando processo 3 por E/S de disco ate 2424
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 4 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -669,19 +669,19 @@ SO: PF Handler: Carregando pagina virtual 15 (end 150) do disco...
 SO: PF Handler: ... para quadro fisico 44 (end 440). Offset prog: 150
 SO: PF Handler: Bloqueando processo 4 por E/S de disco ate 2524
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 2 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -695,16 +695,16 @@ SO: PF Handler: Carregando pagina virtual 16 (end 160) do disco...
 SO: PF Handler: ... para quadro fisico 45 (end 450). Offset prog: 160
 SO: PF Handler: Bloqueando processo 2 por E/S de disco ate 2624
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 3 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -3095,13 +3095,13 @@ SO: PF Handler: Carregando pagina virtual 23 (end 230) do disco...
 SO: PF Handler: ... para quadro fisico 68 (end 680). Offset prog: 230
 SO: PF Handler: Bloqueando processo 4 por E/S de disco ate 8957
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 2 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -3115,19 +3115,19 @@ SO: PF Handler: Carregando pagina virtual 17 (end 170) do disco...
 SO: PF Handler: ... para quadro fisico 69 (end 690). Offset prog: 170
 SO: PF Handler: Bloqueando processo 2 por E/S de disco ate 9057
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 3 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -3141,16 +3141,16 @@ SO: PF Handler: Carregando pagina virtual 18 (end 180) do disco...
 SO: PF Handler: ... para quadro fisico 70 (end 700). Offset prog: 180
 SO: PF Handler: Bloqueando processo 3 por E/S de disco ate 9157
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 4 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -3164,19 +3164,19 @@ SO: PF Handler: Carregando pagina virtual 17 (end 170) do disco...
 SO: PF Handler: ... para quadro fisico 71 (end 710). Offset prog: 170
 SO: PF Handler: Bloqueando processo 4 por E/S de disco ate 9257
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 2 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -3190,16 +3190,16 @@ SO: PF Handler: Carregando pagina virtual 18 (end 180) do disco...
 SO: PF Handler: ... para quadro fisico 72 (end 720). Offset prog: 180
 SO: PF Handler: Bloqueando processo 2 por E/S de disco ate 9357
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 3 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -3213,16 +3213,16 @@ SO: PF Handler: Carregando pagina virtual 19 (end 190) do disco...
 SO: PF Handler: ... para quadro fisico 73 (end 730). Offset prog: 190
 SO: PF Handler: Bloqueando processo 3 por E/S de disco ate 9457
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 4 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -3236,19 +3236,19 @@ SO: PF Handler: Carregando pagina virtual 18 (end 180) do disco...
 SO: PF Handler: ... para quadro fisico 74 (end 740). Offset prog: 180
 SO: PF Handler: Bloqueando processo 4 por E/S de disco ate 9557
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 2 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -3262,16 +3262,16 @@ SO: PF Handler: Carregando pagina virtual 19 (end 190) do disco...
 SO: PF Handler: ... para quadro fisico 75 (end 750). Offset prog: 190
 SO: PF Handler: Bloqueando processo 2 por E/S de disco ate 9657
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 3 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -3285,16 +3285,16 @@ SO: PF Handler: Carregando pagina virtual 24 (end 240) do disco...
 SO: PF Handler: ... para quadro fisico 76 (end 760). Offset prog: 240
 SO: PF Handler: Bloqueando processo 3 por E/S de disco ate 9757
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 4 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -3308,19 +3308,19 @@ SO: PF Handler: Carregando pagina virtual 19 (end 190) do disco...
 SO: PF Handler: ... para quadro fisico 77 (end 770). Offset prog: 190
 SO: PF Handler: Bloqueando processo 4 por E/S de disco ate 9857
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 2 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -3334,16 +3334,16 @@ SO: PF Handler: Carregando pagina virtual 20 (end 200) do disco...
 SO: PF Handler: ... para quadro fisico 78 (end 780). Offset prog: 200
 SO: PF Handler: Bloqueando processo 2 por E/S de disco ate 9957
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 3 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -3357,16 +3357,16 @@ SO: PF Handler: Carregando pagina virtual 20 (end 200) do disco...
 SO: PF Handler: ... para quadro fisico 79 (end 790). Offset prog: 200
 SO: PF Handler: Bloqueando processo 3 por E/S de disco ate 10057
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 4 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -3380,19 +3380,19 @@ SO: PF Handler: Carregando pagina virtual 20 (end 200) do disco...
 SO: PF Handler: ... para quadro fisico 80 (end 800). Offset prog: 200
 SO: PF Handler: Bloqueando processo 4 por E/S de disco ate 10157
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 2 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -3406,16 +3406,16 @@ SO: PF Handler: Carregando pagina virtual 24 (end 240) do disco...
 SO: PF Handler: ... para quadro fisico 81 (end 810). Offset prog: 240
 SO: PF Handler: Bloqueando processo 2 por E/S de disco ate 10257
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 3 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -3434,13 +3434,13 @@ SO: PF Handler: Carregando pagina virtual 21 (end 210) do disco...
 SO: PF Handler: ... para quadro fisico 82 (end 820). Offset prog: 210
 SO: PF Handler: Bloqueando processo 3 por E/S de disco ate 10357
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 4 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -3454,19 +3454,19 @@ SO: PF Handler: Carregando pagina virtual 24 (end 240) do disco...
 SO: PF Handler: ... para quadro fisico 83 (end 830). Offset prog: 240
 SO: PF Handler: Bloqueando processo 4 por E/S de disco ate 10457
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 2 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -3485,13 +3485,13 @@ SO: PF Handler: Carregando pagina virtual 21 (end 210) do disco...
 SO: PF Handler: ... para quadro fisico 84 (end 840). Offset prog: 210
 SO: PF Handler: Bloqueando processo 2 por E/S de disco ate 10557
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 3 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -3505,16 +3505,16 @@ SO: PF Handler: Carregando pagina virtual 22 (end 220) do disco...
 SO: PF Handler: ... para quadro fisico 85 (end 850). Offset prog: 220
 SO: PF Handler: Bloqueando processo 3 por E/S de disco ate 10657
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 4 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -3533,16 +3533,16 @@ SO: PF Handler: Carregando pagina virtual 21 (end 210) do disco...
 SO: PF Handler: ... para quadro fisico 86 (end 860). Offset prog: 210
 SO: PF Handler: Bloqueando processo 4 por E/S de disco ate 10757
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 2 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -3556,16 +3556,16 @@ SO: PF Handler: Carregando pagina virtual 22 (end 220) do disco...
 SO: PF Handler: ... para quadro fisico 87 (end 870). Offset prog: 220
 SO: PF Handler: Bloqueando processo 2 por E/S de disco ate 10857
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 3 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -3640,10 +3640,10 @@ SO: PF Handler: Carregando pagina virtual 22 (end 220) do disco...
 SO: PF Handler: ... para quadro fisico 89 (end 890). Offset prog: 220
 SO: PF Handler: Bloqueando processo 4 por E/S de disco ate 11057
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 2 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -4038,10 +4038,10 @@ SO: PF Handler: Carregando pagina virtual 13 (end 130) do disco...
 SO: PF Handler: ... para quadro fisico 96 (end 960). Offset prog: 130
 SO: PF Handler: Bloqueando processo 3 por E/S de disco ate 12054
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 4 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -4055,19 +4055,19 @@ SO: PF Handler: Carregando pagina virtual 12 (end 120) do disco...
 SO: PF Handler: ... para quadro fisico 97 (end 970). Offset prog: 120
 SO: PF Handler: Bloqueando processo 4 por E/S de disco ate 12154
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 2 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -4081,16 +4081,16 @@ SO: PF Handler: Carregando pagina virtual 12 (end 120) do disco...
 SO: PF Handler: ... para quadro fisico 98 (end 980). Offset prog: 120
 SO: PF Handler: Bloqueando processo 2 por E/S de disco ate 12254
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 3 desbloqueado apos E/S de disco (Page Fault).
 SO: Escalonador Round-Robin em acao.
@@ -6881,6 +6881,1006 @@ SO: Processo escolhido. PID = 3
 SO: recebi IRQ 2 (Chamada de sistema)
 SO: chamada de sistema 8
 SO: Libertando tabela de paginas do PID 3.
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
 SO: Processo com PID 3 terminado.
 SO: Escalonador Round-Robin em acao.
 SO: Processo escolhido. PID = 4
@@ -7419,10 +8419,10 @@ SO: recebi IRQ 2 (Chamada de sistema)
 SO: chamada de sistema 2
 SO: Processo 4 bloqueado esperando por saida.
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 2 desbloqueado apos escrita.
 SO: Escalonador Round-Robin em acao.
@@ -9515,6 +10515,1006 @@ SO: Processo escolhido. PID = 4
 SO: recebi IRQ 2 (Chamada de sistema)
 SO: chamada de sistema 8
 SO: Libertando tabela de paginas do PID 4.
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
 SO: Processo com PID 4 terminado.
 SO: Escalonador Round-Robin em acao.
 SO: Processo escolhido. PID = 2
@@ -9687,33 +11687,13 @@ SO: recebi IRQ 2 (Chamada de sistema)
 SO: chamada de sistema 2
 SO: Processo 2 bloqueado esperando por saida.
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Processo 2 desbloqueado apos escrita.
-SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 2
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 9
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 2
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: Processo 2 bloqueado esperando por saida.
-SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 2 desbloqueado apos escrita.
 SO: Escalonador Round-Robin em acao.
@@ -9727,31 +11707,13 @@ SO: recebi IRQ 2 (Chamada de sistema)
 SO: chamada de sistema 2
 SO: Processo 2 bloqueado esperando por saida.
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Processo 2 desbloqueado apos escrita.
-SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 2
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: Processo 2 bloqueado esperando por saida.
-SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 2 desbloqueado apos escrita.
 SO: Escalonador Round-Robin em acao.
@@ -9765,13 +11727,51 @@ SO: recebi IRQ 2 (Chamada de sistema)
 SO: chamada de sistema 2
 SO: Processo 2 bloqueado esperando por saida.
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Processo 2 desbloqueado apos escrita.
+SO: Escalonador Round-Robin em acao.
+SO: Processo escolhido. PID = 2
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 2
+SO: Processo 2 bloqueado esperando por saida.
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Processo 2 desbloqueado apos escrita.
+SO: Escalonador Round-Robin em acao.
+SO: Processo escolhido. PID = 2
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 9
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 2
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 2
+SO: Processo 2 bloqueado esperando por saida.
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Processo 2 desbloqueado apos escrita.
 SO: Escalonador Round-Robin em acao.
@@ -9779,897 +11779,2812 @@ SO: Processo escolhido. PID = 2
 SO: recebi IRQ 2 (Chamada de sistema)
 SO: chamada de sistema 8
 SO: Libertando tabela de paginas do PID 2.
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
+banana
 SO: Processo com PID 2 terminado.
 SO: Processo 1 desbloqueado pois processo 2 terminou.
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1487606945
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
 CMD: 'f'
 Fim da execução.
