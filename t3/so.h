@@ -18,6 +18,8 @@ so_t *so_cria(cpu_t *cpu, mem_t *mem, mmu_t *mmu,
               es_t *es, console_t *console);
 void so_destroi(so_t *self);
 
+void so_gera_relatorio(so_t *self); 
+
 // Chamadas de sistema
 // Uma chamada de sistema é realizada colocando a identificação da
 //   chamada (um dos valores abaixo) no registrador A e executando a

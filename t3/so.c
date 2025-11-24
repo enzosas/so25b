@@ -219,7 +219,7 @@ static int remove_fila_prontos(so_t *self);
 #endif
 
 // Função de relatório
-void so_gera_relatorio(so_t *self); // <-- Tornar esta não-estática se chamada de fora
+void so_gera_relatorio(so_t *self); 
 
 // função de tratamento de interrupção (entrada no SO)
 static int so_trata_interrupcao(void *argC, int reg_A);
