@@ -494,13 +494,14 @@ static void so_escalona(so_t *self)
   // guarda quem estava executando antes de o escalonador rodar.
   int idx_anterior = self->processo_atual_idx;
 
+  
+  #if ESCALONADOR_ATIVO == ESCALONADOR_ROUND_ROBIN
+
+  console_printf("SO: Escalonador Round-Robin em acao.");
   processo_t *p_atual = NULL;
   if (self->processo_atual_idx != -1) {
     p_atual = &self->tabela_processos[self->processo_atual_idx];
   }
-
-  #if ESCALONADOR_ATIVO == ESCALONADOR_ROUND_ROBIN
-  console_printf("SO: Escalonador Round-Robin em acao.");
 
   // se o processo ainda tem quantum em uma irq relogio, deve voltar para a cpu
   if (self->processo_atual_idx != -1 && p_atual->estado == PRONTO && self->quantum_restante > 0)  
