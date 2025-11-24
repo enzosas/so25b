@@ -43,7 +43,7 @@
 #define ALGORITMO_SUBST_LRU  2
 
 // Mude o valor abaixo para ALGORITMO_SUBST_LRU para trocar
-#define ALGORITMO_SUBST_ATIVO ALGORITMO_SUBST_FIFO
+#define ALGORITMO_SUBST_ATIVO ALGORITMO_SUBST_LRU
 
 // intervalo entre interrupções do relogio
 #define INTERVALO_INTERRUPCAO 20   // numero de instrucoes executadas entre duas interrupcoes de relogio
@@ -117,6 +117,7 @@ typedef struct {
 
   // cada processo agora tem a sua própria tabela de paginas
   tabpag_t *tabpag;
+  int end_disco;
 
   char nome_executavel[100]; // Nome do arquivo para recarregar paginas
   int tam_memoria;           // Tamanho total (em bytes) da memoria virtual
@@ -132,6 +133,9 @@ struct so_t {
   es_t *es;
   console_t *console;
   bool erro_interno;
+
+  mem_t *mem_secundaria;
+  int topo_uso_disco;
 
   processo_t tabela_processos[MAX_PROCESSOS];
   int processo_atual_idx;
@@ -299,6 +303,9 @@ so_t *so_cria(cpu_t *cpu, mem_t *mem, mmu_t *mmu, es_t *es, console_t *console)
   // Desliga a MMU no início (sem tabela de páginas global)
   mmu_define_tabpag(self->mmu, NULL);
 
+  self->mem_secundaria = mem_cria(8192); 
+  self->topo_uso_disco = 0;
+
   return self;
 }
 
@@ -312,9 +319,12 @@ void so_destroi(so_t *self)
       tabpag_destroi(self->tabela_processos[i].tabpag);
     }
   }
-
   free(self->fila_quadros_fifo);
   free(self->tabela_quadros_invertida);
+  
+  if (self->mem_secundaria != NULL) {
+    mem_destroi(self->mem_secundaria);
+  }
 
   free(self);
 }
@@ -1422,42 +1432,22 @@ static void so_chamada_espera_proc(so_t *self)
 // Carrega uma pagina do "disco" (o arquivo .maq) para um quadro da memoria fisica
 static void so_carrega_pagina_do_disco(so_t *self, processo_t *p, int pagina_virtual, int quadro_destino)
 {
-  // abre o programa
-  programa_t *prog = prog_cria(p->nome_executavel);
-  if (prog == NULL) {
-    console_printf("SO: PF Handler: ERRO FATAL! Nao foi possivel abrir '%s'", p->nome_executavel);
-    // Nao ha muito o que fazer aqui, o processo vai morrer
-    self->erro_interno = true;
-    return;
-  }
+  int end_disco_pagina = p->end_disco + (pagina_virtual * TAM_PAGINA);
+  int end_fisico_quadro = quadro_destino * TAM_PAGINA;
 
-  // calcula o offset no arquivo e o endereco fisico na memoria
-  int end_virt_ini_prog = prog_end_carga(prog);
-  int end_virt_pagina = pagina_virtual * TAM_PAGINA;
-  int end_fis_quadro = quadro_destino * TAM_PAGINA;
+  console_printf("SO: SWAP IN: Lendo Pagina Virt %d do Disco (End %d) para Quadro Fis %d", pagina_virtual, end_disco_pagina, quadro_destino);
 
-  int offset_no_prog = end_virt_pagina - end_virt_ini_prog;
-
-  console_printf("SO: PF Handler: Carregando pagina virtual %d (end %d) do disco...", pagina_virtual, end_virt_pagina);
-  console_printf("SO: PF Handler: ... para quadro fisico %d (end %d). Offset prog: %d", quadro_destino, end_fis_quadro, offset_no_prog);
-
-  // copia a pagina (byte a byte) do programa para a memoria fisica
   for (int i = 0; i < TAM_PAGINA; i++) {
-    int end_virt_dado = end_virt_ini_prog + offset_no_prog + i;
-    int end_fis_dado = end_fis_quadro + i;
-
-    // O processo pode ser menor que a pagina inteira
-    // E o endereco virtual do dado deve ser >= endereco de carga
-    if (end_virt_dado >= end_virt_ini_prog && end_virt_dado < p->tam_memoria) {
-      int dado = prog_dado(prog, end_virt_dado);
-      mem_escreve(self->mem, end_fis_dado, dado);
+    int dado;
+    // Lê do disco
+    if (mem_le(self->mem_secundaria, end_disco_pagina + i, &dado) == ERR_OK) {
+      // Escreve na RAM
+      mem_escreve(self->mem, end_fisico_quadro + i, dado);
     } else {
-      // Preenche o resto da pagina com 0 (se for fora do .maq)
-      mem_escreve(self->mem, end_fis_dado, 0);
+      // Se ler fora do disco (ex: pagina não inicializada), escreve 0
+      mem_escreve(self->mem, end_fisico_quadro + i, 0);
     }
   }
-
-  prog_destroi(prog);
 }
 
 // Encontra um quadro livre. Por enquanto, so incrementa o contador global
@@ -1492,19 +1482,19 @@ static int so_encontra_quadro_livre(so_t *self)
 // Implementacao do algoritmo de substituicao LRU (Aging)
 static int so_substitui_pagina_lru(so_t *self, long *tempo_swap_out)
 {
-  *tempo_swap_out = 0;
 
   // encontra a vitima (quadro com o menor 'age')
   int quadro_vitima = -1;
   unsigned int menor_age = -1; // -1 em unsigned e o maior valor possivel
 
-  // Itera por todos os quadros fisicos
-  for (int q = 0; q < self->max_quadros_fisicos; q++) {
-    // So podemos substituir quadros que estao em uso
-    if (self->tabela_quadros_invertida[q].processo_idx != -1) {
-      // (Quadros do SO/ROM terao processo_idx = -1, entao estao seguros)
-      
-      if (self->tabela_quadros_invertida[q].age < menor_age) {
+  // itera por todos os quadros fisicos
+  for (int q = 0; q < self->max_quadros_fisicos; q++) 
+  {
+    // quadro deve estar em uso
+    if (self->tabela_quadros_invertida[q].processo_idx != -1) 
+    {
+      if (self->tabela_quadros_invertida[q].age < menor_age) 
+      {
         menor_age = self->tabela_quadros_invertida[q].age;
         quadro_vitima = q;
       }
@@ -1512,9 +1502,11 @@ static int so_substitui_pagina_lru(so_t *self, long *tempo_swap_out)
   }
 
   // Se (por algum motivo) nao achou (ex: memoria so com ROM), e um erro
-  if (quadro_vitima == -1) {
+  if (quadro_vitima == -1) 
+  {
       console_printf("SO: LRU ERRO: Nao achou vitima para substituir!");
       self->erro_interno = true;
+      *tempo_swap_out = 0;
       return 0; // Vai causar um erro mais a frente
   }
 
@@ -1529,7 +1521,24 @@ static int so_substitui_pagina_lru(so_t *self, long *tempo_swap_out)
   if (tabpag_bit_alteracao(proc_vitima->tabpag, pag_virt_vitima)) 
   {
     console_printf("SO: LRU: Pagina vitima esta 'suja'. Escrevendo no disco (SWAP OUT).");
+
+    int end_fisico_origem = quadro_vitima * TAM_PAGINA;
+    int end_disco_destino = proc_vitima->end_disco + (pag_virt_vitima * TAM_PAGINA);
+
+    for (int i = 0; i < TAM_PAGINA; i++) 
+    {
+      int dado;
+      if (mem_le(self->mem, end_fisico_origem + i, &dado) == ERR_OK) 
+      {
+          mem_escreve(self->mem_secundaria, end_disco_destino + i, dado);
+      }
+    }
     *tempo_swap_out = TEMPO_TRANSFERENCIA_DISCO;
+  }
+  else
+  {
+    console_printf("SO: LRU: Pagina %d do P%d (Quadro %d, Age %u) esta LIMPA. Swap out desnecessario.", pag_virt_vitima, proc_vitima->pid, quadro_vitima, menor_age);
+    *tempo_swap_out = 0;
   }
 
   // invalida a pagina na tabela de paginas do processo vitima
@@ -1549,17 +1558,14 @@ static int so_substitui_pagina_lru(so_t *self, long *tempo_swap_out)
 // Implementacao do algoritmo de substituicao FIFO
 static int so_substitui_pagina_fifo(so_t *self, long *tempo_swap_out)
 {
-  *tempo_swap_out = 0; // Por padrao, sem custo de escrita
-
-  // encontra a vitima (o quadro no inicio da fila FIFO)
   int quadro_vitima = self->fila_quadros_fifo[self->inicio_fila_fifo];
   self->inicio_fila_fifo = (self->inicio_fila_fifo + 1) % self->max_quadros_fisicos;
 
   // descobre quem era o dono desse quadro
   int proc_idx_vitima = self->tabela_quadros_invertida[quadro_vitima].processo_idx;
-
   if (proc_idx_vitima == -1) {
     console_printf("SO: FIFO: Quadro %d estava livre (processo morreu). Reutilizando.", quadro_vitima);
+    *tempo_swap_out = 0;
     return quadro_vitima;
   }
 
@@ -1570,19 +1576,27 @@ static int so_substitui_pagina_fifo(so_t *self, long *tempo_swap_out)
                  quadro_vitima, proc_vitima->pid, pag_virt_vitima);
 
   // verifica se a pagina esta "suja" (Dirty Bit)
+  
   if (tabpag_bit_alteracao(proc_vitima->tabpag, pag_virt_vitima)) {
     console_printf("SO: FIFO: Pagina vitima esta 'suja'. Escrevendo no disco (SWAP OUT).");
+
+    int end_fisico_origem = quadro_vitima * TAM_PAGINA;
+    int end_disco_destino = proc_vitima->end_disco + (pag_virt_vitima * TAM_PAGINA);
     
-    // TODO-T3: Implementar a escrita real no Swap.
+    // copia o conteudo da pagina da RAM de volta para o Disco
+    for (int i = 0; i < TAM_PAGINA; i++) {
+      int dado;
+      if (mem_le(self->mem, end_fisico_origem + i, &dado) == ERR_OK) {
+          mem_escreve(self->mem_secundaria, end_disco_destino + i, dado);
+      }
+    }
 
-    //AJFNKJEANFVKJSRGNVKJRDNGVKJDRNGVKJDRNGVKJDRNG
-
-
-    // Por enquanto, apenas simulamos o tempo de E/S.
     *tempo_swap_out = TEMPO_TRANSFERENCIA_DISCO;
-    
-    // (A logica de 'so_trata_falta_de_pagina' ira adicionar
-    // este tempo ao 'tempo_disco_livre')
+  }
+  else
+  {
+    console_printf("SO: FIFO: Pagina %d do PID %d (Quadro %d) esta LIMPA. Swap out desnecessario.", pag_virt_vitima, proc_vitima->pid, quadro_vitima);
+    *tempo_swap_out = 0;
   }
 
   // invalida a pagina na tabela de paginas do processo vitima
@@ -1736,46 +1750,48 @@ static int so_carrega_programa_na_memoria_fisica(so_t *self, programa_t *program
   return end_ini;
 }
 
-static int so_carrega_programa_na_memoria_virtual(so_t *self,
-                                                  programa_t *programa,
-                                                  processo_t *processo,
-                                                  const char *nome_prog,
-                                                  int processo_idx)
-{
-  // A lógica do T3 para carregar na memória virtual
-  // Adaptada para usar a tabela de páginas do processo
-  
+static int so_carrega_programa_na_memoria_virtual(so_t *self, programa_t *programa, processo_t *processo, const char *nome_prog, int processo_idx)
+{ 
   int end_virt_ini = prog_end_carga(programa);
-  // o código abaixo só funciona se o programa iniciar no início de uma página
+  int tam_prog = prog_tamanho(programa);
+
+  /// verifica alinhamento
   if ((end_virt_ini % TAM_PAGINA) != 0) {
       console_printf("SO: Erro! Programa '%s' nao inicia no comeco de pagina.", nome_prog);
       return -1;
   }
 
-  // --- ALTERACAO T3: Salvar metadados no PCB ---
-  // Salva o nome e o tamanho total da memoria virtual no PCB
-  // O tamanho e o endereco final + 1 (ou tamanho + endereco inicial)
-  processo->tam_memoria = end_virt_ini + prog_tamanho(programa);
+  processo->tam_memoria = end_virt_ini + tam_prog;
+
+  // nome do processo
   strncpy(processo->nome_executavel, nome_prog, 99);
   processo->nome_executavel[99] = '\0';
 
+  processo->end_disco = self->topo_uso_disco;
+  self->topo_uso_disco += processo->tam_memoria;
+
+  for (int i = 0; i < tam_prog; i++) 
+  {
+    int end_virt = end_virt_ini + i;
+    int dado = prog_dado(programa, end_virt);
+    mem_escreve(self->mem_secundaria, processo->end_disco + end_virt, dado);
+  }
+
   console_printf("SO: '%s' registrado para paginacao por demanda. Tamanho: %d bytes (EndVirt: %d a %d).",
-                   nome_prog, processo->tam_memoria - end_virt_ini, end_virt_ini, processo->tam_memoria - 1);
+                  nome_prog, processo->tam_memoria - end_virt_ini, end_virt_ini, processo->tam_memoria - 1);
   
 
-  // O processo 0 (init) nao pode ser paginado por demanda,
-  // pois ele precisa estar na memoria para carregar outros processos.
-  // Vamos pre-carregar todas as suas paginas.
-  if (processo_idx == 0) {
+  // O processo 0 (init) nao pode ser paginado por demanda, pois ele precisa estar na memoria para carregar outros processos.
+  // precarrega-lo-emos!
+  if (processo_idx == 0) 
+  {
     console_printf("SO: Pre-carregando 'init.maq' (PID %d) fisicamente...", self->proximo_pid);
 
-    // (Este bloco e o codigo original de carga, adaptado)
-    int end_virt_fim = end_virt_ini + prog_tamanho(programa) - 1;
     int pagina_ini = end_virt_ini / TAM_PAGINA;
-    int pagina_fim = end_virt_fim / TAM_PAGINA;
+    int pagina_fim = (end_virt_ini + tam_prog - 1) / TAM_PAGINA;
     int n_paginas = pagina_fim - pagina_ini + 1;
 
-    // Aloca quadros de memória física para estas páginas
+    // aloca quadros de memória física para estas páginas
     int quadro_ini = self->quadro_livre;
     int quadro_fim = quadro_ini + n_paginas - 1;
 
@@ -1789,44 +1805,43 @@ static int so_carrega_programa_na_memoria_virtual(so_t *self,
                    n_paginas, pagina_ini, pagina_fim, quadro_ini, quadro_fim);
 
     // Mapeia as páginas na tabela de páginas do processo
-    for (int i = 0; i < n_paginas; i++) {
+    for (int i = 0; i < n_paginas; i++) 
+    {
       int pagina_atual = pagina_ini + i;
       int quadro_atual = quadro_ini + i;
 
       tabpag_define_quadro(processo->tabpag, pagina_atual, quadro_atual);
 
-      // Atualiza a tabela invertida (IMPORTANTE)
+      // atualiza a tabela invertida
       self->tabela_quadros_invertida[quadro_atual].processo_idx = processo_idx;
       self->tabela_quadros_invertida[quadro_atual].pagina_virtual = pagina_atual;
-      self->tabela_quadros_invertida[quadro_atual].age = 0; // Para LRU
+      self->tabela_quadros_invertida[quadro_atual].age = 0;
 
-      // Adiciona na fila FIFO (IMPORTANTE)
+      // adiciona na fila FIFO
       #if ALGORITMO_SUBST_ATIVO == ALGORITMO_SUBST_FIFO
       self->fila_quadros_fifo[self->fim_fila_fifo] = quadro_atual;
       self->fim_fila_fifo = (self->fim_fila_fifo + 1) % self->max_quadros_fisicos;
       #endif
+
+      int end_base_quadro = quadro_atual * TAM_PAGINA;
+      int end_base_virt_pag = pagina_atual * TAM_PAGINA;
+
+      for (int offset = 0; offset < TAM_PAGINA; offset++) 
+      {
+        int end_v = end_base_virt_pag + offset;
+        int val = 0;
+        if (end_v >= end_virt_ini && end_v < (end_virt_ini + tam_prog)) 
+        {
+          val = prog_dado(programa, end_v);
+        }
+        mem_escreve(self->mem, end_base_quadro + offset, val);
+      }
     }
     self->quadro_livre = quadro_fim + 1;
     self->n_quadros_ocupados += n_paginas; // Atualiza contador de quadros
-
-    // Carrega o programa na memória física, quadro a quadro
-    int end_fis_ini = quadro_ini * TAM_PAGINA;
-    int end_fis = end_fis_ini;
-    for (int end_virt = end_virt_ini; end_virt <= end_virt_fim; end_virt++) {
-      if (mem_escreve(self->mem, end_fis, prog_dado(programa, end_virt)) != ERR_OK) {
-        console_printf("Erro na carga da memoria, end virt %d fís %d\n", end_virt,
-                       end_fis);
-        return -1; 
-      }
-      end_fis++;
-    }
     
-    console_printf("SO: carga na memória virtual V%d-%d F%d-%d npag=%d",
-                   end_virt_ini, end_virt_fim, end_fis_ini, end_fis - 1, n_paginas);
-
-  } // Fim do if (processo_idx == 0)
-
-  // O "return end_virt_ini;" (linha 1681) deve permanecer
+    console_printf("SO: Init carregado em RAM (Quadros %d-%d)", quadro_ini, quadro_fim);
+  }
   return end_virt_ini;
 }
 
