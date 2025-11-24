@@ -523,18 +523,6 @@ static void so_escalona(so_t *self)
 
   #elif ESCALONADOR_ATIVO == ESCALONADOR_PRIORIDADE
   console_printf("SO: Escalonador por Prioridade em acao.");
-  
-  processo_t *p_atual = NULL;
-  if (self->processo_atual_idx != -1) {
-    p_atual = &self->tabela_processos[self->processo_atual_idx];
-  }
-
-  if (self->processo_atual_idx != -1 && p_atual->estado == PRONTO && self->quantum_restante > 0)  
-  {
-    console_printf("SO: Processo atual ainda tem quantum. Sem escalonamento.");
-    console_printf("SO: Processo segue. PID = %d", self->tabela_processos[self->processo_atual_idx].pid);
-    return;
-  }
 
   int melhor_idx = -1;
   double menor_prio = 2.0; // Valor inicial > 1.0
