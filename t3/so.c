@@ -1346,6 +1346,11 @@ static void so_chamada_mata_proc(so_t *self)
       p->pid_esperado = -1;
       p->regA = 0; // Retorna 0 (sucesso) para a chamada SO_ESPERA_PROC
 
+      #if ESCALONADOR_ATIVO == ESCALONADOR_ROUND_ROBIN
+      // coloca o novo processo no fim da fila de prontos
+      insere_fila_prontos(self, i);
+      #endif
+
       console_printf("SO: Processo %d desbloqueado pois processo %d terminou.", p->pid, pid_morto);
     }
   }
@@ -1355,7 +1360,6 @@ static void so_chamada_mata_proc(so_t *self)
       self->processo_atual_idx = -1;
   }
 
-  // 3. Retornar 0 (sucesso) no registrador A do processo chamador
   chamador->regA = 0;
 }
 

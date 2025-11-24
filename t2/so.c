@@ -1013,7 +1013,7 @@ static void so_chamada_mata_proc(so_t *self)
     pid_alvo = chamador->pid;
   }
 
-  // 1. Encontrar o processo a ser morto na tabela
+  // encontrar o processo a ser morto na tabela
   int idx_alvo = -1;
   for (int i = 0; i < MAX_PROCESSOS; i++) 
   {
@@ -1024,7 +1024,7 @@ static void so_chamada_mata_proc(so_t *self)
     }
   }
 
-  // Se não encontrou o processo, retorna erro
+  // se não encontrou o processo, retorna erro
   if (idx_alvo == -1) 
   {
     chamador->regA = -1; // Retorno de erro
@@ -1032,7 +1032,7 @@ static void so_chamada_mata_proc(so_t *self)
     return;
   }
 
-  // Mudar o estado do processo para TERMINADO
+  // mudar o estado do processo para TERMINADO
   processo_t *alvo = &self->tabela_processos[idx_alvo];
 
   //metricas
@@ -1052,11 +1052,15 @@ static void so_chamada_mata_proc(so_t *self)
     processo_t *p = &self->tabela_processos[i];
     if (p->estado == BLOQUEADO && p->tipo_bloqueio == BLOQUEIO_ESPERA && p->pid_esperado == pid_morto) 
     {
-      
       p->estado = PRONTO;
       p->tipo_bloqueio = BLOQUEIO_NENHUM;
       p->pid_esperado = -1;
       p->regA = 0; // Retorna 0 (sucesso) para a chamada SO_ESPERA_PROC
+
+      #if ESCALONADOR_ATIVO == ESCALONADOR_ROUND_ROBIN
+      // coloca o novo processo no fim da fila de prontos
+      insere_fila_prontos(self, i);
+      #endif
 
       console_printf("SO: Processo %d desbloqueado pois processo %d terminou.", p->pid, pid_morto);
     }

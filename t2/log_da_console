@@ -47,6 +47,7 @@ SO: Interrupcao do relogio, quantum restante = 4
 SO: Escalonador Round-Robin em acao.
 SO: Processo atual ainda tem quantum. Sem escalonamento.
 SO: Processo segue. PID = 1
+CMD: 'd 1'
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Interrupcao do relogio, quantum restante = 3
 SO: Escalonador Round-Robin em acao.
@@ -60,257 +61,257 @@ SO: Processo atual ainda tem quantum. Sem escalonamento.
 SO: Processo segue. PID = 1
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Interrupcao do relogio, quantum restante = 2
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 1
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 0
+SO: Quantum esgotado para o processo 1. Preempcao.
+SO: Escalonador Round-Robin em acao.
+SO: Processo escolhido. PID = 1
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 2
+SO: escrita imediata.
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 9
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 8
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 7
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 2
+SO: escrita imediata.
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 6
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 5
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 4
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 2
+SO: escrita imediata.
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 3
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 2
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 1
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 2
+SO: escrita imediata.
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 0
+SO: Quantum esgotado para o processo 1. Preempcao.
+SO: Escalonador Round-Robin em acao.
+SO: Processo escolhido. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 9
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 8
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 2
+SO: escrita imediata.
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 7
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 6
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 5
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 2
+SO: escrita imediata.
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 4
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 3
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 2
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 2
+SO: escrita imediata.
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 1
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 0
+SO: Quantum esgotado para o processo 1. Preempcao.
+SO: Escalonador Round-Robin em acao.
+SO: Processo escolhido. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 9
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 2
+SO: escrita imediata.
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 8
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 7
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 6
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 2
+SO: escrita imediata.
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 5
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 4
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 3
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 2
+SO: escrita imediata.
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 2
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 1
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 0
+SO: Quantum esgotado para o processo 1. Preempcao.
+SO: Escalonador Round-Robin em acao.
+SO: Processo escolhido. PID = 1
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 2
+SO: escrita imediata.
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 9
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 8
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 7
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 2
+SO: escrita imediata.
 SO: Escalonador Round-Robin em acao.
 SO: Processo atual ainda tem quantum. Sem escalonamento.
 SO: Processo segue. PID = 1
 CMD: 'd 0'
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 1
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 0
-SO: Quantum esgotado para o processo 1. Preempcao.
-SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: escrita imediata.
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 9
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 8
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 7
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: escrita imediata.
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 6
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 5
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 4
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: escrita imediata.
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 3
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 2
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 1
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: escrita imediata.
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 0
-SO: Quantum esgotado para o processo 1. Preempcao.
-SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 9
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 8
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: escrita imediata.
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 7
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 6
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 5
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: escrita imediata.
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 4
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 3
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 2
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: escrita imediata.
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 1
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 0
-SO: Quantum esgotado para o processo 1. Preempcao.
-SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 9
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: escrita imediata.
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 8
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 7
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 6
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: escrita imediata.
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 5
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 4
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 3
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: escrita imediata.
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 2
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 1
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 0
-SO: Quantum esgotado para o processo 1. Preempcao.
-SO: Escalonador Round-Robin em acao.
-SO: Processo escolhido. PID = 1
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: escrita imediata.
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 9
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 8
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 3 (E/S: relógio)
-SO: Interrupcao do relogio, quantum restante = 7
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
-SO: recebi IRQ 2 (Chamada de sistema)
-SO: chamada de sistema 2
-SO: escrita imediata.
-SO: Escalonador Round-Robin em acao.
-SO: Processo atual ainda tem quantum. Sem escalonamento.
-SO: Processo segue. PID = 1
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Interrupcao do relogio, quantum restante = 6
 SO: Escalonador Round-Robin em acao.
@@ -20204,6 +20205,2080 @@ SO: chamada de sistema 8
 SO: Processo com PID 2 terminado.
 SO: Processo 1 desbloqueado pois processo 2 terminou.
 SO: Escalonador Round-Robin em acao.
+SO: Processo escolhido. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 9
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 9
+SO: Processo 1 tentou esperar por PID 3, que nao existe.
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 8
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 9
+SO: Processo 1 tentou esperar por PID 4, que nao existe.
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 7
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 6
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 2
+SO: escrita imediata.
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 5
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 4
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 3
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 2
+SO: escrita imediata.
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 2
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 1
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 0
+SO: Quantum esgotado para o processo 1. Preempcao.
+SO: Escalonador Round-Robin em acao.
+SO: Processo escolhido. PID = 1
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 2
+SO: escrita imediata.
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 9
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 8
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 7
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 2
+SO: escrita imediata.
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 6
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 5
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 4
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 2
+SO: escrita imediata.
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 3
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 2
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 1
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 2
+SO: escrita imediata.
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 0
+SO: Quantum esgotado para o processo 1. Preempcao.
+SO: Escalonador Round-Robin em acao.
+SO: Processo escolhido. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 9
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 8
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 2
+SO: escrita imediata.
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 7
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 6
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 5
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 2
+SO: escrita imediata.
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 4
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 3
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 2
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 2
+SO: escrita imediata.
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 1
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 0
+SO: Quantum esgotado para o processo 1. Preempcao.
+SO: Escalonador Round-Robin em acao.
+SO: Processo escolhido. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 9
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 2
+SO: escrita imediata.
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 8
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 7
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 6
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 2
+SO: escrita imediata.
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 5
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 4
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 3
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 2
+SO: escrita imediata.
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 2
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 1
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 0
+SO: Quantum esgotado para o processo 1. Preempcao.
+SO: Escalonador Round-Robin em acao.
+SO: Processo escolhido. PID = 1
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 2
+SO: escrita imediata.
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 9
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 8
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 7
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 2
+SO: escrita imediata.
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 6
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 5
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 4
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 2
+SO: escrita imediata.
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 3
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 2
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 1
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 2
+SO: escrita imediata.
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 0
+SO: Quantum esgotado para o processo 1. Preempcao.
+SO: Escalonador Round-Robin em acao.
+SO: Processo escolhido. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 9
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 8
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 2
+SO: escrita imediata.
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 7
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 6
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 5
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 2
+SO: escrita imediata.
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 4
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 3
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Interrupcao do relogio, quantum restante = 2
+SO: Escalonador Round-Robin em acao.
+SO: Processo atual ainda tem quantum. Sem escalonamento.
+SO: Processo segue. PID = 1
+SO: recebi IRQ 2 (Chamada de sistema)
+SO: chamada de sistema 8
+SO: Processo com PID 1 terminado.
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
+SO: Nenhum processo pronto. CPU ociosa.
+SO: recebi IRQ 3 (E/S: relógio)
+SO: Escalonador Round-Robin em acao.
 SO: Nenhum processo pronto. CPU ociosa.
 SO: recebi IRQ 3 (E/S: relógio)
 SO: Escalonador Round-Robin em acao.
@@ -23932,14 +26007,14 @@ Fim da execução.
 --- RELATORIO FINAL DO SISTEMA ---
 
 [Metricas Globais]
-  - Tempo total de execucao: 64540 instrucoes
+  - Tempo total de execucao: 72616 instrucoes
   - Numero total de processos criados: 3
-  - Tempo em que a CPU ficou ociosa: 12560 instrucoes
-  - Numero total de preempcoes: 309
+  - Tempo em que a CPU ficou ociosa: 18090 instrucoes
+  - Numero total de preempcoes: 314
   - Numero de interrupcoes por tipo:
     > IRQ 0 (Reset): 1 vezes
-    > IRQ 2 (Chamada de sistema): 441 vezes
-    > IRQ 3 (E/S: relógio): 4757 vezes
+    > IRQ 2 (Chamada de sistema): 462 vezes
+    > IRQ 3 (E/S: relógio): 5368 vezes
 
 [Metricas por Processo]
 
